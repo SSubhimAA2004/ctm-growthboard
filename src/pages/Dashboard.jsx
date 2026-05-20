@@ -1,24 +1,50 @@
 
 
 
-<Header />
+import Header from "../components/Header";
+import KPIStrip from "../components/KPIStrip";
+import NextBestAction from "../components/NextBestAction";
+import TribeStrength from "../components/TribeStrength";
+import WeeklyIncome from "../components/WeeklyIncome";
+import RankJourney from "../components/RankJourney";
+import ProspectFollowups from "../components/ProspectFollowups";
+import MemberFollowups from "../components/MemberFollowups";
+import DailyMissions from "../components/DailyMissions";
+import Footer from "../components/Footer";
 
-<KPIStrip />
+import { dashboardData } from "../services/dashboardData";
 
-<NextBestAction />
+function Dashboard() {
 
-<TribeStrength />
+  return (
 
-<WeeklyIncome />
+    <div className="dashboard-container">
 
-<RankJourney />
+      <Header />
 
-<ProspectFollowups />
+      <KPIStrip metrics={dashboardData.metrics} />
 
-<MemberFollowups />
+      <NextBestAction action={dashboardData.nextBestAction} />
 
-<DailyMissions />
+      <TribeStrength data={dashboardData.tribeStrength} />
 
-<Footer />
+      <WeeklyIncome data={dashboardData.weeklyIncome} />
+
+      <RankJourney data={dashboardData.rankJourney} />
+
+      <ProspectFollowups prospects={dashboardData.prospectFollowups} />
+
+      <MemberFollowups members={dashboardData.memberFollowups} />
+
+      <DailyMissions missions={dashboardData.dailyMissions} />
+
+      <Footer />
+
+    </div>
+
+  );
+}
+
+export default Dashboard;
 
 

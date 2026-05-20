@@ -5,12 +5,11 @@ function Header() {
   return (
     <header className="hero-section">
 
-      <div className="hero-content">
+      <div className="top-badge">
+        GLOBAL EXECUTION SYSTEM
+      </div>
 
-        <div className="hero-badge">
-          GLOBAL EXECUTION SYSTEM
-        </div>
-
+      <div>
         <h1 className="main-title">
           CTM GrowthBoard
         </h1>
@@ -18,12 +17,14 @@ function Header() {
         <p className="sub-title">
           Action Command Centre
         </p>
-
       </div>
 
       <div className="live-pill">
-        <span className="live-dot"></span>
+
+        <div className="live-dot"></div>
+
         LIVE
+
       </div>
 
     </header>
@@ -31,3 +32,5 @@ function Header() {
 }
 
 export default Header;
+
+

@@ -1,18 +1,24 @@
 
 
 
-import Header from "../components/Header";
-import MetricsStrip from "../components/MetricsStrip";
+<Header />
 
-function Dashboard() {
-  return (
-    <main>
-      <Header />
-      <MetricsStrip />
-    </main>
-  );
-}
+<KPIStrip />
 
-export default Dashboard;
+<NextBestAction />
+
+<TribeStrength />
+
+<WeeklyIncome />
+
+<RankJourney />
+
+<ProspectFollowups />
+
+<MemberFollowups />
+
+<DailyMissions />
+
+<Footer />
 
 

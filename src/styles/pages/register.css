@@ -1,0 +1,1073 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — REGISTER.CSS
+   FINAL FROZEN ONBOARDING SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   REGISTER PAGE ROOT
+========================================================= */
+
+.register-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    #020617;
+}
+
+/* =========================================================
+   BACKGROUND SYSTEM
+========================================================= */
+
+.register-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59,130,246,0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(6,182,212,0.12),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2,6,23,1),
+      rgba(3,7,18,1)
+    );
+
+  z-index: 0;
+}
+
+.register-page::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    80px 80px;
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      rgba(0,0,0,1),
+      transparent 88%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =========================================================
+   REGISTER SHELL
+========================================================= */
+
+.register-shell {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1680px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  min-height: 100vh;
+}
+
+/* =========================================================
+   BRAND EXPERIENCE PANEL
+========================================================= */
+
+.register-brand-panel {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding:
+    72px 72px 56px;
+
+  overflow: hidden;
+}
+
+.register-brand-panel::before {
+  content: "";
+
+  position: absolute;
+  top: -20%;
+  left: -10%;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.24),
+      rgba(6,182,212,0.12),
+      transparent 72%
+    );
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+.register-brand-panel::after {
+  content: "";
+
+  position: absolute;
+  right: -10%;
+  bottom: -20%;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34,197,94,0.16),
+      rgba(6,182,212,0.08),
+      transparent 72%
+    );
+
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BRAND TOP
+========================================================= */
+
+.register-brand-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.register-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+
+  min-height: 42px;
+
+  padding:
+    0 18px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(18px);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+.register-brand-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 16px rgba(34,197,94,0.62);
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.register-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.register-hero-title {
+  margin: 0;
+
+  max-width: 760px;
+
+  font-size: 82px;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -4px;
+
+  color:
+    #ffffff;
+}
+
+.register-hero-title-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.register-hero-description {
+  max-width: 680px;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   MOMENTUM METRICS
+========================================================= */
+
+.register-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+
+  width: 100%;
+}
+
+.register-metric-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  min-height: 210px;
+
+  padding:
+    28px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.register-metric-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(59,130,246,0.22);
+}
+
+.register-metric-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+.register-metric-value {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -3px;
+
+  color:
+    #ffffff;
+}
+
+.register-metric-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.register-metric-description {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   BRAND FOOTER
+========================================================= */
+
+.register-brand-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  padding-top: 42px;
+}
+
+.register-brand-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.register-brand-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 44px;
+
+  padding:
+    0 16px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   FORM PANEL
+========================================================= */
+
+.register-form-panel {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    56px;
+}
+
+.register-form-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.02),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.register-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 640px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+
+  padding:
+    42px;
+
+  border-radius: 36px;
+
+  background:
+    rgba(7,15,35,0.78);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(32px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.55);
+}
+
+.register-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.register-form-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.register-form-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.register-form-title {
+  margin: 0;
+
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -2px;
+
+  color:
+    #ffffff;
+}
+
+.register-form-description {
+  max-width: 520px;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.register-form-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.register-form-col-span-2 {
+  grid-column: span 2;
+}
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.register-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+/* =========================================================
+   INPUT SYSTEM
+========================================================= */
+
+.register-input-shell {
+  position: relative;
+}
+
+.register-input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color:
+    rgba(255,255,255,0.38);
+
+  pointer-events: none;
+
+  transition:
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.register-input {
+  width: 100%;
+  height: 58px;
+
+  padding:
+    0 18px 0 54px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:
+    #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  outline: none;
+
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.register-input:focus {
+  border-color:
+    rgba(59,130,246,0.42);
+
+  background:
+    rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 0 0 4px rgba(59,130,246,0.10);
+}
+
+.register-input:focus + .register-input-icon,
+.register-input-shell:focus-within .register-input-icon {
+  color:
+    #3b82f6;
+}
+
+.register-input::placeholder {
+  color:
+    rgba(255,255,255,0.32);
+}
+
+/* =========================================================
+   PASSWORD STRENGTH
+========================================================= */
+
+.register-password-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.register-strength-bar {
+  position: relative;
+
+  flex: 1;
+
+  height: 8px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.register-strength-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ef4444,
+      #f59e0b,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 16px rgba(34,197,94,0.24);
+}
+
+.register-strength-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.52);
+}
+
+/* =========================================================
+   AGREEMENT SYSTEM
+========================================================= */
+
+.register-agreement {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.register-checkbox {
+  width: 20px;
+  height: 20px;
+
+  margin-top: 2px;
+
+  accent-color:
+    #3b82f6;
+
+  cursor: pointer;
+}
+
+.register-agreement-text {
+  font-size: 13px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.register-agreement-text a {
+  color:
+    #3b82f6;
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   CTA SYSTEM
+========================================================= */
+
+.register-actions {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.register-submit-btn {
+  position: relative;
+
+  width: 100%;
+  height: 62px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border: none;
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 24px 42px rgba(59,130,246,0.28);
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.register-submit-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 30px 54px rgba(59,130,246,0.34);
+}
+
+.register-submit-btn::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.18),
+      transparent
+    );
+
+  transform:
+    translateX(-120%);
+
+  transition:
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.register-submit-btn:hover::before {
+  transform:
+    translateX(120%);
+}
+
+/* =========================================================
+   LOGIN REDIRECT
+========================================================= */
+
+.register-login-redirect {
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+.register-login-redirect a {
+  color:
+    #3b82f6;
+
+  text-decoration: none;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.register-live-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  min-height: 62px;
+
+  padding:
+    0 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+}
+
+.register-live-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.register-live-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 16px rgba(34,197,94,0.62);
+
+  animation:
+    registerPulse 2.6s infinite ease-in-out;
+}
+
+.register-live-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.register-live-value {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE — LARGE TABLET
+========================================================= */
+
+@media (max-width: 1280px) {
+  .register-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .register-brand-panel {
+    min-height: auto;
+
+    padding-bottom: 24px;
+  }
+
+  .register-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .register-brand-panel,
+  .register-form-panel {
+    padding:
+      42px;
+  }
+
+  .register-hero-title {
+    font-size: 64px;
+  }
+
+  .register-form-title {
+    font-size: 44px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .register-page {
+    min-height: auto;
+  }
+
+  .register-brand-panel,
+  .register-form-panel {
+    padding:
+      24px;
+  }
+
+  .register-card {
+    padding:
+      28px;
+
+    border-radius: 28px;
+  }
+
+  .register-hero-title {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .register-hero-description {
+    font-size: 16px;
+  }
+
+  .register-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-form-col-span-2 {
+    grid-column: span 1;
+  }
+
+  .register-form-title {
+    font-size: 36px;
+  }
+
+  .register-brand-footer,
+  .register-live-status {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .register-submit-btn:hover,
+  .register-metric-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .register-submit-btn,
+  .register-submit-btn::before,
+  .register-metric-card,
+  .register-live-dot {
+    transition: none;
+    animation: none;
+  }
+
+  .register-submit-btn:hover,
+  .register-metric-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes registerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.22);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,497 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — GRID SYSTEM ENGINE
+   FILE: src/styles/layout/grid-system.css
+   PURPOSE:
+   - Frozen responsive grid architecture
+   - Execution-first dashboard layout engine
+   - Unified desktop/tablet/mobile spanning system
+   - Operational continuity preservation
+   - Scalable section distribution
+   ========================================================================== */
+
+/* ==========================================================================
+   ROOT GRID VARIABLES
+   ========================================================================== */
+
+:root {
+  --grid-columns: 12;
+  --grid-gap: 24px;
+  --grid-gap-tablet: 20px;
+  --grid-gap-mobile: 16px;
+
+  --content-max-width: 1440px;
+
+  --section-spacing-desktop: 96px;
+  --section-spacing-tablet: 72px;
+  --section-spacing-mobile: 56px;
+}
+
+/* ==========================================================================
+   MASTER DASHBOARD GRID
+   ========================================================================== */
+
+.dashboard-grid,
+.grid-system,
+.execution-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: var(--grid-gap);
+  width: 100%;
+  align-items: start;
+}
+
+/* ==========================================================================
+   CONTENT WRAPPERS
+   ========================================================================== */
+
+.content-wrapper,
+.dashboard-wrapper,
+.section-wrapper {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   STANDARD GRID SPANS
+   ========================================================================== */
+
+.span-12 {
+  grid-column: span 12;
+}
+
+.span-11 {
+  grid-column: span 11;
+}
+
+.span-10 {
+  grid-column: span 10;
+}
+
+.span-9 {
+  grid-column: span 9;
+}
+
+.span-8 {
+  grid-column: span 8;
+}
+
+.span-7 {
+  grid-column: span 7;
+}
+
+.span-6 {
+  grid-column: span 6;
+}
+
+.span-5 {
+  grid-column: span 5;
+}
+
+.span-4 {
+  grid-column: span 4;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-1 {
+  grid-column: span 1;
+}
+
+/* ==========================================================================
+   AUTO FIT EXECUTION GRIDS
+   ========================================================================== */
+
+.auto-grid-xl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: var(--grid-gap);
+}
+
+.auto-grid-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--grid-gap);
+}
+
+.auto-grid-md {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--grid-gap);
+}
+
+.auto-grid-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   KPI GRID SYSTEM
+   ========================================================================== */
+
+.kpi-grid,
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   EXECUTION PRIORITY GRID
+   ========================================================================== */
+
+.execution-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: var(--grid-gap);
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   SECTION LAYOUTS
+   ========================================================================== */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+.section-main {
+  grid-column: span 8;
+}
+
+.section-side {
+  grid-column: span 4;
+}
+
+/* ==========================================================================
+   FOLLOWUPS GRID
+   ========================================================================== */
+
+.followups-grid,
+.prospect-followups-grid,
+.member-followups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   DAILY MISSIONS GRID
+   ========================================================================== */
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   RANK JOURNEY GRID
+   ========================================================================== */
+
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   INCOME GRID
+   ========================================================================== */
+
+.income-grid,
+.weekly-income-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   FOOTER GRID
+   ========================================================================== */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   HERO GRID
+   ========================================================================== */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   GRID ALIGNMENT UTILITIES
+   ========================================================================== */
+
+.grid-center {
+  align-items: center;
+}
+
+.grid-start {
+  align-items: start;
+}
+
+.grid-end {
+  align-items: end;
+}
+
+.grid-stretch {
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   GRID JUSTIFICATION UTILITIES
+   ========================================================================== */
+
+.justify-center {
+  justify-items: center;
+}
+
+.justify-start {
+  justify-items: start;
+}
+
+.justify-end {
+  justify-items: end;
+}
+
+.justify-stretch {
+  justify-items: stretch;
+}
+
+/* ==========================================================================
+   GRID FLOW UTILITIES
+   ========================================================================== */
+
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.grid-flow-column {
+  grid-auto-flow: column;
+}
+
+.grid-dense {
+  grid-auto-flow: dense;
+}
+
+/* ==========================================================================
+   SECTION SPACING SYSTEM
+   ========================================================================== */
+
+.dashboard-section,
+.execution-section,
+.section-block {
+  margin-bottom: var(--section-spacing-desktop);
+}
+
+/* ==========================================================================
+   OPERATIONAL CARD DISTRIBUTION
+   ========================================================================== */
+
+.card-stack-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.card-stack-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.card-stack-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ==========================================================================
+   OVERFLOW PROTECTION
+   ========================================================================== */
+
+.grid-item,
+.grid-card,
+.dashboard-card {
+  min-width: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE — LARGE DESKTOP
+   ========================================================================== */
+
+@media screen and (max-width: 1440px) {
+
+  .rank-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .income-grid,
+  .weekly-income-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — TABLET
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  .dashboard-grid,
+  .grid-system,
+  .execution-grid,
+  .section-grid {
+    gap: var(--grid-gap-tablet);
+  }
+
+  .dashboard-section,
+  .execution-section,
+  .section-block {
+    margin-bottom: var(--section-spacing-tablet);
+  }
+
+  .section-main,
+  .section-side,
+  .span-12,
+  .span-11,
+  .span-10,
+  .span-9,
+  .span-8,
+  .span-7,
+  .span-6,
+  .span-5,
+  .span-4,
+  .span-3,
+  .span-2,
+  .span-1 {
+    grid-column: span 12;
+  }
+
+  .kpi-grid,
+  .metrics-grid,
+  .missions-grid,
+  .card-stack-4,
+  .card-stack-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rank-grid,
+  .income-grid,
+  .weekly-income-grid,
+  .footer-grid,
+  .hero-grid,
+  .execution-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auto-grid-xl,
+  .auto-grid-lg,
+  .auto-grid-md {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+  .dashboard-grid,
+  .grid-system,
+  .execution-grid,
+  .section-grid,
+  .kpi-grid,
+  .metrics-grid,
+  .missions-grid,
+  .rank-grid,
+  .income-grid,
+  .weekly-income-grid,
+  .followups-grid,
+  .prospect-followups-grid,
+  .member-followups-grid,
+  .footer-grid,
+  .hero-grid,
+  .execution-layout,
+  .card-stack-2,
+  .card-stack-3,
+  .card-stack-4 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap-mobile);
+  }
+
+  .dashboard-section,
+  .execution-section,
+  .section-block {
+    margin-bottom: var(--section-spacing-mobile);
+  }
+
+  .auto-grid-xl,
+  .auto-grid-lg,
+  .auto-grid-md,
+  .auto-grid-sm {
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap-mobile);
+  }
+
+  .content-wrapper,
+  .dashboard-wrapper,
+  .section-wrapper {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   ULTRA SMALL MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 480px) {
+
+  .dashboard-grid,
+  .grid-system,
+  .execution-grid {
+    gap: 14px;
+  }
+
+  .dashboard-section,
+  .execution-section,
+  .section-block {
+    margin-bottom: 48px;
+  }
+
+  .auto-grid-xl,
+  .auto-grid-lg,
+  .auto-grid-md,
+  .auto-grid-sm {
+    gap: 14px;
+  }
+}
+
+

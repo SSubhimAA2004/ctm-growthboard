@@ -1,0 +1,94 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — APP SHELL.CSS
+   Frozen Production Layout System V1
+========================================================= */
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(6, 182, 212, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #030b1a 100%
+    );
+
+  color: #ffffff;
+}
+
+.app-shell::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.02),
+      transparent
+    );
+
+  z-index: 0;
+}
+
+.app-shell-inner {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
+  padding-bottom: 120px;
+}
+
+.section-spacing {
+  margin-top: 96px;
+}
+
+@media (max-width: 1024px) {
+  .app-shell-inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .section-spacing {
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  .section-spacing {
+    margin-top: 56px;
+  }
+}
+

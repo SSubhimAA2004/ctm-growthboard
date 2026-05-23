@@ -1,0 +1,606 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — LOGO-SYSTEM.CSS
+   FINAL FROZEN BRAND IDENTITY SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   MASTER LOGO WRAPPER
+========================================================= */
+
+.logo-system {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  width: fit-content;
+}
+
+/* =========================================================
+   LOGO MARK
+========================================================= */
+
+.logo-mark {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7,15,35,0.96),
+      rgba(12,22,48,0.88)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 24px rgba(59,130,246,0.18);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.logo-mark::before {
+  content: "";
+
+  position: absolute;
+  inset: -30%;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(59,130,246,0.28),
+      rgba(6,182,212,0.12),
+      transparent 70%
+    );
+
+  filter: blur(24px);
+
+  z-index: -1;
+}
+
+.logo-mark::after {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  border-radius: inherit;
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   LOGO ICON
+========================================================= */
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter:
+    drop-shadow(0 0 12px rgba(59,130,246,0.42));
+}
+
+/* =========================================================
+   BRAND LOCKUP
+========================================================= */
+
+.logo-lockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* =========================================================
+   BRAND TITLE
+========================================================= */
+
+.logo-title {
+  margin: 0;
+
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.logo-title-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #dbeafe 24%,
+      #60a5fa 52%,
+      #22d3ee 100%
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =========================================================
+   BRAND SUBTITLE
+========================================================= */
+
+.logo-subtitle {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+
+  color: rgba(255,255,255,0.72);
+}
+
+.logo-subtitle-highlight {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* =========================================================
+   HERO LOGO SYSTEM
+========================================================= */
+
+.hero-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  text-align: center;
+}
+
+.hero-logo .logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 36px;
+}
+
+.hero-logo .logo-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.hero-logo .logo-title {
+  font-size: 72px;
+  letter-spacing: -3px;
+}
+
+.hero-logo .logo-subtitle {
+  font-size: 20px;
+  max-width: 720px;
+}
+
+/* =========================================================
+   HEADER LOGO SYSTEM
+========================================================= */
+
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo .logo-mark {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.header-logo .logo-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.header-logo .logo-title {
+  font-size: 32px;
+  letter-spacing: -1.6px;
+}
+
+.header-logo .logo-subtitle {
+  font-size: 13px;
+}
+
+/* =========================================================
+   SIDEBAR LOGO SYSTEM
+========================================================= */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sidebar-logo .logo-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+}
+
+.sidebar-logo .logo-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.sidebar-logo .logo-title {
+  font-size: 26px;
+  letter-spacing: -1.2px;
+}
+
+.sidebar-logo .logo-subtitle {
+  font-size: 12px;
+}
+
+/* =========================================================
+   FOOTER LOGO SYSTEM
+========================================================= */
+
+.footer-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-logo .logo-mark {
+  width: 68px;
+  height: 68px;
+  border-radius: 22px;
+}
+
+.footer-logo .logo-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.footer-logo .logo-title {
+  font-size: 38px;
+}
+
+.footer-logo .logo-subtitle {
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   MINI LOGO
+========================================================= */
+
+.logo-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-mini .logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+.logo-mini .logo-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* =========================================================
+   EXECUTION BADGE LOGO
+========================================================= */
+
+.execution-logo {
+  position: relative;
+}
+
+.execution-logo::after {
+  content: "";
+
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #06b6d4
+    );
+
+  border:
+    2px solid rgba(2,6,23,1);
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.52);
+}
+
+/* =========================================================
+   LIVE SYSTEM STATUS
+========================================================= */
+
+.logo-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-live-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.72),
+    0 0 24px rgba(34,197,94,0.42);
+
+  animation:
+    logoPulse 2.4s infinite ease-in-out;
+}
+
+.logo-live-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   BRAND DIVIDER
+========================================================= */
+
+.logo-divider {
+  width: 1px;
+  height: 48px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0)
+    );
+}
+
+/* =========================================================
+   BRAND GLOW AURA
+========================================================= */
+
+.logo-aura {
+  position: relative;
+}
+
+.logo-aura::before {
+  content: "";
+
+  position: absolute;
+  inset: -24px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.18),
+      rgba(6,182,212,0.10),
+      transparent 72%
+    );
+
+  filter: blur(32px);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =========================================================
+   BRAND SHIMMER
+========================================================= */
+
+.logo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-shimmer::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -140%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.10),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  animation:
+    logoShimmer 7s linear infinite;
+}
+
+/* =========================================================
+   BRAND TYPOGRAPHY STATES
+========================================================= */
+
+.logo-title-muted {
+  opacity: 0.82;
+}
+
+.logo-title-active {
+  text-shadow:
+    0 0 18px rgba(59,130,246,0.28);
+}
+
+.logo-title-success {
+  text-shadow:
+    0 0 18px rgba(34,197,94,0.28);
+}
+
+/* =========================================================
+   RESPONSIVE SYSTEM
+========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-logo .logo-title {
+    font-size: 60px;
+  }
+
+  .hero-logo .logo-mark {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-logo .logo-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-system {
+    gap: 14px;
+  }
+
+  .logo-mark {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-title {
+    font-size: 28px;
+    letter-spacing: -1.4px;
+  }
+
+  .logo-subtitle {
+    font-size: 12px;
+  }
+
+  .hero-logo {
+    gap: 24px;
+  }
+
+  .hero-logo .logo-title {
+    font-size: 46px;
+    line-height: 1;
+  }
+
+  .hero-logo .logo-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-logo .logo-mark {
+    width: 82px;
+    height: 82px;
+    border-radius: 28px;
+  }
+
+  .hero-logo .logo-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .header-logo .logo-title,
+  .footer-logo .logo-title {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-live-dot,
+  .logo-shimmer::after {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes logoShimmer {
+  0% {
+    left: -140%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+

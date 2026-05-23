@@ -1,0 +1,873 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — PROSPECT-PAGE.CSS
+   FINAL FROZEN PROSPECT MANAGEMENT SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   PROSPECT PAGE ROOT
+========================================================= */
+
+.prospect-page {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+
+.prospect-page-hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  width: 100%;
+}
+
+.prospect-page-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: -12%;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59,130,246,0.10),
+      rgba(6,182,212,0.06),
+      transparent 72%
+    );
+
+  filter: blur(72px);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================
+   HERO HEADER
+========================================================= */
+
+.prospect-hero-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.prospect-hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.prospect-hero-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.prospect-hero-title {
+  margin: 0;
+
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -3px;
+
+  color: #ffffff;
+}
+
+.prospect-hero-description {
+  max-width: 760px;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.prospect-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.prospect-action-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 56px;
+
+  padding:
+    0 24px;
+
+  border-radius: 18px;
+
+  border: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.prospect-action-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 18px 42px rgba(59,130,246,0.22);
+}
+
+.prospect-action-secondary {
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  color:
+    rgba(255,255,255,0.82);
+}
+
+/* =========================================================
+   KPI STRIP
+========================================================= */
+
+.prospect-kpi-strip {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+}
+
+.prospect-kpi-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  min-height: 220px;
+
+  padding:
+    28px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-kpi-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(59,130,246,0.18);
+}
+
+.prospect-kpi-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+.prospect-kpi-value {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -3px;
+
+  color: #ffffff;
+}
+
+.prospect-kpi-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+.prospect-kpi-description {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   CRM WORKSPACE
+========================================================= */
+
+.prospect-workspace {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 28px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   PIPELINE SIDEBAR
+========================================================= */
+
+.prospect-sidebar {
+  position: sticky;
+  top: 110px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  height: fit-content;
+}
+
+.prospect-sidebar-panel {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding:
+    28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  overflow: hidden;
+}
+
+.prospect-sidebar-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PIPELINE STAGES
+========================================================= */
+
+.prospect-stage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prospect-stage-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  min-height: 58px;
+
+  padding:
+    0 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  transition:
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-stage-item:hover {
+  transform: translateX(4px);
+
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.prospect-stage-item-active {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,0.16),
+      rgba(6,182,212,0.08)
+    );
+
+  border:
+    1px solid rgba(59,130,246,0.18);
+}
+
+.prospect-stage-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.prospect-stage-dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 999px;
+
+  background:
+    #3b82f6;
+
+  box-shadow:
+    0 0 12px rgba(59,130,246,0.42);
+}
+
+.prospect-stage-name {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+.prospect-stage-count {
+  min-width: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    6px 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   PIPELINE CONTENT
+========================================================= */
+
+.prospect-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.prospect-toolbar {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding:
+    24px 28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+}
+
+.prospect-toolbar-left,
+.prospect-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.prospect-search {
+  position: relative;
+
+  width: 320px;
+}
+
+.prospect-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color:
+    rgba(255,255,255,0.42);
+
+  pointer-events: none;
+}
+
+.prospect-search-input {
+  width: 100%;
+  height: 54px;
+
+  padding:
+    0 18px 0 52px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  color:
+    #ffffff;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-search-input:focus {
+  border-color:
+    rgba(59,130,246,0.42);
+
+  box-shadow:
+    0 0 0 4px rgba(59,130,246,0.10);
+}
+
+.prospect-search-input::placeholder {
+  color:
+    rgba(255,255,255,0.32);
+}
+
+/* =========================================================
+   FILTER CHIPS
+========================================================= */
+
+.prospect-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.prospect-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding:
+    0 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  cursor: pointer;
+
+  transition:
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-filter-chip:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.prospect-filter-chip-active {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,0.18),
+      rgba(6,182,212,0.08)
+    );
+
+  border:
+    1px solid rgba(59,130,246,0.18);
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   CONTENT PANEL
+========================================================= */
+
+.prospect-content-panel {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  min-height: 720px;
+
+  padding:
+    28px;
+
+  border-radius: 32px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+}
+
+.prospect-content-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.prospect-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 480px;
+
+  text-align: center;
+}
+
+.prospect-empty-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+
+  color: #ffffff;
+}
+
+.prospect-empty-description {
+  max-width: 620px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   LIVE STATUS BAR
+========================================================= */
+
+.prospect-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  min-height: 58px;
+
+  padding:
+    0 20px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+}
+
+.prospect-status-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.prospect-status-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.62);
+}
+
+.prospect-status-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.prospect-status-value {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+  .prospect-kpi-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prospect-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .prospect-sidebar {
+    position: relative;
+    top: unset;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .prospect-page {
+    gap: 36px;
+  }
+
+  .prospect-hero-header,
+  .prospect-toolbar,
+  .prospect-status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prospect-hero-title {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .prospect-hero-description {
+    font-size: 16px;
+  }
+
+  .prospect-kpi-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .prospect-kpi-card,
+  .prospect-sidebar-panel,
+  .prospect-toolbar,
+  .prospect-content-panel {
+    padding:
+      22px;
+
+    border-radius: 24px;
+  }
+
+  .prospect-kpi-value {
+    font-size: 42px;
+  }
+
+  .prospect-search {
+    width: 100%;
+  }
+
+  .prospect-toolbar-left,
+  .prospect-toolbar-right,
+  .prospect-hero-actions {
+    width: 100%;
+  }
+
+  .prospect-filter-group {
+    width: 100%;
+  }
+
+  .prospect-action-btn {
+    width: 100%;
+  }
+
+  .prospect-stage-item:hover,
+  .prospect-action-btn:hover,
+  .prospect-kpi-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .prospect-stage-item,
+  .prospect-action-btn,
+  .prospect-filter-chip,
+  .prospect-kpi-card {
+    transition: none;
+  }
+
+  .prospect-stage-item:hover,
+  .prospect-action-btn:hover,
+  .prospect-filter-chip:hover,
+  .prospect-kpi-card:hover {
+    transform: none;
+  }
+}
+
+
+

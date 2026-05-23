@@ -1,0 +1,784 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — FOOTER.CSS
+   FINAL FROZEN FOOTER COMMAND CENTRE SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   FOOTER ROOT
+========================================================= */
+
+.footer-section {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  padding:
+    48px;
+
+  border-radius: 38px 38px 0 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,12,32,0.96),
+      rgba(2,6,23,1)
+    );
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 -10px 40px rgba(0,0,0,0.28);
+}
+
+/* =========================================================
+   BACKGROUND VISUAL SYSTEM
+========================================================= */
+
+.footer-section::before {
+  content: "";
+
+  position: absolute;
+  top: -20%;
+  right: -10%;
+
+  width: 540px;
+  height: 540px;
+
+  border-radius: 999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.14),
+      rgba(6,182,212,0.08),
+      transparent 72%
+    );
+
+  filter:
+    blur(100px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.footer-section::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.02),
+      transparent 38%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
+
+.footer-top {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   BRAND BLOCK
+========================================================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  max-width: 520px;
+}
+
+.footer-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  min-height: 40px;
+
+  padding:
+    0 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.footer-brand-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 14px rgba(34,197,94,0.62);
+
+  animation:
+    footerPulse 2.8s infinite ease-in-out;
+}
+
+.footer-brand-title {
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -2px;
+
+  color:
+    #ffffff;
+}
+
+.footer-brand-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand-description {
+  font-size: 15px;
+  line-height: 1.9;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   STATUS PANEL
+========================================================= */
+
+.footer-status-panel {
+  position: relative;
+
+  min-width: 340px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding:
+    30px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(7,15,35,0.78);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.32);
+}
+
+.footer-status-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(59,130,246,0.08),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.footer-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-status-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.footer-status-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-status-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.62);
+}
+
+.footer-status-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(34,197,94,0.92);
+}
+
+/* =========================================================
+   METRICS GRID
+========================================================= */
+
+.footer-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.footer-metric-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  min-height: 120px;
+
+  padding:
+    20px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  overflow: hidden;
+}
+
+.footer-metric-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+.footer-metric-value {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+
+  color:
+    #ffffff;
+}
+
+.footer-metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.46);
+}
+
+.footer-metric-description {
+  font-size: 12px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.56);
+}
+
+/* =========================================================
+   FOOTER GRID
+========================================================= */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+
+  gap: 28px;
+}
+
+/* =========================================================
+   FOOTER COLUMN
+========================================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-column-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-link {
+  position: relative;
+
+  width: fit-content;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  color:
+    rgba(255,255,255,0.68);
+
+  transition:
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-link:hover {
+  transform:
+    translateX(4px);
+
+  color:
+    #ffffff;
+}
+
+.footer-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    rgba(59,130,246,0.72);
+
+  transition:
+    width 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   EXECUTION HEALTH
+========================================================= */
+
+.footer-health-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-health-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-health-label {
+  font-size: 13px;
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.footer-health-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-health-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.52);
+}
+
+.footer-health-status {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  color:
+    rgba(34,197,94,0.92);
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  padding-top: 28px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.footer-bottom-left,
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+.footer-system-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 38px;
+
+  padding:
+    0 14px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   COMMAND ACTIONS
+========================================================= */
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-action-btn {
+  position: relative;
+
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding:
+    0 22px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color:
+    rgba(255,255,255,0.72);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-action-btn:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(59,130,246,0.12);
+
+  border-color:
+    rgba(59,130,246,0.18);
+
+  color:
+    #ffffff;
+}
+
+.footer-action-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  border:
+    1px solid rgba(59,130,246,0.22);
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 18px 40px rgba(59,130,246,0.28);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1280px) {
+
+  .footer-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-status-panel {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .footer-section {
+    padding:
+      28px 22px 120px;
+
+    border-radius:
+      28px 28px 0 0;
+
+    gap:
+      32px;
+  }
+
+  .footer-brand-title {
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .footer-brand-description {
+    font-size: 14px;
+  }
+
+  .footer-status-panel {
+    min-width: 100%;
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  .footer-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-left,
+  .footer-bottom-right,
+  .footer-actions {
+    width: 100%;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-action-btn {
+    width: 100%;
+  }
+
+  .footer-link:hover,
+  .footer-action-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer-brand-dot,
+  .footer-link,
+  .footer-link::after,
+  .footer-action-btn {
+    transition: none;
+    animation: none;
+  }
+
+  .footer-link:hover,
+  .footer-action-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes footerPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

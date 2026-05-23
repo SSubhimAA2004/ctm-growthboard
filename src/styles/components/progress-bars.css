@@ -1,0 +1,466 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — PROGRESS BAR SYSTEM
+   Live Momentum Visualization Engine
+   ========================================================= */
+
+/* ===============================
+   BASE PROGRESS SYSTEM
+================================= */
+
+.progress {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+}
+
+/* ===============================
+   PROGRESS FILL
+================================= */
+
+.progress-fill {
+  position: relative;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  transition:
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+
+  overflow: hidden;
+}
+
+/* ===============================
+   LIVE SHIMMER
+================================= */
+
+.progress-fill::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.18),
+      transparent
+    );
+
+  animation: progressShimmer 2.4s infinite;
+}
+
+@keyframes progressShimmer {
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===============================
+   EXECUTION GRADIENT
+================================= */
+
+.progress-execution {
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 22px rgba(6,182,212,0.22);
+}
+
+/* ===============================
+   SUCCESS PROGRESS
+================================= */
+
+.progress-success {
+  background:
+    linear-gradient(
+      90deg,
+      #22c55e,
+      #4ade80
+    );
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.22);
+}
+
+/* ===============================
+   WARNING PROGRESS
+================================= */
+
+.progress-warning {
+  background:
+    linear-gradient(
+      90deg,
+      #f59e0b,
+      #facc15
+    );
+
+  box-shadow:
+    0 0 18px rgba(250,204,21,0.22);
+}
+
+/* ===============================
+   DANGER PROGRESS
+================================= */
+
+.progress-danger {
+  background:
+    linear-gradient(
+      90deg,
+      #ef4444,
+      #f87171
+    );
+
+  box-shadow:
+    0 0 18px rgba(239,68,68,0.22);
+}
+
+/* ===============================
+   RANK EVOLUTION BAR
+================================= */
+
+.progress-rank {
+  height: 14px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.24);
+}
+
+.progress-rank .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #86efac,
+      #67e8f9,
+      #3b82f6
+    );
+
+  box-shadow:
+    0 0 28px rgba(59,130,246,0.24);
+}
+
+/* ===============================
+   DAILY MISSION BAR
+================================= */
+
+.progress-mission {
+  height: 10px;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.progress-mission .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #06b6d4,
+      #22c55e
+    );
+}
+
+/* ===============================
+   KPI MICRO BAR
+================================= */
+
+.progress-mini {
+  height: 6px;
+}
+
+.progress-mini .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #60a5fa
+    );
+}
+
+/* ===============================
+   PAIR CEILING BAR
+================================= */
+
+.progress-ceiling {
+  height: 12px;
+
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.progress-ceiling .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #22c55e,
+      #06b6d4,
+      #3b82f6,
+      #8b5cf6
+    );
+
+  box-shadow:
+    0 0 32px rgba(139,92,246,0.28);
+}
+
+/* ===============================
+   MOMENTUM BAR
+================================= */
+
+.progress-momentum {
+  height: 8px;
+}
+
+.progress-momentum .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #22c55e,
+      #4ade80
+    );
+
+  animation:
+    momentumGlow 2.4s ease infinite;
+}
+
+@keyframes momentumGlow {
+
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* ===============================
+   PROGRESS LABEL ROW
+================================= */
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   PROGRESS TITLE
+================================= */
+
+.progress-title {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+/* ===============================
+   PROGRESS VALUE
+================================= */
+
+.progress-value {
+  font-size: 13px;
+  font-weight: 700;
+
+  color: rgba(255,255,255,0.68);
+}
+
+/* ===============================
+   EXECUTION SCORE LABEL
+================================= */
+
+.progress-score {
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.48);
+}
+
+/* ===============================
+   SEGMENTED PROGRESS
+================================= */
+
+.progress-segments {
+  display: flex;
+  gap: 4px;
+
+  width: 100%;
+}
+
+.progress-segment {
+  flex: 1;
+
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.progress-segment.active {
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 14px rgba(34,197,94,0.24);
+}
+
+/* ===============================
+   LOADING STATE
+================================= */
+
+.progress-loading {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.progress-loading::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.04)
+    );
+
+  animation: progressLoading 1.6s infinite;
+}
+
+@keyframes progressLoading {
+
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===============================
+   EMPTY STATE
+================================= */
+
+.progress-empty .progress-fill {
+  width: 0 !important;
+
+  opacity: 0.25;
+}
+
+/* ===============================
+   LIVE ACTIVE INDICATOR
+================================= */
+
+.progress-live-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.82);
+
+  animation: liveDotPulse 1.8s infinite;
+}
+
+@keyframes liveDotPulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 6px;
+  }
+
+  .progress-title {
+    font-size: 13px;
+  }
+
+  .progress-value {
+    font-size: 12px;
+  }
+
+  .progress-rank {
+    height: 12px;
+  }
+}
+
+

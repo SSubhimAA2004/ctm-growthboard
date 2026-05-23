@@ -1,0 +1,654 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — THEME TOKEN ENGINE
+   FILE: src/styles/themes/theme-tokens.css
+   PURPOSE:
+   - Frozen semantic theme orchestration
+   - Dark/light abstraction layer
+   - Operational surface mapping
+   - Execution-state token mapping
+   - Production-safe theming architecture
+   ========================================================================== */
+
+/* ==========================================================================
+   DEFAULT THEME MAPPING
+   PRODUCTION DEFAULT = DARK
+   ========================================================================== */
+
+:root {
+
+  /* ==========================================================================
+     CORE SURFACES
+     ========================================================================== */
+
+  --theme-bg-primary:
+    var(--color-background-primary);
+
+  --theme-bg-secondary:
+    var(--color-background-secondary);
+
+  --theme-bg-tertiary:
+    var(--color-background-tertiary);
+
+  --theme-surface-primary:
+    var(--color-surface-primary);
+
+  --theme-surface-secondary:
+    var(--color-surface-secondary);
+
+  --theme-surface-hover:
+    var(--color-surface-hover);
+
+  /* ==========================================================================
+     TEXT SYSTEM
+     ========================================================================== */
+
+  --theme-text-primary:
+    var(--color-text-primary);
+
+  --theme-text-secondary:
+    var(--color-text-secondary);
+
+  --theme-text-muted:
+    var(--color-text-muted);
+
+  --theme-text-disabled:
+    var(--color-text-disabled);
+
+  /* ==========================================================================
+     BORDER SYSTEM
+     ========================================================================== */
+
+  --theme-border-primary:
+    var(--color-border-primary);
+
+  --theme-border-secondary:
+    var(--color-border-secondary);
+
+  /* ==========================================================================
+     BRAND SYSTEM
+     ========================================================================== */
+
+  --theme-primary:
+    var(--color-primary-blue);
+
+  --theme-secondary:
+    var(--color-primary-cyan);
+
+  --theme-accent:
+    var(--color-primary-green);
+
+  --theme-highlight:
+    var(--color-primary-pink);
+
+  --theme-purple:
+    var(--color-primary-purple);
+
+  --theme-indigo:
+    var(--color-primary-indigo);
+
+  /* ==========================================================================
+     EXECUTION STATUS SYSTEM
+     ========================================================================== */
+
+  --theme-success:
+    var(--color-success);
+
+  --theme-warning:
+    var(--color-warning);
+
+  --theme-danger:
+    var(--color-danger);
+
+  --theme-info:
+    var(--color-info);
+
+  /* ==========================================================================
+     PRIORITY SYSTEM
+     ========================================================================== */
+
+  --theme-priority-high:
+    var(--color-high-priority);
+
+  --theme-priority-medium:
+    var(--color-medium-priority);
+
+  --theme-priority-low:
+    var(--color-low-priority);
+
+  /* ==========================================================================
+     GLASSMORPHISM TOKENS
+     ========================================================================== */
+
+  --theme-glass-bg:
+    var(--glass-background);
+
+  --theme-glass-bg-strong:
+    var(--glass-background-strong);
+
+  --theme-glass-border:
+    var(--glass-border);
+
+  --theme-glass-blur:
+    var(--glass-backdrop-blur);
+
+  /* ==========================================================================
+     CARD SYSTEM TOKENS
+     ========================================================================== */
+
+  --theme-card-bg:
+    var(--card-background);
+
+  --theme-card-border:
+    var(--card-border);
+
+  --theme-card-shadow:
+    var(--card-shadow);
+
+  --theme-card-radius:
+    var(--card-radius);
+
+  /* ==========================================================================
+     GRADIENT SYSTEM
+     ========================================================================== */
+
+  --theme-gradient-primary:
+    var(--gradient-primary);
+
+  --theme-gradient-card:
+    var(--gradient-card);
+
+  --theme-gradient-hero:
+    var(--gradient-hero);
+
+  --theme-gradient-glow:
+    var(--gradient-glow);
+
+  /* ==========================================================================
+     GLOW SYSTEM
+     ========================================================================== */
+
+  --theme-glow-primary:
+    var(--glow-blue);
+
+  --theme-glow-cyan:
+    var(--glow-cyan);
+
+  --theme-glow-success:
+    var(--glow-green);
+
+  --theme-glow-highlight:
+    var(--glow-pink);
+
+  --theme-glow-danger:
+    var(--glow-danger);
+
+  /* ==========================================================================
+     TYPOGRAPHY TOKENS
+     ========================================================================== */
+
+  --theme-font-primary:
+    var(--font-primary);
+
+  --theme-text-xs:
+    var(--text-xs);
+
+  --theme-text-sm:
+    var(--text-sm);
+
+  --theme-text-md:
+    var(--text-md);
+
+  --theme-text-lg:
+    var(--text-lg);
+
+  --theme-text-xl:
+    var(--text-xl);
+
+  --theme-text-2xl:
+    var(--text-2xl);
+
+  --theme-text-3xl:
+    var(--text-3xl);
+
+  --theme-text-4xl:
+    var(--text-4xl);
+
+  --theme-text-5xl:
+    var(--text-5xl);
+
+  --theme-text-6xl:
+    var(--text-6xl);
+
+  /* ==========================================================================
+     FONT WEIGHTS
+     ========================================================================== */
+
+  --theme-font-light:
+    var(--font-light);
+
+  --theme-font-regular:
+    var(--font-regular);
+
+  --theme-font-medium:
+    var(--font-medium);
+
+  --theme-font-semibold:
+    var(--font-semibold);
+
+  --theme-font-bold:
+    var(--font-bold);
+
+  --theme-font-extrabold:
+    var(--font-extrabold);
+
+  /* ==========================================================================
+     SPACING TOKENS
+     ========================================================================== */
+
+  --theme-space-1:
+    var(--space-1);
+
+  --theme-space-2:
+    var(--space-2);
+
+  --theme-space-3:
+    var(--space-3);
+
+  --theme-space-4:
+    var(--space-4);
+
+  --theme-space-5:
+    var(--space-5);
+
+  --theme-space-6:
+    var(--space-6);
+
+  --theme-space-7:
+    var(--space-7);
+
+  --theme-space-8:
+    var(--space-8);
+
+  --theme-space-9:
+    var(--space-9);
+
+  --theme-space-10:
+    var(--space-10);
+
+  --theme-space-11:
+    var(--space-11);
+
+  --theme-space-12:
+    var(--space-12);
+
+  /* ==========================================================================
+     BORDER RADIUS TOKENS
+     ========================================================================== */
+
+  --theme-radius-xs:
+    var(--radius-xs);
+
+  --theme-radius-sm:
+    var(--radius-sm);
+
+  --theme-radius-md:
+    var(--radius-md);
+
+  --theme-radius-lg:
+    var(--radius-lg);
+
+  --theme-radius-xl:
+    var(--radius-xl);
+
+  --theme-radius-2xl:
+    var(--radius-2xl);
+
+  --theme-radius-3xl:
+    var(--radius-3xl);
+
+  --theme-radius-full:
+    var(--radius-full);
+
+  /* ==========================================================================
+     SHADOW TOKENS
+     ========================================================================== */
+
+  --theme-shadow-xs:
+    var(--shadow-xs);
+
+  --theme-shadow-sm:
+    var(--shadow-sm);
+
+  --theme-shadow-md:
+    var(--shadow-md);
+
+  --theme-shadow-lg:
+    var(--shadow-lg);
+
+  --theme-shadow-xl:
+    var(--shadow-xl);
+
+  /* ==========================================================================
+     MOTION TOKENS
+     ========================================================================== */
+
+  --theme-transition-fast:
+    var(--transition-fast);
+
+  --theme-transition-base:
+    var(--transition-base);
+
+  --theme-transition-slow:
+    var(--transition-slow);
+
+  --theme-transition-easing:
+    var(--transition-easing);
+
+  --theme-hover-lift-sm:
+    var(--hover-lift-sm);
+
+  --theme-hover-lift-md:
+    var(--hover-lift-md);
+
+  --theme-hover-lift-lg:
+    var(--hover-lift-lg);
+
+  --theme-scale-hover-sm:
+    var(--scale-hover-sm);
+
+  --theme-scale-hover-md:
+    var(--scale-hover-md);
+
+  /* ==========================================================================
+     BLUR TOKENS
+     ========================================================================== */
+
+  --theme-blur-sm:
+    var(--blur-sm);
+
+  --theme-blur-md:
+    var(--blur-md);
+
+  --theme-blur-lg:
+    var(--blur-lg);
+
+  --theme-blur-xl:
+    var(--blur-xl);
+
+  /* ==========================================================================
+     LAYOUT TOKENS
+     ========================================================================== */
+
+  --theme-container-width:
+    var(--container-max-width);
+
+  --theme-grid-columns:
+    var(--grid-columns);
+
+  --theme-grid-gap-desktop:
+    var(--grid-gap-desktop);
+
+  --theme-grid-gap-tablet:
+    var(--grid-gap-tablet);
+
+  --theme-grid-gap-mobile:
+    var(--grid-gap-mobile);
+
+  /* ==========================================================================
+     SECTION SPACING TOKENS
+     ========================================================================== */
+
+  --theme-section-spacing-desktop:
+    var(--section-spacing-desktop);
+
+  --theme-section-spacing-tablet:
+    var(--section-spacing-tablet);
+
+  --theme-section-spacing-mobile:
+    var(--section-spacing-mobile);
+
+  /* ==========================================================================
+     KPI SYSTEM TOKENS
+     ========================================================================== */
+
+  --theme-kpi-height-desktop:
+    var(--kpi-card-height-desktop);
+
+  --theme-kpi-height-tablet:
+    var(--kpi-card-height-tablet);
+
+  --theme-kpi-height-mobile:
+    var(--kpi-card-height-mobile);
+
+  /* ==========================================================================
+     MISSION SYSTEM TOKENS
+     ========================================================================== */
+
+  --theme-mission-height-desktop:
+    var(--mission-card-height-desktop);
+
+  --theme-mission-height-tablet:
+    var(--mission-card-height-tablet);
+
+  --theme-mission-height-mobile:
+    var(--mission-card-height-mobile);
+
+  /* ==========================================================================
+     BUTTON TOKENS
+     ========================================================================== */
+
+  --theme-button-height-sm:
+    var(--button-height-sm);
+
+  --theme-button-height-md:
+    var(--button-height-md);
+
+  --theme-button-height-lg:
+    var(--button-height-lg);
+
+  /* ==========================================================================
+     Z-INDEX TOKENS
+     ========================================================================== */
+
+  --theme-z-base:
+    var(--z-base);
+
+  --theme-z-dropdown:
+    var(--z-dropdown);
+
+  --theme-z-sticky:
+    var(--z-sticky);
+
+  --theme-z-overlay:
+    var(--z-overlay);
+
+  --theme-z-modal:
+    var(--z-modal);
+
+  --theme-z-toast:
+    var(--z-toast);
+
+  --theme-z-tooltip:
+    var(--z-tooltip);
+
+  --theme-z-max:
+    var(--z-max);
+}
+
+/* ==========================================================================
+   DARK THEME MAPPING
+   PRODUCTION ACTIVE THEME
+   ========================================================================== */
+
+[data-theme="dark"] {
+
+  color-scheme: dark;
+
+  --theme-bg-primary:
+    #020617;
+
+  --theme-bg-secondary:
+    rgba(10, 18, 38, 0.72);
+
+  --theme-surface-primary:
+    rgba(7, 15, 35, 0.72);
+
+  --theme-surface-secondary:
+    rgba(10, 18, 38, 0.84);
+
+  --theme-text-primary:
+    #FFFFFF;
+
+  --theme-text-secondary:
+    rgba(255, 255, 255, 0.72);
+
+  --theme-text-muted:
+    rgba(255, 255, 255, 0.42);
+
+  --theme-border-primary:
+    rgba(255, 255, 255, 0.06);
+
+  --theme-card-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   LIGHT THEME MAPPING
+   FUTURE OPTIONAL SUPPORT
+   ========================================================================== */
+
+[data-theme="light"] {
+
+  color-scheme: light;
+
+  --theme-bg-primary:
+    #F8FAFC;
+
+  --theme-bg-secondary:
+    rgba(255, 255, 255, 0.92);
+
+  --theme-bg-tertiary:
+    rgba(241, 245, 249, 0.92);
+
+  --theme-surface-primary:
+    rgba(255, 255, 255, 0.88);
+
+  --theme-surface-secondary:
+    rgba(255, 255, 255, 0.96);
+
+  --theme-surface-hover:
+    rgba(248, 250, 252, 1);
+
+  --theme-text-primary:
+    #020617;
+
+  --theme-text-secondary:
+    rgba(15, 23, 42, 0.72);
+
+  --theme-text-muted:
+    rgba(15, 23, 42, 0.48);
+
+  --theme-border-primary:
+    rgba(15, 23, 42, 0.08);
+
+  --theme-border-secondary:
+    rgba(15, 23, 42, 0.12);
+
+  --theme-card-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.08);
+
+  --theme-glass-bg:
+    rgba(255, 255, 255, 0.82);
+
+  --theme-glass-bg-strong:
+    rgba(255, 255, 255, 0.94);
+}
+
+/* ==========================================================================
+   EXECUTION STATE TOKENS
+   ========================================================================== */
+
+[data-execution-state="momentum-high"] {
+  --theme-primary: #22C55E;
+  --theme-glow-primary: var(--glow-green);
+}
+
+[data-execution-state="momentum-medium"] {
+  --theme-primary: #06B6D4;
+  --theme-glow-primary: var(--glow-cyan);
+}
+
+[data-execution-state="momentum-low"] {
+  --theme-primary: #F59E0B;
+}
+
+[data-execution-state="critical"] {
+  --theme-primary: #EF4444;
+  --theme-glow-primary: var(--glow-danger);
+}
+
+/* ==========================================================================
+   OPERATIONAL SURFACE TOKENS
+   ========================================================================== */
+
+.surface-primary {
+  background: var(--theme-surface-primary);
+  border: 1px solid var(--theme-border-primary);
+}
+
+.surface-secondary {
+  background: var(--theme-surface-secondary);
+  border: 1px solid var(--theme-border-primary);
+}
+
+.surface-glass {
+  background: var(--theme-glass-bg);
+  backdrop-filter: var(--theme-glass-blur);
+  border: var(--theme-glass-border);
+}
+
+.surface-hover:hover {
+  background: var(--theme-surface-hover);
+}
+
+/* ==========================================================================
+   THEME TRANSITION NORMALIZATION
+   ========================================================================== */
+
+body,
+.dashboard-shell,
+.dashboard-card,
+.glass-card,
+button,
+input,
+textarea,
+select {
+  transition:
+    background-color var(--theme-transition-base)
+      var(--theme-transition-easing),
+    border-color var(--theme-transition-base)
+      var(--theme-transition-easing),
+    color var(--theme-transition-base)
+      var(--theme-transition-easing),
+    box-shadow var(--theme-transition-base)
+      var(--theme-transition-easing);
+}
+
+/* ==========================================================================
+   FROZEN THEME DISCIPLINE
+   --------------------------------------------------------------------------
+   Theme mappings ONLY.
+   No component styling.
+   No section styling.
+   No business logic styling.
+
+   All production themes must inherit from:
+   - variables.css
+   - semantic theme mappings
+   ========================================================================== */
+
+
+   

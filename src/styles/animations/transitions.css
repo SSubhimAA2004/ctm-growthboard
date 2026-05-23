@@ -1,0 +1,548 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — GLOBAL TRANSITION SYSTEM
+   Elite Silicon Valley Motion Timing Engine
+   ========================================================= */
+
+/* =========================================================
+   ROOT TRANSITION TOKENS
+   ========================================================= */
+
+:root {
+  /* ---------------------------------------------------------
+     CORE TIMINGS
+     --------------------------------------------------------- */
+
+  --transition-instant: 80ms;
+  --transition-fast: 160ms;
+  --transition-primary: 220ms;
+  --transition-medium: 320ms;
+  --transition-slow: 480ms;
+  --transition-ultra: 720ms;
+
+  /* ---------------------------------------------------------
+     CORE EASING
+     --------------------------------------------------------- */
+
+  --ease-primary:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  --ease-smooth:
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+  --ease-sharp:
+    cubic-bezier(0.4, 0, 0.6, 1);
+
+  --ease-bounce:
+    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --ease-glide:
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---------------------------------------------------------
+     COMMON TRANSITION COMBINATIONS
+     --------------------------------------------------------- */
+
+  --transition-opacity:
+    opacity var(--transition-primary)
+    var(--ease-primary);
+
+  --transition-transform:
+    transform var(--transition-primary)
+    var(--ease-primary);
+
+  --transition-colors:
+    background-color var(--transition-primary)
+      var(--ease-primary),
+    border-color var(--transition-primary)
+      var(--ease-primary),
+    color var(--transition-primary)
+      var(--ease-primary);
+
+  --transition-shadow:
+    box-shadow var(--transition-primary)
+    var(--ease-primary);
+
+  --transition-all:
+    all var(--transition-primary)
+    var(--ease-primary);
+}
+
+/* =========================================================
+   UNIVERSAL INTERACTION BASE
+   ========================================================= */
+
+.transition-base {
+  transition:
+    var(--transition-all);
+}
+
+.transition-opacity {
+  transition:
+    var(--transition-opacity);
+}
+
+.transition-transform {
+  transition:
+    var(--transition-transform);
+}
+
+.transition-colors {
+  transition:
+    var(--transition-colors);
+}
+
+.transition-shadow {
+  transition:
+    var(--transition-shadow);
+}
+
+/* =========================================================
+   ELITE EXECUTION TRANSITIONS
+   ========================================================= */
+
+.execution-transition {
+  transition:
+    transform var(--transition-primary)
+      var(--ease-primary),
+    opacity var(--transition-primary)
+      var(--ease-primary),
+    border-color var(--transition-primary)
+      var(--ease-primary),
+    background var(--transition-primary)
+      var(--ease-primary),
+    box-shadow var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   KPI TRANSITIONS
+   ========================================================= */
+
+.kpi-transition {
+  transition:
+    transform var(--transition-primary)
+      var(--ease-glide),
+    box-shadow var(--transition-primary)
+      var(--ease-primary),
+    border-color var(--transition-primary)
+      var(--ease-primary),
+    filter var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   BUTTON MOTION SYSTEM
+   ========================================================= */
+
+.button-transition {
+  transition:
+    transform 180ms var(--ease-primary),
+    opacity 180ms var(--ease-primary),
+    background-color 180ms var(--ease-primary),
+    border-color 180ms var(--ease-primary),
+    color 180ms var(--ease-primary),
+    box-shadow 180ms var(--ease-primary),
+    filter 180ms var(--ease-primary);
+}
+
+/* =========================================================
+   CARD TRANSITIONS
+   ========================================================= */
+
+.card-transition {
+  transition:
+    transform var(--transition-primary)
+      var(--ease-primary),
+    box-shadow var(--transition-primary)
+      var(--ease-primary),
+    border-color var(--transition-primary)
+      var(--ease-primary),
+    background var(--transition-primary)
+      var(--ease-primary),
+    opacity var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   MODAL TRANSITIONS
+   ========================================================= */
+
+.modal-fade-enter {
+  opacity:
+    0;
+
+  transform:
+    scale(0.96)
+    translateY(12px);
+}
+
+.modal-fade-enter-active {
+  opacity:
+    1;
+
+  transform:
+    scale(1)
+    translateY(0);
+
+  transition:
+    opacity 260ms var(--ease-primary),
+    transform 260ms var(--ease-primary);
+}
+
+.modal-fade-exit {
+  opacity:
+    1;
+
+  transform:
+    scale(1)
+    translateY(0);
+}
+
+.modal-fade-exit-active {
+  opacity:
+    0;
+
+  transform:
+    scale(0.96)
+    translateY(8px);
+
+  transition:
+    opacity 220ms var(--ease-primary),
+    transform 220ms var(--ease-primary);
+}
+
+/* =========================================================
+   SECTION REVEAL SYSTEM
+   ========================================================= */
+
+.section-reveal {
+  opacity:
+    0;
+
+  transform:
+    translateY(24px);
+}
+
+.section-reveal-active {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+
+  transition:
+    opacity 520ms var(--ease-primary),
+    transform 520ms var(--ease-primary);
+}
+
+/* =========================================================
+   FADE SYSTEM
+   ========================================================= */
+
+.fade-in {
+  animation:
+    fadeIn 420ms var(--ease-primary)
+    forwards;
+}
+
+.fade-out {
+  animation:
+    fadeOut 320ms var(--ease-primary)
+    forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:
+      0;
+  }
+
+  to {
+    opacity:
+      1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity:
+      1;
+  }
+
+  to {
+    opacity:
+      0;
+  }
+}
+
+/* =========================================================
+   SLIDE SYSTEM
+   ========================================================= */
+
+.slide-up-enter {
+  opacity:
+    0;
+
+  transform:
+    translateY(20px);
+}
+
+.slide-up-enter-active {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+
+  transition:
+    opacity 320ms var(--ease-primary),
+    transform 320ms var(--ease-primary);
+}
+
+.slide-down-exit {
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+}
+
+.slide-down-exit-active {
+  opacity:
+    0;
+
+  transform:
+    translateY(12px);
+
+  transition:
+    opacity 240ms var(--ease-primary),
+    transform 240ms var(--ease-primary);
+}
+
+/* =========================================================
+   SCALE SYSTEM
+   ========================================================= */
+
+.scale-enter {
+  opacity:
+    0;
+
+  transform:
+    scale(0.92);
+}
+
+.scale-enter-active {
+  opacity:
+    1;
+
+  transform:
+    scale(1);
+
+  transition:
+    opacity 260ms var(--ease-bounce),
+    transform 260ms var(--ease-bounce);
+}
+
+/* =========================================================
+   NAVIGATION TRANSITIONS
+   ========================================================= */
+
+.nav-transition {
+  transition:
+    color var(--transition-primary)
+      var(--ease-primary),
+    opacity var(--transition-primary)
+      var(--ease-primary),
+    transform var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   PROGRESS TRANSITIONS
+   ========================================================= */
+
+.progress-transition {
+  transition:
+    width 520ms var(--ease-primary),
+    background 320ms var(--ease-primary),
+    box-shadow 320ms var(--ease-primary);
+}
+
+/* =========================================================
+   GLOW TRANSITIONS
+   ========================================================= */
+
+.glow-transition {
+  transition:
+    box-shadow var(--transition-primary)
+      var(--ease-primary),
+    filter var(--transition-primary)
+      var(--ease-primary),
+    opacity var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   BLUR TRANSITIONS
+   ========================================================= */
+
+.blur-transition {
+  transition:
+    backdrop-filter var(--transition-primary)
+      var(--ease-primary),
+    background var(--transition-primary)
+      var(--ease-primary);
+}
+
+/* =========================================================
+   DASHBOARD HYDRATION TRANSITIONS
+   ========================================================= */
+
+.dashboard-hydration {
+  transition:
+    opacity 420ms var(--ease-primary),
+    transform 420ms var(--ease-primary);
+}
+
+.dashboard-loading {
+  opacity:
+    0.4;
+
+  transform:
+    scale(0.995);
+
+  pointer-events:
+    none;
+
+  filter:
+    blur(1px);
+}
+
+.dashboard-loaded {
+  opacity:
+    1;
+
+  transform:
+    scale(1);
+
+  filter:
+    blur(0);
+}
+
+/* =========================================================
+   STAGGER UTILITIES
+   ========================================================= */
+
+.stagger-1 {
+  transition-delay:
+    40ms;
+}
+
+.stagger-2 {
+  transition-delay:
+    80ms;
+}
+
+.stagger-3 {
+  transition-delay:
+    120ms;
+}
+
+.stagger-4 {
+  transition-delay:
+    160ms;
+}
+
+.stagger-5 {
+  transition-delay:
+    200ms;
+}
+
+.stagger-6 {
+  transition-delay:
+    240ms;
+}
+
+/* =========================================================
+   PERFORMANCE OPTIMIZATION
+   ========================================================= */
+
+.gpu-accelerated {
+  transform:
+    translateZ(0);
+
+  backface-visibility:
+    hidden;
+
+  perspective:
+    1000px;
+}
+
+.will-transform {
+  will-change:
+    transform;
+}
+
+.will-opacity {
+  will-change:
+    opacity;
+}
+
+.will-scroll {
+  will-change:
+    scroll-position;
+}
+
+/* =========================================================
+   INTERACTION STATES
+   ========================================================= */
+
+.interaction-disabled {
+  transition:
+    none !important;
+
+  animation:
+    none !important;
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+  .section-reveal,
+  .section-reveal-active,
+  .slide-up-enter,
+  .slide-up-enter-active,
+  .modal-fade-enter,
+  .modal-fade-enter-active,
+  .scale-enter,
+  .scale-enter-active {
+    opacity:
+      1 !important;
+
+    transform:
+      none !important;
+  }
+}
+
+

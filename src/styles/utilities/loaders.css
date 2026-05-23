@@ -1,0 +1,659 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — LOADERS SYSTEM
+   Elite Execution OS Loading Architecture
+   ========================================================= */
+
+/* ===============================
+   FULLSCREEN LOADER
+================================= */
+
+.app-loader {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(59,130,246,0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #030b1b 100%
+    );
+
+  overflow: hidden;
+}
+
+/* ===============================
+   BACKGROUND GRID
+================================= */
+
+.app-loader::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  opacity: 0.35;
+
+  animation:
+    loaderGridMove 18s linear infinite;
+}
+
+@keyframes loaderGridMove {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(48px);
+  }
+}
+
+/* ===============================
+   CORE LOADER
+================================= */
+
+.loader-core {
+  position: relative;
+
+  width: 140px;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+/* ===============================
+   OUTER RING
+================================= */
+
+.loader-ring {
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(255,255,255,0.05);
+
+  border-top:
+    2px solid #3b82f6;
+
+  border-right:
+    2px solid #06b6d4;
+
+  animation:
+    rotateLoader 1.2s linear infinite;
+
+  box-shadow:
+    0 0 36px rgba(59,130,246,0.18);
+}
+
+/* ===============================
+   INNER RING
+================================= */
+
+.loader-ring-inner {
+  position: absolute;
+
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(255,255,255,0.04);
+
+  border-bottom:
+    2px solid #22c55e;
+
+  animation:
+    rotateLoaderReverse 1.8s linear infinite;
+}
+
+/* ===============================
+   ROTATION ANIMATIONS
+================================= */
+
+@keyframes rotateLoader {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateLoaderReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===============================
+   PULSE CORE
+================================= */
+
+.loader-pulse {
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 40px rgba(6,182,212,0.55);
+
+  animation:
+    pulseCore 1.4s ease infinite;
+}
+
+@keyframes pulseCore {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.82;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   BRAND TITLE
+================================= */
+
+.loader-brand {
+  margin-top: 42px;
+
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  animation:
+    fadeLoaderText 1.6s ease infinite alternate;
+}
+
+/* ===============================
+   BRAND SUBTEXT
+================================= */
+
+.loader-subtitle {
+  margin-top: 18px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+
+  text-align: center;
+
+  max-width: 520px;
+}
+
+/* ===============================
+   LIVE STATUS
+================================= */
+
+.loader-status {
+  margin-top: 26px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+/* ===============================
+   STATUS DOT
+================================= */
+
+.loader-status-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.85);
+
+  animation:
+    statusPulse 1.4s infinite;
+}
+
+@keyframes statusPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   LOADING TEXT FADE
+================================= */
+
+@keyframes fadeLoaderText {
+
+  from {
+    opacity: 0.78;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   INLINE SECTION LOADER
+================================= */
+
+.section-loader {
+  position: relative;
+
+  width: 100%;
+  min-height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(24px);
+}
+
+/* ===============================
+   SHIMMER LAYER
+================================= */
+
+.section-loader::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.05),
+      transparent
+    );
+
+  transform: translateX(-100%);
+
+  animation:
+    shimmerLoader 1.8s infinite;
+}
+
+@keyframes shimmerLoader {
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ===============================
+   DOT LOADER
+================================= */
+
+.dot-loader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot-loader span {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  animation:
+    dotBounce 1s infinite ease-in-out;
+}
+
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes dotBounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0.35;
+  }
+
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   KPI SKELETON
+================================= */
+
+.kpi-skeleton {
+  position: relative;
+
+  width: 100%;
+  height: 260px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(24px);
+}
+
+.kpi-skeleton::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.06),
+      transparent
+    );
+
+  transform: translateX(-100%);
+
+  animation:
+    shimmerLoader 1.6s infinite;
+}
+
+/* ===============================
+   CARD SKELETON
+================================= */
+
+.card-skeleton {
+  position: relative;
+
+  width: 100%;
+  min-height: 320px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(24px);
+}
+
+.card-skeleton::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.06),
+      transparent
+    );
+
+  transform: translateX(-100%);
+
+  animation:
+    shimmerLoader 1.7s infinite;
+}
+
+/* ===============================
+   TABLE ROW LOADER
+================================= */
+
+.row-loader {
+  position: relative;
+
+  width: 100%;
+  height: 72px;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.04);
+}
+
+.row-loader::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+
+  transform: translateX(-100%);
+
+  animation:
+    shimmerLoader 1.6s infinite;
+}
+
+/* ===============================
+   BUTTON LOADER
+================================= */
+
+.button-loader {
+  position: relative;
+
+  width: 160px;
+  height: 58px;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background:
+    rgba(59,130,246,0.22);
+}
+
+.button-loader::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.12),
+      transparent
+    );
+
+  animation:
+    shimmerLoader 1.5s infinite;
+}
+
+/* ===============================
+   LIVE HYDRATION BADGE
+================================= */
+
+.hydration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding:
+    10px 14px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(34,197,94,0.12);
+
+  border:
+    1px solid rgba(34,197,94,0.18);
+
+  color:
+    #86efac;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .loader-brand {
+    font-size: 42px;
+  }
+
+  .loader-subtitle {
+    font-size: 14px;
+
+    padding:
+      0 24px;
+  }
+
+  .loader-core {
+    transform: scale(0.88);
+  }
+
+  .section-loader {
+    min-height: 180px;
+  }
+
+  .kpi-skeleton {
+    height: 220px;
+  }
+
+  .card-skeleton {
+    min-height: 260px;
+  }
+}
+
+

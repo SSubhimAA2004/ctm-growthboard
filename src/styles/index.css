@@ -1,0 +1,270 @@
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — MASTER STYLE IMPORT ENGINE
+   FILE: src/styles/index.css
+
+   PURPOSE:
+   - Deterministic global style orchestration
+   - Token-first inheritance hierarchy
+   - Predictable cascade architecture
+   - Production-safe import sequencing
+   - Human Momentum Operating System styling root
+
+   IMPORTANT:
+   - IMPORT ORDER IS FROZEN
+   - DO NOT RANDOMIZE
+   - DO NOT DUPLICATE IMPORTS
+   - DO NOT IMPORT COMPONENTS OUTSIDE THIS HIERARCHY
+   ========================================================================== */
+
+/* ==========================================================================
+   TASK 21 — BASE SYSTEM
+   FOUNDATION LAYER
+   ========================================================================== */
+
+@import "./base/reset.css";
+@import "./base/variables.css";
+@import "./base/typography.css";
+@import "./base/backgrounds.css";
+
+/* ==========================================================================
+   TASK 27 — THEME ARCHITECTURE
+   TOKEN + THEME LAYER
+   ========================================================================== */
+
+@import "./themes/theme-tokens.css";
+@import "./themes/dark-theme.css";
+@import "./themes/light-theme.css";
+
+/* ==========================================================================
+   TASK 28 — ANIMATION ARCHITECTURE
+   MOTION FOUNDATION LAYER
+   ========================================================================== */
+
+@import "./animations/motion.css";
+@import "./animations/transitions.css";
+@import "./animations/micro-interactions.css";
+
+/* ==========================================================================
+   TASK 29 — UTILITY ARCHITECTURE
+   LOW-SPECIFICITY GLOBAL UTILITIES
+   ========================================================================== */
+
+@import "./utilities/helpers.css";
+@import "./utilities/spacing.css";
+@import "./utilities/animations.css";
+
+/* ==========================================================================
+   TASK 22 — REUSABLE COMPONENT SYSTEM
+   SHARED COMPONENT ARCHITECTURE
+   ========================================================================== */
+
+@import "./components/buttons.css";
+@import "./components/cards.css";
+@import "./components/forms.css";
+@import "./components/badges.css";
+@import "./components/glows.css";
+@import "./components/logo-system.css";
+@import "./components/metrics.css";
+
+/* ==========================================================================
+   TASK 23 — LAYOUT SYSTEM
+   APPLICATION STRUCTURE LAYER
+   ========================================================================== */
+
+@import "./layout/grid-system.css";
+@import "./layout/app-shell.css";
+@import "./layout/dashboard-shell.css";
+
+/* ==========================================================================
+   TASK 26 — SECTION MODULES
+   DASHBOARD EXPERIENCE LAYER
+   ========================================================================== */
+
+@import "./sections/hero-section.css";
+@import "./sections/kpi-section.css";
+@import "./sections/daily-missions.css";
+@import "./sections/next-action.css";
+@import "./sections/prospect-followups.css";
+@import "./sections/member-followups.css";
+@import "./sections/tribe-strength.css";
+@import "./sections/rank-journey.css";
+@import "./sections/weekly-income.css";
+@import "./sections/footer.css";
+
+/* ==========================================================================
+   TASK 24 — PAGE SYSTEM
+   ROUTE-SPECIFIC EXPERIENCE LAYER
+   ========================================================================== */
+
+@import "./pages/login.css";
+@import "./pages/register.css";
+@import "./pages/prospect-page.css";
+@import "./pages/prospect-table.css";
+@import "./pages/prospect-modal.css";
+
+/* ==========================================================================
+   TASK 25 — RESPONSIVE ARCHITECTURE
+   MUST ALWAYS BE LAST
+   RESPONSIVE OVERRIDES REQUIRE FINAL CASCADE PRIORITY
+   ========================================================================== */
+
+@import "./responsive/desktop.css";
+@import "./responsive/tablet.css";
+@import "./responsive/mobile.css";
+
+/* ==========================================================================
+   GLOBAL ROOT CONFIGURATION
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   GLOBAL APPLICATION ROOT
+   ========================================================================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   GLOBAL SELECTION STYLING
+   ========================================================================== */
+
+::selection {
+  background:
+    rgba(59, 130, 246, 0.24);
+
+  color:
+    #ffffff;
+}
+
+/* ==========================================================================
+   GLOBAL FOCUS ACCESSIBILITY
+   ========================================================================== */
+
+:focus-visible {
+  outline:
+    2px solid rgba(59, 130, 246, 0.72);
+
+  outline-offset:
+    2px;
+}
+
+/* ==========================================================================
+   GLOBAL MEDIA SAFETY
+   ========================================================================== */
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+
+  display: block;
+}
+
+/* ==========================================================================
+   GLOBAL BUTTON SAFETY
+   ========================================================================== */
+
+button {
+  font: inherit;
+
+  background: none;
+
+  border: none;
+}
+
+/* ==========================================================================
+   GLOBAL INPUT SAFETY
+   ========================================================================== */
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ==========================================================================
+   GLOBAL SCROLLBAR ORCHESTRATION
+   ========================================================================== */
+
+* {
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(255,255,255,0.14)
+    transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.12);
+
+  border:
+    2px solid transparent;
+
+  background-clip:
+    padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(255,255,255,0.20);
+
+  background-clip:
+    padding-box;
+}
+
+/* ==========================================================================
+   REDUCED MOTION GOVERNANCE
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   END OF MASTER STYLE IMPORT ENGINE
+   FROZEN CASCADE ARCHITECTURE
+   ========================================================================== */
+
+
+   

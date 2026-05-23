@@ -1,0 +1,816 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — OPERATIONAL BADGE ENGINE
+   FILE: src/styles/components/badges.css
+   PURPOSE:
+   - Frozen semantic badge architecture
+   - Execution-state indicators
+   - KPI micro-label system
+   - Momentum-state hierarchy
+   - Responsive operational tag engine
+   ========================================================================== */
+
+/* ==========================================================================
+   MASTER BADGE FOUNDATION
+   ========================================================================== */
+
+.badge,
+.status-badge,
+.execution-badge {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height:
+    34px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    999px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  color:
+    var(--theme-text-primary);
+
+  font-family:
+    var(--theme-font-primary);
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.04em;
+
+  text-transform:
+    uppercase;
+
+  white-space:
+    nowrap;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    background var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    border-color var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    box-shadow var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    transform var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    color var(--theme-transition-fast)
+      var(--theme-transition-easing);
+}
+
+/* ==========================================================================
+   BADGE INNER LIGHT
+   ========================================================================== */
+
+.badge::before,
+.status-badge::before,
+.execution-badge::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 55%
+    );
+
+  pointer-events: none;
+
+  opacity: 0.82;
+}
+
+/* ==========================================================================
+   BADGE HOVER SYSTEM
+   ========================================================================== */
+
+.badge:hover,
+.status-badge:hover,
+.execution-badge:hover {
+
+  transform:
+    translateY(-1px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   BADGE ICON SYSTEM
+   ========================================================================== */
+
+.badge-icon {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width:
+    14px;
+
+  height:
+    14px;
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   BADGE LABEL SYSTEM
+   ========================================================================== */
+
+.badge-label {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   STATUS DOT SYSTEM
+   ========================================================================== */
+
+.badge-dot,
+.status-dot {
+
+  width:
+    8px;
+
+  height:
+    8px;
+
+  border-radius:
+    999px;
+
+  background:
+    currentColor;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 0 12px currentColor;
+}
+
+/* ==========================================================================
+   EXECUTION PRIORITY VARIANTS
+   ========================================================================== */
+
+.badge-priority-high {
+
+  background:
+    rgba(239, 68, 68, 0.10);
+
+  border-color:
+    rgba(239, 68, 68, 0.22);
+
+  color:
+    #F87171;
+
+  box-shadow:
+    0 0 18px rgba(239, 68, 68, 0.10);
+}
+
+.badge-priority-medium {
+
+  background:
+    rgba(245, 158, 11, 0.10);
+
+  border-color:
+    rgba(245, 158, 11, 0.22);
+
+  color:
+    #FBBF24;
+
+  box-shadow:
+    0 0 18px rgba(245, 158, 11, 0.10);
+}
+
+.badge-priority-low {
+
+  background:
+    rgba(34, 197, 94, 0.10);
+
+  border-color:
+    rgba(34, 197, 94, 0.22);
+
+  color:
+    #4ADE80;
+
+  box-shadow:
+    0 0 18px rgba(34, 197, 94, 0.10);
+}
+
+/* ==========================================================================
+   SEMANTIC EXECUTION VARIANTS
+   ========================================================================== */
+
+.badge-success {
+
+  background:
+    rgba(34, 197, 94, 0.10);
+
+  border-color:
+    rgba(34, 197, 94, 0.24);
+
+  color:
+    #4ADE80;
+
+  box-shadow:
+    0 0 18px rgba(34, 197, 94, 0.10);
+}
+
+.badge-warning {
+
+  background:
+    rgba(245, 158, 11, 0.10);
+
+  border-color:
+    rgba(245, 158, 11, 0.24);
+
+  color:
+    #FBBF24;
+
+  box-shadow:
+    0 0 18px rgba(245, 158, 11, 0.10);
+}
+
+.badge-danger {
+
+  background:
+    rgba(239, 68, 68, 0.10);
+
+  border-color:
+    rgba(239, 68, 68, 0.24);
+
+  color:
+    #F87171;
+
+  box-shadow:
+    0 0 18px rgba(239, 68, 68, 0.10);
+}
+
+.badge-info {
+
+  background:
+    rgba(6, 182, 212, 0.10);
+
+  border-color:
+    rgba(6, 182, 212, 0.24);
+
+  color:
+    #22D3EE;
+
+  box-shadow:
+    0 0 18px rgba(6, 182, 212, 0.10);
+}
+
+/* ==========================================================================
+   MOMENTUM EXECUTION STATES
+   ========================================================================== */
+
+.badge-momentum-high {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.18),
+      rgba(6, 182, 212, 0.14)
+    );
+
+  border-color:
+    rgba(34, 197, 94, 0.28);
+
+  color:
+    #4ADE80;
+
+  box-shadow:
+    0 0 22px rgba(34, 197, 94, 0.14);
+}
+
+.badge-momentum-medium {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(6, 182, 212, 0.16),
+      rgba(59, 130, 246, 0.12)
+    );
+
+  border-color:
+    rgba(6, 182, 212, 0.24);
+
+  color:
+    #22D3EE;
+
+  box-shadow:
+    0 0 20px rgba(6, 182, 212, 0.12);
+}
+
+.badge-momentum-low {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.16),
+      rgba(239, 68, 68, 0.12)
+    );
+
+  border-color:
+    rgba(245, 158, 11, 0.24);
+
+  color:
+    #FBBF24;
+
+  box-shadow:
+    0 0 20px rgba(245, 158, 11, 0.12);
+}
+
+/* ==========================================================================
+   KPI MICRO LABELS
+   ========================================================================== */
+
+.kpi-badge,
+.metric-badge {
+
+  min-height:
+    28px;
+
+  padding:
+    0 12px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.08em;
+
+  background:
+    rgba(59, 130, 246, 0.10);
+
+  border:
+    1px solid rgba(59, 130, 246, 0.18);
+
+  color:
+    #93C5FD;
+
+  box-shadow:
+    0 0 18px rgba(59, 130, 246, 0.08);
+}
+
+/* ==========================================================================
+   EXECUTION RANK BADGES
+   ========================================================================== */
+
+.rank-badge {
+
+  min-height:
+    38px;
+
+  padding:
+    0 18px;
+
+  border-radius:
+    999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.18),
+      rgba(59, 130, 246, 0.14)
+    );
+
+  border:
+    1px solid rgba(139, 92, 246, 0.24);
+
+  color:
+    #C4B5FD;
+
+  box-shadow:
+    0 0 22px rgba(139, 92, 246, 0.12);
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.08em;
+}
+
+/* ==========================================================================
+   ACTIVE PAIR BADGES
+   ========================================================================== */
+
+.active-pair-badge {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.18),
+      rgba(6, 182, 212, 0.12)
+    );
+
+  border:
+    1px solid rgba(34, 197, 94, 0.24);
+
+  color:
+    #4ADE80;
+
+  box-shadow:
+    0 0 22px rgba(34, 197, 94, 0.12);
+}
+
+/* ==========================================================================
+   STREAK EXECUTION BADGES
+   ========================================================================== */
+
+.streak-badge {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.18),
+      rgba(239, 68, 68, 0.14)
+    );
+
+  border:
+    1px solid rgba(245, 158, 11, 0.24);
+
+  color:
+    #FCD34D;
+
+  box-shadow:
+    0 0 22px rgba(245, 158, 11, 0.12);
+}
+
+/* ==========================================================================
+   GLOW BADGE VARIANTS
+   ========================================================================== */
+
+.badge-glow-blue {
+  box-shadow:
+    0 0 24px rgba(59, 130, 246, 0.18);
+}
+
+.badge-glow-cyan {
+  box-shadow:
+    0 0 24px rgba(6, 182, 212, 0.18);
+}
+
+.badge-glow-green {
+  box-shadow:
+    0 0 24px rgba(34, 197, 94, 0.18);
+}
+
+.badge-glow-purple {
+  box-shadow:
+    0 0 24px rgba(139, 92, 246, 0.18);
+}
+
+.badge-glow-danger {
+  box-shadow:
+    0 0 24px rgba(239, 68, 68, 0.18);
+}
+
+/* ==========================================================================
+   OUTLINE BADGE SYSTEM
+   ========================================================================== */
+
+.badge-outline {
+
+  background:
+    transparent;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    none;
+}
+
+/* ==========================================================================
+   SOLID BADGE SYSTEM
+   ========================================================================== */
+
+.badge-solid {
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border:
+    none;
+}
+
+/* ==========================================================================
+   EXECUTION BADGE GROUPS
+   ========================================================================== */
+
+.badge-group {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.badge-stack {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   FLOATING STATUS INDICATOR
+   ========================================================================== */
+
+.badge-floating {
+
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 10;
+}
+
+/* ==========================================================================
+   ANIMATED EXECUTION PULSE
+   ========================================================================== */
+
+.badge-pulse::after {
+
+  content: "";
+
+  position: absolute;
+  inset: -2px;
+
+  border-radius:
+    inherit;
+
+  border:
+    1px solid currentColor;
+
+  opacity: 0.42;
+
+  animation:
+    badgePulse 2.4s ease-out infinite;
+
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   EXECUTION LIVE INDICATOR
+   ========================================================================== */
+
+.badge-live {
+
+  background:
+    rgba(239, 68, 68, 0.14);
+
+  border:
+    1px solid rgba(239, 68, 68, 0.24);
+
+  color:
+    #F87171;
+
+  box-shadow:
+    0 0 18px rgba(239, 68, 68, 0.12);
+}
+
+.badge-live .badge-dot {
+
+  animation:
+    liveDotPulse 1.8s ease infinite;
+}
+
+/* ==========================================================================
+   LIGHT THEME COMPATIBILITY
+   ========================================================================== */
+
+[data-theme="light"] .badge,
+[data-theme="light"] .status-badge,
+[data-theme="light"] .execution-badge {
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(15, 23, 42, 0.08);
+
+  color:
+    var(--theme-text-primary);
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .badge-outline {
+
+  background:
+    transparent;
+
+  border:
+    1px solid rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================================================================
+   RESPONSIVE — TABLET
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  .badge,
+  .status-badge,
+  .execution-badge {
+
+    min-height:
+      32px;
+
+    padding:
+      0 13px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+  .badge,
+  .status-badge,
+  .execution-badge {
+
+    min-height:
+      30px;
+
+    padding:
+      0 12px;
+
+    font-size:
+      11px;
+  }
+
+  .badge-group {
+
+    gap:
+      8px;
+  }
+
+  .badge-floating {
+
+    top: 14px;
+    right: 14px;
+  }
+
+  .rank-badge {
+
+    min-height:
+      34px;
+
+    padding:
+      0 16px;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .badge,
+  .status-badge,
+  .execution-badge {
+
+    transition: none !important;
+  }
+
+  .badge:hover,
+  .status-badge:hover,
+  .execution-badge:hover {
+
+    transform: none !important;
+  }
+
+  .badge-pulse::after,
+  .badge-live .badge-dot {
+
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   BADGE ANIMATIONS
+   ========================================================================== */
+
+@keyframes badgePulse {
+
+  0% {
+    transform:
+      scale(1);
+
+    opacity: 0.42;
+  }
+
+  70% {
+    transform:
+      scale(1.12);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform:
+      scale(1.12);
+
+    opacity: 0;
+  }
+}
+
+@keyframes liveDotPulse {
+
+  0% {
+    opacity: 0.42;
+    transform:
+      scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      scale(1.15);
+  }
+
+  100% {
+    opacity: 0.42;
+    transform:
+      scale(0.9);
+  }
+}
+
+/* ==========================================================================
+   FROZEN BADGE DISCIPLINE
+   --------------------------------------------------------------------------
+   DO NOT:
+   - Add page-specific badge hacks
+   - Override semantic hierarchy
+   - Hardcode business logic states
+   - Introduce random status styles
+
+   ONLY:
+   - Preserve execution clarity
+   - Maintain operational hierarchy
+   - Extend through semantic variants
+   - Protect cockpit consistency
+   ========================================================================== */
+
+
+   

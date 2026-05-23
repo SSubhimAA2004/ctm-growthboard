@@ -1,0 +1,844 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — EXECUTION BUTTON ENGINE
+   FILE: src/styles/components/buttons.css
+   PURPOSE:
+   - Frozen CTA hierarchy system
+   - Execution-first interaction engine
+   - Semantic priority variants
+   - Motion orchestration layer
+   - Production-safe responsive button architecture
+
+   REFERENCE:
+   CTM frozen visual system & motion architecture
+   :contentReference[oaicite:0]{index=0}
+   ========================================================================== */
+
+/* ==========================================================================
+   MASTER BUTTON FOUNDATION
+   ========================================================================== */
+
+button,
+.btn,
+.action-btn,
+.primary-action-btn {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height:
+    58px;
+
+  padding:
+    0 28px;
+
+  border:
+    1px solid transparent;
+
+  border-radius:
+    18px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  font-family:
+    var(--theme-font-primary);
+
+  font-size:
+    16px;
+
+  font-weight:
+    700;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.02em;
+
+  transition:
+    transform var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    box-shadow var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    background var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    border-color var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    opacity var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    color var(--theme-transition-fast)
+      var(--theme-transition-easing);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* ==========================================================================
+   PRIMARY EXECUTION CTA
+   ========================================================================== */
+
+.btn-primary,
+.primary-action-btn,
+.action-btn-primary {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563EB,
+      #06B6D4
+    );
+
+  color:
+    #FFFFFF;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 14px 36px rgba(37, 99, 235, 0.24);
+}
+
+/* ==========================================================================
+   PRIMARY EXECUTION GLOW
+   ========================================================================== */
+
+.btn-primary::before,
+.primary-action-btn::before,
+.action-btn-primary::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.18) 48%,
+      transparent 100%
+    );
+
+  transform:
+    translateX(-140%);
+
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   PRIMARY CTA HOVER
+   ========================================================================== */
+
+.btn-primary:hover,
+.primary-action-btn:hover,
+.action-btn-primary:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 20px 48px rgba(37, 99, 235, 0.34),
+    0 0 24px rgba(6, 182, 212, 0.18);
+}
+
+.btn-primary:hover::before,
+.primary-action-btn:hover::before,
+.action-btn-primary:hover::before {
+
+  transform:
+    translateX(140%);
+}
+
+/* ==========================================================================
+   PRIMARY CTA ACTIVE
+   ========================================================================== */
+
+.btn-primary:active,
+.primary-action-btn:active,
+.action-btn-primary:active {
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.22);
+}
+
+/* ==========================================================================
+   SECONDARY EXECUTION CTA
+   ========================================================================== */
+
+.btn-secondary,
+.secondary-action-btn {
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color:
+    var(--theme-text-primary);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.btn-secondary:hover,
+.secondary-action-btn:hover {
+
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(59, 130, 246, 0.16);
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+/* ==========================================================================
+   OUTLINE EXECUTION CTA
+   ========================================================================== */
+
+.btn-outline,
+.action-btn-outline {
+
+  background:
+    transparent;
+
+  color:
+    var(--theme-text-primary);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    none;
+}
+
+.btn-outline:hover,
+.action-btn-outline:hover {
+
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(59, 130, 246, 0.28);
+
+  background:
+    rgba(59, 130, 246, 0.06);
+}
+
+/* ==========================================================================
+   GHOST EXECUTION CTA
+   ========================================================================== */
+
+.btn-ghost,
+.action-btn-ghost {
+
+  background:
+    transparent;
+
+  border:
+    none;
+
+  color:
+    var(--theme-text-secondary);
+
+  box-shadow:
+    none;
+}
+
+.btn-ghost:hover,
+.action-btn-ghost:hover {
+
+  color:
+    var(--theme-text-primary);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================================================================
+   SEMANTIC PRIORITY VARIANTS
+   ========================================================================== */
+
+.btn-success {
+
+  background:
+    linear-gradient(
+      135deg,
+      #16A34A,
+      #22C55E
+    );
+
+  color:
+    #FFFFFF;
+
+  box-shadow:
+    0 14px 32px rgba(34, 197, 94, 0.24);
+}
+
+.btn-warning {
+
+  background:
+    linear-gradient(
+      135deg,
+      #D97706,
+      #F59E0B
+    );
+
+  color:
+    #FFFFFF;
+
+  box-shadow:
+    0 14px 32px rgba(245, 158, 11, 0.24);
+}
+
+.btn-danger {
+
+  background:
+    linear-gradient(
+      135deg,
+      #DC2626,
+      #EF4444
+    );
+
+  color:
+    #FFFFFF;
+
+  box-shadow:
+    0 14px 32px rgba(239, 68, 68, 0.24);
+}
+
+.btn-info {
+
+  background:
+    linear-gradient(
+      135deg,
+      #0891B2,
+      #06B6D4
+    );
+
+  color:
+    #FFFFFF;
+
+  box-shadow:
+    0 14px 32px rgba(6, 182, 212, 0.24);
+}
+
+/* ==========================================================================
+   EXECUTION CTA SIZES
+   ========================================================================== */
+
+.btn-xl {
+
+  min-height:
+    72px;
+
+  padding:
+    0 40px;
+
+  border-radius:
+    22px;
+
+  font-size:
+    18px;
+}
+
+.btn-lg {
+
+  min-height:
+    64px;
+
+  padding:
+    0 34px;
+
+  border-radius:
+    20px;
+
+  font-size:
+    17px;
+}
+
+.btn-md {
+
+  min-height:
+    58px;
+
+  padding:
+    0 28px;
+}
+
+.btn-sm {
+
+  min-height:
+    46px;
+
+  padding:
+    0 20px;
+
+  border-radius:
+    14px;
+
+  font-size:
+    14px;
+}
+
+.btn-xs {
+
+  min-height:
+    36px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    12px;
+
+  font-size:
+    13px;
+}
+
+/* ==========================================================================
+   FULL WIDTH EXECUTION BUTTON
+   ========================================================================== */
+
+.btn-block {
+
+  width: 100%;
+}
+
+/* ==========================================================================
+   ICON BUTTONS
+   ========================================================================== */
+
+.icon-btn,
+.btn-icon {
+
+  width:
+    52px;
+
+  min-width:
+    52px;
+
+  height:
+    52px;
+
+  padding:
+    0;
+
+  border-radius:
+    18px;
+}
+
+.icon-btn-sm {
+
+  width:
+    42px;
+
+  min-width:
+    42px;
+
+  height:
+    42px;
+
+  border-radius:
+    14px;
+}
+
+/* ==========================================================================
+   EXECUTION CTA LABELS
+   ========================================================================== */
+
+.btn-label {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-left,
+.btn-icon-right {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size:
+    1em;
+}
+
+/* ==========================================================================
+   LOADING EXECUTION STATE
+   ========================================================================== */
+
+.btn-loading,
+button.loading {
+
+  pointer-events: none;
+
+  opacity: 0.82;
+}
+
+.btn-loading::after,
+button.loading::after {
+
+  content: "";
+
+  width: 16px;
+  height: 16px;
+
+  border-radius:
+    999px;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.28);
+
+  border-top-color:
+    #FFFFFF;
+
+  animation:
+    buttonSpin 700ms linear infinite;
+}
+
+/* ==========================================================================
+   DISABLED EXECUTION STATE
+   ========================================================================== */
+
+button:disabled,
+.btn-disabled,
+.btn[disabled] {
+
+  cursor: not-allowed;
+
+  opacity: 0.42;
+
+  pointer-events: none;
+
+  box-shadow:
+    none !important;
+
+  transform:
+    none !important;
+
+  filter:
+    grayscale(0.12);
+}
+
+/* ==========================================================================
+   EXECUTION CTA GROUPS
+   ========================================================================== */
+
+.btn-group {
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+.btn-stack {
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ==========================================================================
+   FLOATING EXECUTION BUTTON
+   ========================================================================== */
+
+.floating-action-btn {
+
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  width:
+    72px;
+
+  height:
+    72px;
+
+  border-radius:
+    24px;
+
+  z-index:
+    1200;
+
+  box-shadow:
+    0 24px 64px rgba(37, 99, 235, 0.34),
+    0 0 24px rgba(6, 182, 212, 0.18);
+}
+
+/* ==========================================================================
+   NEXT BEST ACTION CTA
+   ========================================================================== */
+
+.next-action-cta {
+
+  min-height:
+    64px;
+
+  padding:
+    0 36px;
+
+  border-radius:
+    22px;
+
+  font-size:
+    17px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    -0.03em;
+}
+
+/* ==========================================================================
+   LIGHT THEME COMPATIBILITY
+   ========================================================================== */
+
+[data-theme="light"] .btn-secondary,
+[data-theme="light"] .secondary-action-btn {
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(15, 23, 42, 0.08);
+
+  color:
+    var(--theme-text-primary);
+}
+
+[data-theme="light"] .btn-outline,
+[data-theme="light"] .action-btn-outline {
+
+  border:
+    1px solid rgba(15, 23, 42, 0.12);
+
+  color:
+    var(--theme-text-primary);
+}
+
+[data-theme="light"] .btn-ghost,
+[data-theme="light"] .action-btn-ghost {
+
+  color:
+    var(--theme-text-secondary);
+}
+
+/* ==========================================================================
+   RESPONSIVE — TABLET
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  button,
+  .btn,
+  .action-btn,
+  .primary-action-btn {
+
+    min-height:
+      54px;
+
+    padding:
+      0 24px;
+  }
+
+  .btn-xl {
+
+    min-height:
+      66px;
+  }
+
+  .floating-action-btn {
+
+    width:
+      66px;
+
+    height:
+      66px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+  button,
+  .btn,
+  .action-btn,
+  .primary-action-btn {
+
+    min-height:
+      52px;
+
+    padding:
+      0 20px;
+
+    border-radius:
+      16px;
+
+    font-size:
+      15px;
+  }
+
+  .btn-group {
+
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-group .btn,
+  .btn-group button {
+
+    width: 100%;
+  }
+
+  .btn-xl,
+  .btn-lg {
+
+    width: 100%;
+  }
+
+  .floating-action-btn {
+
+    right: 20px;
+    bottom: 20px;
+
+    width:
+      62px;
+
+    height:
+      62px;
+
+    border-radius:
+      20px;
+  }
+
+  .next-action-cta {
+
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY — FOCUS STATES
+   ========================================================================== */
+
+button:focus-visible,
+.btn:focus-visible {
+
+  outline:
+    2px solid rgba(59, 130, 246, 0.72);
+
+  outline-offset:
+    3px;
+}
+
+/* ==========================================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  button,
+  .btn,
+  .action-btn,
+  .primary-action-btn {
+
+    transition: none !important;
+  }
+
+  .btn-primary::before,
+  .primary-action-btn::before,
+  .action-btn-primary::before {
+
+    display: none;
+  }
+
+  .btn-loading::after,
+  button.loading::after {
+
+    animation: none !important;
+  }
+
+  button:hover,
+  .btn:hover {
+
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   BUTTON LOADER ANIMATION
+   ========================================================================== */
+
+@keyframes buttonSpin {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   FROZEN BUTTON DISCIPLINE
+   --------------------------------------------------------------------------
+   DO NOT:
+   - Add page-specific button hacks
+   - Hardcode business logic states
+   - Override semantic token hierarchy
+   - Introduce random CTA styling
+
+   ONLY:
+   - Preserve execution clarity
+   - Maintain CTA hierarchy
+   - Protect interaction consistency
+   - Extend through modular variants
+   ========================================================================== */
+
+
+   

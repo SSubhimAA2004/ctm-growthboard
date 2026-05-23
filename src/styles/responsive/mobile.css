@@ -1,0 +1,688 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — MOBILE.CSS
+   FINAL FROZEN MOBILE EXECUTION SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --mobile-max-width: 100%;
+
+    --mobile-page-padding-x: 18px;
+    --mobile-page-padding-y: 18px;
+
+    --mobile-section-gap: 42px;
+    --mobile-card-gap: 16px;
+
+    --mobile-card-radius: 22px;
+
+    --mobile-density-scale: 0.72;
+
+    --mobile-bottom-safe-space: 120px;
+  }
+
+  /* =========================================================
+     GLOBAL MOBILE FOUNDATION
+  ========================================================= */
+
+  html,
+  body {
+    width: 100%;
+
+    overflow-x: hidden;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    touch-action:
+      manipulation;
+  }
+
+  body {
+    padding-bottom:
+      env(safe-area-inset-bottom);
+  }
+
+  .app-shell,
+  .dashboard-shell,
+  .dashboard-page,
+  .dashboard-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+  }
+
+  .dashboard-container,
+  .dashboard-content,
+  .page-container {
+    width: 100%;
+    max-width:
+      var(--mobile-max-width);
+
+    padding-left:
+      var(--mobile-page-padding-x);
+
+    padding-right:
+      var(--mobile-page-padding-x);
+  }
+
+  /* =========================================================
+     SECTION SPACING
+  ========================================================= */
+
+  .dashboard-section,
+  .hero-section,
+  .kpi-section,
+  .next-action-section,
+  .tribe-strength-section,
+  .weekly-income-section,
+  .rank-journey-section,
+  .prospect-followups-section,
+  .member-followups-section,
+  .daily-missions-section,
+  .footer-section {
+    margin-bottom:
+      var(--mobile-section-gap);
+  }
+
+  /* =========================================================
+     MOBILE STACKING SYSTEM
+  ========================================================= */
+
+  .dashboard-grid,
+  .dashboard-main-grid,
+  .daily-missions-grid,
+  .mission-grid,
+  .weekly-income-grid,
+  .income-grid,
+  .prospect-followups-grid,
+  .member-followups-grid,
+  .rank-journey-track,
+  .kpi-strip,
+  .metrics-strip,
+  .dashboard-kpi-strip,
+  .prospect-kpi-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      var(--mobile-card-gap);
+  }
+
+  .grid-span-1,
+  .grid-span-2,
+  .grid-span-3,
+  .grid-span-4,
+  .grid-span-5,
+  .grid-span-6,
+  .grid-span-7,
+  .grid-span-8,
+  .grid-span-9,
+  .grid-span-12 {
+    grid-column: span 1;
+  }
+
+  /* =========================================================
+     HERO SYSTEM
+  ========================================================= */
+
+  .hero-section,
+  .dashboard-hero,
+  .hero-shell {
+    min-height: auto;
+
+    padding-top:
+      24px;
+  }
+
+  .hero-header,
+  .dashboard-hero-header,
+  .prospect-hero-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .hero-title,
+  .dashboard-hero-title,
+  .prospect-hero-title,
+  .login-brand-title,
+  .register-hero-title {
+    max-width: 100%;
+
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .hero-description,
+  .dashboard-hero-description,
+  .prospect-hero-description,
+  .login-brand-description,
+  .register-hero-description {
+    max-width: 100%;
+
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .hero-actions,
+  .dashboard-actions,
+  .prospect-hero-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  /* =========================================================
+     KPI SYSTEM
+  ========================================================= */
+
+  .kpi-card,
+  .metric-card,
+  .dashboard-kpi-card,
+  .prospect-kpi-card,
+  .register-metric-card {
+    min-height: auto;
+
+    padding:
+      22px;
+
+    border-radius:
+      var(--mobile-card-radius);
+  }
+
+  .kpi-value,
+  .metric-value,
+  .dashboard-kpi-value,
+  .prospect-kpi-value,
+  .register-metric-value {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: -2px;
+  }
+
+  .kpi-description,
+  .metric-description,
+  .dashboard-kpi-description,
+  .prospect-kpi-description {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* =========================================================
+     EXECUTION CARD SYSTEM
+  ========================================================= */
+
+  .next-action-card,
+  .execution-card,
+  .prospect-content-panel,
+  .prospect-sidebar-panel,
+  .login-card,
+  .register-card {
+    padding:
+      24px;
+
+    border-radius:
+      24px;
+  }
+
+  .next-action-title,
+  .execution-title,
+  .register-form-title,
+  .login-card-title {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .next-action-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      16px;
+  }
+
+  /* =========================================================
+     BUTTON SYSTEM
+  ========================================================= */
+
+  .btn,
+  .primary-btn,
+  .secondary-btn,
+  .prospect-action-btn,
+  .register-submit-btn,
+  .login-submit,
+  .prospect-btn {
+    width: 100%;
+    min-height: 56px;
+
+    border-radius:
+      18px;
+
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  /* =========================================================
+     FORM SYSTEM
+  ========================================================= */
+
+  .register-form-grid,
+  .prospect-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      18px;
+  }
+
+  .register-form-col-span-2,
+  .prospect-modal-col-span-4,
+  .prospect-modal-col-span-6,
+  .prospect-modal-col-span-8,
+  .prospect-modal-col-span-12 {
+    grid-column: span 1;
+  }
+
+  .register-input,
+  .login-input,
+  .prospect-search-input {
+    height: 54px;
+
+    font-size: 15px;
+  }
+
+  .prospect-notes {
+    min-height: 140px;
+  }
+
+  /* =========================================================
+     CRM WORKSPACE
+  ========================================================= */
+
+  .prospect-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .prospect-sidebar {
+    position: relative;
+    top: unset;
+
+    width: 100%;
+  }
+
+  .prospect-stage-list {
+    gap:
+      10px;
+  }
+
+  .prospect-stage-item {
+    min-height: 54px;
+
+    border-radius:
+      16px;
+  }
+
+  /* =========================================================
+     TOOLBAR SYSTEM
+  ========================================================= */
+
+  .prospect-toolbar,
+  .dashboard-toolbar,
+  .prospect-status-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    padding:
+      18px;
+  }
+
+  .prospect-toolbar-left,
+  .prospect-toolbar-right {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .prospect-search,
+  .prospect-filter-group {
+    width: 100%;
+  }
+
+  .prospect-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .prospect-filter-chip {
+    min-height: 38px;
+
+    padding:
+      0 14px;
+  }
+
+  /* =========================================================
+     TABLE SYSTEM
+  ========================================================= */
+
+  .prospect-table-shell,
+  .table-shell {
+    border-radius:
+      22px;
+  }
+
+  .prospect-table-wrapper {
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+  .prospect-table {
+    min-width: 980px;
+  }
+
+  .prospect-table th,
+  .prospect-table td {
+    padding:
+      16px 16px;
+  }
+
+  .prospect-table-profile {
+    min-width: 220px;
+  }
+
+  .prospect-table-avatar {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+  }
+
+  /* =========================================================
+     AUTHENTICATION SYSTEM
+  ========================================================= */
+
+  .login-layout,
+  .register-shell {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .login-brand-panel,
+  .register-brand-panel,
+  .login-auth-panel,
+  .register-form-panel {
+    padding:
+      24px 18px;
+  }
+
+  .login-brand-content,
+  .register-hero-content {
+    gap:
+      22px;
+  }
+
+  .register-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      16px;
+  }
+
+  /* =========================================================
+     MODAL SYSTEM
+  ========================================================= */
+
+  .prospect-modal-overlay {
+    padding:
+      10px;
+  }
+
+  .prospect-modal {
+    max-width: 100%;
+    max-height: calc(100vh - 20px);
+
+    border-radius:
+      24px;
+  }
+
+  .prospect-modal-header,
+  .prospect-modal-body,
+  .prospect-modal-footer {
+    padding:
+      22px;
+  }
+
+  .prospect-modal-header,
+  .prospect-modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .prospect-modal-title {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  /* =========================================================
+     TRIBE VISUALIZATION
+  ========================================================= */
+
+  .tribe-network-visual {
+    min-height: 320px;
+  }
+
+  .tribe-node-card {
+    min-width: 150px;
+
+    padding:
+      18px;
+
+    border-radius:
+      18px;
+  }
+
+  /* =========================================================
+     FOOTER SYSTEM
+  ========================================================= */
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      22px;
+  }
+
+  .footer-section,
+  .dashboard-footer {
+    padding-bottom:
+      calc(var(--mobile-bottom-safe-space) + env(safe-area-inset-bottom));
+  }
+
+  /* =========================================================
+     BOTTOM ACTION SAFE ZONE
+  ========================================================= */
+
+  .mobile-safe-bottom {
+    padding-bottom:
+      calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-fixed-action {
+    position: fixed;
+    left: 18px;
+    right: 18px;
+    bottom:
+      calc(18px + env(safe-area-inset-bottom));
+
+    z-index: 120;
+  }
+
+  /* =========================================================
+     THUMB-ZONE OPTIMIZATION
+  ========================================================= */
+
+  .mobile-touch-target,
+  .prospect-table-btn,
+  .prospect-table-page,
+  .prospect-modal-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mobile-thumb-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* =========================================================
+     MOBILE SCROLL SYSTEM
+  ========================================================= */
+
+  .mobile-scroll-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling:
+      touch;
+
+    scrollbar-width: none;
+  }
+
+  .mobile-scroll-area::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* =========================================================
+     PERFORMANCE OPTIMIZATION
+  ========================================================= */
+
+  .mobile-gpu-layer {
+    transform:
+      translateZ(0);
+
+    will-change:
+      transform;
+  }
+
+  .mobile-blur-surface {
+    backdrop-filter:
+      blur(14px);
+
+    -webkit-backdrop-filter:
+      blur(14px);
+  }
+
+  /* =========================================================
+     TOUCH INTERACTION OPTIMIZATION
+  ========================================================= */
+
+  .kpi-card:hover,
+  .metric-card:hover,
+  .mission-card:hover,
+  .income-card:hover,
+  .rank-card:hover,
+  .prospect-card:hover,
+  .member-followup-card:hover,
+  .prospect-stage-item:hover,
+  .prospect-action-btn:hover,
+  .register-submit-btn:hover,
+  .login-submit:hover,
+  .prospect-btn:hover,
+  .prospect-table-btn:hover,
+  .prospect-table-page:hover {
+    transform: none;
+  }
+
+  .kpi-card:active,
+  .metric-card:active,
+  .prospect-action-btn:active,
+  .register-submit-btn:active,
+  .login-submit:active,
+  .prospect-btn:active {
+    transform:
+      scale(0.98);
+  }
+
+  /* =========================================================
+     SAFE AREA SUPPORT
+  ========================================================= */
+
+  @supports (padding: max(0px)) {
+
+    .dashboard-container,
+    .dashboard-content,
+    .page-container {
+      padding-left:
+        max(var(--mobile-page-padding-x), env(safe-area-inset-left));
+
+      padding-right:
+        max(var(--mobile-page-padding-x), env(safe-area-inset-right));
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION SUPPORT
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .kpi-card,
+    .metric-card,
+    .mission-card,
+    .income-card,
+    .rank-card,
+    .prospect-card,
+    .member-followup-card,
+    .prospect-action-btn,
+    .register-submit-btn,
+    .login-submit,
+    .prospect-btn,
+    .prospect-table-btn,
+    .prospect-table-page {
+      transition: none;
+    }
+
+    .kpi-card:active,
+    .metric-card:active,
+    .prospect-action-btn:active,
+    .register-submit-btn:active,
+    .login-submit:active,
+    .prospect-btn:active {
+      transform: none;
+    }
+  }
+}
+
+

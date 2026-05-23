@@ -1,0 +1,902 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — MEMBER-FOLLOWUPS.CSS
+   FINAL FROZEN MEMBER RETENTION SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   SECTION ROOT
+========================================================= */
+
+.member-followups-section {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   BACKGROUND SYSTEM
+========================================================= */
+
+.member-followups-section::before {
+  content: "";
+
+  position: absolute;
+  bottom: -25%;
+  right: -10%;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34,197,94,0.12),
+      rgba(6,182,212,0.08),
+      transparent 72%
+    );
+
+  filter:
+    blur(90px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.member-followups-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.member-followups-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.member-followups-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  min-height: 38px;
+
+  padding:
+    0 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(18px);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.member-followups-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 14px rgba(34,197,94,0.62);
+
+  animation:
+    memberFollowPulse 2.8s infinite ease-in-out;
+}
+
+.member-followups-title {
+  margin: 0;
+
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -2px;
+
+  color:
+    #ffffff;
+}
+
+.member-followups-description {
+  max-width: 760px;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.66);
+}
+
+/* =========================================================
+   RETENTION STATUS PANEL
+========================================================= */
+
+.member-retention-panel {
+  position: relative;
+
+  min-width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  padding:
+    24px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(7,15,35,0.76);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.32);
+}
+
+.member-retention-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34,197,94,0.08),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+.member-retention-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.member-retention-score {
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -3px;
+
+  color:
+    #ffffff;
+}
+
+.member-retention-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.member-retention-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.62);
+}
+
+.member-retention-status {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    rgba(34,197,94,0.92);
+}
+
+/* =========================================================
+   FOLLOW-UP GRID
+========================================================= */
+
+.member-followups-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================================
+   MEMBER CARD
+========================================================= */
+
+.member-followup-card {
+  position: relative;
+
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding:
+    26px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(7,15,35,0.74);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(26px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+
+  transition:
+    transform 220ms cubic-bezier(0.22,1,0.36,1),
+    border-color 220ms cubic-bezier(0.22,1,0.36,1),
+    box-shadow 220ms cubic-bezier(0.22,1,0.36,1);
+}
+
+.member-followup-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(34,197,94,0.18);
+
+  box-shadow:
+    0 28px 72px rgba(0,0,0,0.42);
+}
+
+.member-followup-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD STATES
+========================================================= */
+
+.member-followup-hot {
+  border-color:
+    rgba(239,68,68,0.16);
+}
+
+.member-followup-warm {
+  border-color:
+    rgba(245,158,11,0.16);
+}
+
+.member-followup-stable {
+  border-color:
+    rgba(34,197,94,0.16);
+}
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.member-followup-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.member-followup-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.member-followup-avatar {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  box-shadow:
+    0 12px 28px rgba(59,130,246,0.24);
+}
+
+.member-followup-avatar::after {
+  content: "";
+
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  border:
+    3px solid rgba(7,15,35,1);
+}
+
+.member-followup-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.member-followup-name {
+  font-size: 16px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+.member-followup-rank {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.member-followup-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 34px;
+
+  padding:
+    0 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.member-status-active {
+  background:
+    rgba(34,197,94,0.12);
+
+  border:
+    1px solid rgba(34,197,94,0.18);
+
+  color:
+    #22c55e;
+}
+
+.member-status-risk {
+  background:
+    rgba(239,68,68,0.12);
+
+  border:
+    1px solid rgba(239,68,68,0.18);
+
+  color:
+    #ef4444;
+}
+
+.member-status-watch {
+  background:
+    rgba(245,158,11,0.12);
+
+  border:
+    1px solid rgba(245,158,11,0.18);
+
+  color:
+    #f59e0b;
+}
+
+/* =========================================================
+   ENGAGEMENT CONTENT
+========================================================= */
+
+.member-followup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.member-followup-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color:
+    #ffffff;
+}
+
+.member-followup-description {
+  font-size: 14px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+/* =========================================================
+   ENGAGEMENT METRICS
+========================================================= */
+
+.member-engagement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.member-engagement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.member-engagement-label {
+  font-size: 13px;
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+.member-engagement-value {
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   MOMENTUM BAR
+========================================================= */
+
+.member-momentum {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.member-momentum-track {
+  position: relative;
+
+  width: 100%;
+  height: 10px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.member-momentum-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22c55e,
+      #06b6d4,
+      #3b82f6
+    );
+
+  box-shadow:
+    0 0 18px rgba(34,197,94,0.34);
+}
+
+.member-momentum-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.member-momentum-label,
+.member-momentum-score {
+  font-size: 12px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   FOLLOW-UP ACTIONS
+========================================================= */
+
+.member-followup-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.member-followup-btn {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color:
+    rgba(255,255,255,0.72);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22,1,0.36,1),
+    background 220ms cubic-bezier(0.22,1,0.36,1),
+    border-color 220ms cubic-bezier(0.22,1,0.36,1);
+}
+
+.member-followup-btn:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(34,197,94,0.10);
+
+  border-color:
+    rgba(34,197,94,0.18);
+
+  color:
+    #ffffff;
+}
+
+.member-followup-btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #06b6d4
+    );
+
+  border:
+    1px solid rgba(34,197,94,0.22);
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 18px 40px rgba(34,197,94,0.24);
+}
+
+/* =========================================================
+   INSIGHT BAR
+========================================================= */
+
+.member-followup-insight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  min-height: 76px;
+
+  padding:
+    0 24px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,197,94,0.14),
+      rgba(6,182,212,0.08)
+    );
+
+  border:
+    1px solid rgba(34,197,94,0.16);
+}
+
+.member-followup-insight-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.member-followup-insight-icon {
+  width: 48px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  color:
+    #ffffff;
+}
+
+.member-followup-insight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.member-followup-insight-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.52);
+}
+
+.member-followup-insight-value {
+  font-size: 15px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+.member-followup-insight-score {
+  font-size: 30px;
+  font-weight: 800;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1280px) {
+
+  .member-followups-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .member-retention-panel {
+    width: 100%;
+  }
+
+  .member-followups-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .member-followups-section {
+    gap:
+      28px;
+  }
+
+  .member-followups-title {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .member-followups-description {
+    font-size: 15px;
+  }
+
+  .member-retention-panel {
+    min-width: 100%;
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  .member-retention-score {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  .member-followups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .member-followup-card {
+    min-height: auto;
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  .member-followup-title {
+    font-size: 22px;
+  }
+
+  .member-followup-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .member-followup-btn {
+    width: 100%;
+  }
+
+  .member-followup-insight {
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-height: auto;
+
+    padding:
+      18px;
+  }
+
+  .member-followup-card:hover,
+  .member-followup-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .member-followups-eyebrow-dot,
+  .member-followup-card,
+  .member-followup-btn {
+    transition: none;
+    animation: none;
+  }
+
+  .member-followup-card:hover,
+  .member-followup-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes memberFollowPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

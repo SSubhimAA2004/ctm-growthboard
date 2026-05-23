@@ -1,0 +1,600 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — DESKTOP.CSS
+   FINAL FROZEN DESKTOP RESPONSIVE SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   DESKTOP FOUNDATION
+========================================================= */
+
+@media (min-width: 1281px) {
+
+  :root {
+    --desktop-max-width: 1440px;
+    --desktop-ultra-width: 1680px;
+
+    --desktop-page-padding-x: 48px;
+    --desktop-page-padding-y: 42px;
+
+    --desktop-section-gap: 96px;
+    --desktop-card-gap: 24px;
+
+    --desktop-card-radius: 28px;
+
+    --desktop-content-density: 1;
+  }
+
+  /* =========================================================
+     GLOBAL APP SHELL
+  ========================================================= */
+
+  .app-shell,
+  .dashboard-shell,
+  .dashboard-page,
+  .dashboard-layout {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .dashboard-shell,
+  .dashboard-page {
+    position: relative;
+
+    overflow-x: hidden;
+  }
+
+  .dashboard-container,
+  .page-container,
+  .dashboard-content {
+    width: 100%;
+    max-width: var(--desktop-max-width);
+
+    margin:
+      0 auto;
+
+    padding-left:
+      var(--desktop-page-padding-x);
+
+    padding-right:
+      var(--desktop-page-padding-x);
+  }
+
+  .dashboard-ultra-container {
+    max-width:
+      var(--desktop-ultra-width);
+  }
+
+  /* =========================================================
+     SECTION SPACING SYSTEM
+  ========================================================= */
+
+  .dashboard-section,
+  .hero-section,
+  .kpi-section,
+  .next-action-section,
+  .tribe-strength-section,
+  .weekly-income-section,
+  .rank-journey-section,
+  .prospect-followups-section,
+  .member-followups-section,
+  .daily-missions-section,
+  .footer-section {
+    position: relative;
+
+    margin-bottom:
+      var(--desktop-section-gap);
+  }
+
+  .dashboard-section:last-child,
+  .footer-section:last-child {
+    margin-bottom: 0;
+  }
+
+  /* =========================================================
+     HERO OPTIMIZATION
+  ========================================================= */
+
+  .hero-section,
+  .dashboard-hero,
+  .hero-shell {
+    min-height: 720px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-title,
+  .dashboard-hero-title {
+    max-width: 980px;
+
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+  }
+
+  .hero-description,
+  .dashboard-hero-description {
+    max-width: 760px;
+
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  /* =========================================================
+     KPI STRIP OPTIMIZATION
+  ========================================================= */
+
+  .kpi-strip,
+  .metrics-strip,
+  .dashboard-kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap:
+      var(--desktop-card-gap);
+  }
+
+  .kpi-card,
+  .metric-card,
+  .dashboard-kpi-card {
+    min-height: 260px;
+
+    padding:
+      32px;
+
+    border-radius:
+      32px;
+  }
+
+  .kpi-value,
+  .metric-value,
+  .dashboard-kpi-value {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -2px;
+  }
+
+  /* =========================================================
+     NEXT ACTION EXECUTION SYSTEM
+  ========================================================= */
+
+  .next-action-section,
+  .next-action-shell {
+    min-height: 620px;
+  }
+
+  .next-action-card,
+  .execution-card {
+    padding:
+      48px;
+
+    border-radius:
+      36px;
+  }
+
+  .next-action-title,
+  .execution-title {
+    max-width: 980px;
+
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 0.94;
+    letter-spacing: -3px;
+  }
+
+  .next-action-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap:
+      32px;
+  }
+
+  /* =========================================================
+     DASHBOARD GRID SYSTEM
+  ========================================================= */
+
+  .dashboard-grid,
+  .dashboard-main-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    gap:
+      var(--desktop-card-gap);
+  }
+
+  .grid-span-3 {
+    grid-column: span 3;
+  }
+
+  .grid-span-4 {
+    grid-column: span 4;
+  }
+
+  .grid-span-5 {
+    grid-column: span 5;
+  }
+
+  .grid-span-6 {
+    grid-column: span 6;
+  }
+
+  .grid-span-7 {
+    grid-column: span 7;
+  }
+
+  .grid-span-8 {
+    grid-column: span 8;
+  }
+
+  .grid-span-9 {
+    grid-column: span 9;
+  }
+
+  .grid-span-12 {
+    grid-column: span 12;
+  }
+
+  /* =========================================================
+     TRIBE STRENGTH SYSTEM
+  ========================================================= */
+
+  .tribe-strength-section,
+  .tribe-strength-shell {
+    min-height: 780px;
+  }
+
+  .tribe-network-visual {
+    min-height: 540px;
+  }
+
+  .tribe-node-card {
+    min-width: 220px;
+
+    padding:
+      24px;
+  }
+
+  /* =========================================================
+     DAILY MISSIONS SYSTEM
+  ========================================================= */
+
+  .daily-missions-grid,
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap:
+      24px;
+  }
+
+  .mission-card,
+  .daily-mission-card {
+    min-height: 320px;
+
+    padding:
+      28px;
+
+    border-radius:
+      28px;
+  }
+
+  /* =========================================================
+     WEEKLY INCOME SYSTEM
+  ========================================================= */
+
+  .weekly-income-grid,
+  .income-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap:
+      24px;
+  }
+
+  .income-card,
+  .weekly-income-card {
+    min-height: 240px;
+
+    padding:
+      28px;
+  }
+
+  .income-value,
+  .weekly-income-value {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* =========================================================
+     RANK JOURNEY SYSTEM
+  ========================================================= */
+
+  .rank-journey-track {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .rank-card {
+    min-height: 260px;
+
+    padding:
+      24px;
+  }
+
+  .rank-current-position {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 0.94;
+  }
+
+  /* =========================================================
+     FOLLOW-UP SYSTEMS
+  ========================================================= */
+
+  .prospect-followups-grid,
+  .member-followups-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap:
+      24px;
+  }
+
+  .prospect-card,
+  .member-followup-card {
+    min-height: 320px;
+
+    padding:
+      26px;
+
+    border-radius:
+      28px;
+  }
+
+  /* =========================================================
+     TABLE OPTIMIZATION
+  ========================================================= */
+
+  .prospect-table-shell,
+  .table-shell {
+    border-radius:
+      32px;
+  }
+
+  .prospect-table th,
+  .prospect-table td {
+    padding:
+      24px 24px;
+  }
+
+  .prospect-table {
+    min-width: 1360px;
+  }
+
+  /* =========================================================
+     FORM EXPERIENCE SYSTEM
+  ========================================================= */
+
+  .register-shell,
+  .login-shell {
+    max-width:
+      1680px;
+  }
+
+  .register-card,
+  .login-card {
+    max-width:
+      640px;
+  }
+
+  /* =========================================================
+     FOOTER OPTIMIZATION
+  ========================================================= */
+
+  .footer-section,
+  .dashboard-footer {
+    min-height: 220px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap:
+      32px;
+  }
+
+  /* =========================================================
+     INTERACTION DENSITY
+  ========================================================= */
+
+  .desktop-hover-lift:hover,
+  .kpi-card:hover,
+  .metric-card:hover,
+  .mission-card:hover,
+  .income-card:hover,
+  .prospect-card:hover,
+  .member-followup-card:hover,
+  .rank-card:hover {
+    transform:
+      translateY(-6px);
+  }
+
+  /* =========================================================
+     LARGE SCREEN SCALING
+  ========================================================= */
+
+  .desktop-fluid-text {
+    font-size:
+      clamp(16px, 1vw, 18px);
+  }
+
+  .desktop-fluid-heading {
+    font-size:
+      clamp(56px, 4vw, 82px);
+  }
+
+  /* =========================================================
+     ULTRA WIDE OPTIMIZATION
+  ========================================================= */
+
+  @media (min-width: 1680px) {
+
+    :root {
+      --desktop-page-padding-x: 72px;
+      --desktop-card-gap: 28px;
+    }
+
+    .dashboard-container,
+    .page-container,
+    .dashboard-content {
+      max-width:
+        1680px;
+    }
+
+    .hero-title,
+    .dashboard-hero-title {
+      font-size: 82px;
+    }
+
+    .next-action-title,
+    .execution-title {
+      font-size: 74px;
+    }
+
+    .kpi-value,
+    .metric-value,
+    .dashboard-kpi-value {
+      font-size: 78px;
+    }
+
+    .rank-current-position {
+      font-size: 84px;
+    }
+
+    .prospect-followups-grid,
+    .member-followups-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .weekly-income-grid,
+    .income-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+
+  /* =========================================================
+     LARGE DESKTOP STABILIZATION
+  ========================================================= */
+
+  @media (min-width: 1920px) {
+
+    .dashboard-container,
+    .page-container,
+    .dashboard-content {
+      max-width:
+        1800px;
+    }
+
+    .hero-section,
+    .dashboard-hero {
+      min-height: 820px;
+    }
+
+    .dashboard-grid,
+    .dashboard-main-grid {
+      gap:
+        32px;
+    }
+
+    .next-action-card,
+    .execution-card {
+      padding:
+        56px;
+    }
+  }
+
+  /* =========================================================
+     DESKTOP SCROLL SYSTEM
+  ========================================================= */
+
+  .desktop-scroll-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+  }
+
+  .desktop-scroll-area::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .desktop-scroll-area::-webkit-scrollbar-track {
+    background:
+      rgba(255,255,255,0.02);
+  }
+
+  .desktop-scroll-area::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+      rgba(255,255,255,0.12);
+  }
+
+  .desktop-scroll-area::-webkit-scrollbar-thumb:hover {
+    background:
+      rgba(255,255,255,0.22);
+  }
+
+  /* =========================================================
+     DESKTOP PERFORMANCE OPTIMIZATION
+  ========================================================= */
+
+  .desktop-gpu-layer {
+    transform:
+      translateZ(0);
+
+    will-change:
+      transform;
+  }
+
+  .desktop-blur-surface {
+    backdrop-filter:
+      blur(24px);
+
+    -webkit-backdrop-filter:
+      blur(24px);
+  }
+
+  /* =========================================================
+     REDUCED MOTION SUPPORT
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .desktop-hover-lift:hover,
+    .kpi-card:hover,
+    .metric-card:hover,
+    .mission-card:hover,
+    .income-card:hover,
+    .prospect-card:hover,
+    .member-followup-card:hover,
+    .rank-card:hover {
+      transform: none;
+    }
+  }
+}
+
+

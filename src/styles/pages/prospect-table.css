@@ -1,0 +1,889 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — PROSPECT-TABLE.CSS
+   FINAL FROZEN CRM TABLE SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   TABLE ROOT
+========================================================= */
+
+.prospect-table-shell {
+  position: relative;
+
+  width: 100%;
+
+  border-radius: 32px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(24px);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+}
+
+.prospect-table-shell::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.prospect-table-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* =========================================================
+   TABLE FOUNDATION
+========================================================= */
+
+.prospect-table {
+  width: 100%;
+  min-width: 1180px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.prospect-table thead {
+  position: sticky;
+  top: 0;
+
+  z-index: 5;
+
+  background:
+    rgba(7,15,35,0.92);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+.prospect-table th {
+  position: relative;
+
+  padding:
+    22px 24px;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.48);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+
+  white-space: nowrap;
+}
+
+.prospect-table th::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 22px;
+
+  transform: translateY(-50%);
+
+  background:
+    rgba(255,255,255,0.04);
+}
+
+.prospect-table th:last-child::after {
+  display: none;
+}
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.prospect-table tbody tr {
+  position: relative;
+
+  transition:
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-table tbody tr:hover {
+  background:
+    rgba(255,255,255,0.03);
+}
+
+.prospect-table tbody tr:not(:last-child) td {
+  border-bottom:
+    1px solid rgba(255,255,255,0.04);
+}
+
+.prospect-table td {
+  position: relative;
+
+  padding:
+    22px 24px;
+
+  vertical-align: middle;
+}
+
+/* =========================================================
+   ROW STATES
+========================================================= */
+
+.prospect-row-active {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,0.06),
+      transparent
+    );
+}
+
+.prospect-row-priority {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,68,68,0.06),
+      transparent
+    );
+}
+
+.prospect-row-converted {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,197,94,0.06),
+      transparent
+    );
+}
+
+/* =========================================================
+   PROSPECT PROFILE CELL
+========================================================= */
+
+.prospect-table-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  min-width: 260px;
+}
+
+.prospect-table-avatar {
+  position: relative;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  box-shadow:
+    0 0 18px rgba(59,130,246,0.22);
+}
+
+.prospect-table-avatar::after {
+  content: "";
+
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  border:
+    3px solid rgba(7,15,35,1);
+}
+
+.prospect-table-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prospect-table-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color: #ffffff;
+}
+
+.prospect-table-contact {
+  font-size: 13px;
+  line-height: 1.6;
+
+  color:
+    rgba(255,255,255,0.56);
+}
+
+/* =========================================================
+   PIPELINE STAGE BADGES
+========================================================= */
+
+.prospect-table-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 40px;
+
+  padding:
+    0 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.prospect-stage-hot {
+  background:
+    rgba(239,68,68,0.12);
+
+  border:
+    1px solid rgba(239,68,68,0.18);
+
+  color:
+    #f87171;
+}
+
+.prospect-stage-warm {
+  background:
+    rgba(245,158,11,0.12);
+
+  border:
+    1px solid rgba(245,158,11,0.18);
+
+  color:
+    #fbbf24;
+}
+
+.prospect-stage-cold {
+  background:
+    rgba(148,163,184,0.12);
+
+  border:
+    1px solid rgba(148,163,184,0.18);
+
+  color:
+    #cbd5e1;
+}
+
+.prospect-stage-converted {
+  background:
+    rgba(34,197,94,0.12);
+
+  border:
+    1px solid rgba(34,197,94,0.18);
+
+  color:
+    #4ade80;
+}
+
+/* =========================================================
+   VALUE CELLS
+========================================================= */
+
+.prospect-table-value {
+  font-size: 16px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+.prospect-table-subvalue {
+  margin-top: 6px;
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+/* =========================================================
+   FOLLOW-UP STATUS
+========================================================= */
+
+.prospect-followup-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prospect-followup-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  flex-shrink: 0;
+}
+
+.prospect-followup-ontrack {
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.42);
+}
+
+.prospect-followup-pending {
+  background:
+    #f59e0b;
+
+  box-shadow:
+    0 0 12px rgba(245,158,11,0.42);
+}
+
+.prospect-followup-overdue {
+  background:
+    #ef4444;
+
+  box-shadow:
+    0 0 12px rgba(239,68,68,0.42);
+}
+
+.prospect-followup-label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.78);
+}
+
+/* =========================================================
+   MOMENTUM SCORE
+========================================================= */
+
+.prospect-momentum {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  min-width: 140px;
+}
+
+.prospect-momentum-value {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+
+  color:
+    #ffffff;
+}
+
+.prospect-momentum-track {
+  position: relative;
+
+  width: 100%;
+  height: 10px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.prospect-momentum-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 18px rgba(59,130,246,0.28);
+}
+
+/* =========================================================
+   TAG SYSTEM
+========================================================= */
+
+.prospect-tag-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.prospect-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding:
+    0 12px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   ACTIONS CELL
+========================================================= */
+
+.prospect-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prospect-table-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  color:
+    rgba(255,255,255,0.72);
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-table-btn:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(59,130,246,0.12);
+
+  color:
+    #ffffff;
+}
+
+.prospect-table-btn-danger:hover {
+  background:
+    rgba(239,68,68,0.12);
+
+  color:
+    #f87171;
+}
+
+/* =========================================================
+   LIVE INDICATOR
+========================================================= */
+
+.prospect-table-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prospect-table-live-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.62),
+    0 0 24px rgba(34,197,94,0.28);
+
+  animation:
+    prospectTablePulse 2.4s infinite ease-in-out;
+}
+
+.prospect-table-live-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.48);
+}
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.prospect-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding:
+    22px 28px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.prospect-table-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prospect-table-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  cursor: pointer;
+
+  transition:
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-table-page:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.prospect-table-page-active {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  border:
+    1px solid rgba(59,130,246,0.22);
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 0 18px rgba(59,130,246,0.22);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.prospect-table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 480px;
+
+  padding:
+    48px;
+
+  text-align: center;
+}
+
+.prospect-table-empty-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+
+  color:
+    #ffffff;
+}
+
+.prospect-table-empty-description {
+  max-width: 620px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.prospect-table-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.prospect-table-loading::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.08),
+      transparent
+    );
+
+  animation:
+    prospectTableShimmer 2.8s infinite linear;
+}
+
+/* =========================================================
+   SCROLLBAR SYSTEM
+========================================================= */
+
+.prospect-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prospect-table-wrapper::-webkit-scrollbar-track {
+  background:
+    rgba(255,255,255,0.02);
+}
+
+.prospect-table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.12);
+}
+
+.prospect-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(255,255,255,0.22);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .prospect-table-shell {
+    border-radius: 28px;
+  }
+
+  .prospect-table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .prospect-table-shell {
+    border-radius: 24px;
+  }
+
+  .prospect-table th,
+  .prospect-table td {
+    padding:
+      18px 18px;
+  }
+
+  .prospect-table-profile {
+    min-width: 220px;
+  }
+
+  .prospect-table-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 16px;
+
+    font-size: 16px;
+  }
+
+  .prospect-kpi-value,
+  .prospect-table-empty-title {
+    font-size: 26px;
+  }
+
+  .prospect-table-btn:hover,
+  .prospect-table-page:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .prospect-table tbody tr,
+  .prospect-table-btn,
+  .prospect-table-page,
+  .prospect-table-live-dot,
+  .prospect-table-loading::after {
+    transition: none;
+    animation: none;
+  }
+
+  .prospect-table-btn:hover,
+  .prospect-table-page:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes prospectTablePulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.24);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes prospectTableShimmer {
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+

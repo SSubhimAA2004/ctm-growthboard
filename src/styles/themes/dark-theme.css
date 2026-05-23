@@ -1,0 +1,653 @@
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — DARK THEME ENGINE
+   FILE: src/styles/themes/dark-theme.css
+   PURPOSE:
+   - Frozen production dark theme
+   - Elite execution cockpit styling
+   - Glassmorphism execution layer
+   - Operational contrast hierarchy
+   - Human Momentum OS visual stabilization
+   ========================================================================== */
+
+/* ==========================================================================
+   DARK THEME ROOT ACTIVATION
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+
+  color-scheme: dark;
+
+  background:
+    var(--theme-bg-primary);
+
+  color:
+    var(--theme-text-primary);
+}
+
+/* ==========================================================================
+   GLOBAL BODY FOUNDATION
+   ========================================================================== */
+
+body {
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(59, 130, 246, 0.10),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(6, 182, 212, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #040B1A 40%,
+      #020617 100%
+    );
+
+  color:
+    var(--theme-text-primary);
+
+  font-family:
+    var(--theme-font-primary);
+
+  min-height:
+    100vh;
+
+  overflow-x:
+    hidden;
+}
+
+/* ==========================================================================
+   ROOT APPLICATION SURFACE
+   ========================================================================== */
+
+#root,
+.app,
+.app-shell,
+.dashboard-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+/* ==========================================================================
+   GLOBAL AMBIENT GLOW LAYER
+   ========================================================================== */
+
+.dashboard-shell::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(59, 130, 246, 0.10),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(139, 92, 246, 0.08),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(6, 182, 212, 0.06),
+      transparent 28%
+    );
+
+  z-index:
+    -1;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY RENDERING
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color:
+    var(--theme-text-primary);
+
+  text-rendering:
+    optimizeLegibility;
+}
+
+p,
+span,
+li,
+label,
+td,
+th {
+  color:
+    var(--theme-text-secondary);
+}
+
+/* ==========================================================================
+   OPERATIONAL CONTRAST HIERARCHY
+   ========================================================================== */
+
+.text-primary {
+  color:
+    var(--theme-text-primary);
+}
+
+.text-secondary {
+  color:
+    var(--theme-text-secondary);
+}
+
+.text-muted {
+  color:
+    var(--theme-text-muted);
+}
+
+.text-success {
+  color:
+    var(--theme-success);
+}
+
+.text-warning {
+  color:
+    var(--theme-warning);
+}
+
+.text-danger {
+  color:
+    var(--theme-danger);
+}
+
+.text-info {
+  color:
+    var(--theme-info);
+}
+
+/* ==========================================================================
+   GLASSMORPHISM EXECUTION LAYER
+   ========================================================================== */
+
+.glass-card,
+.dashboard-card,
+.execution-card,
+.section-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 18, 38, 0.88),
+      rgba(7, 15, 35, 0.72)
+    );
+
+  backdrop-filter:
+    blur(24px);
+
+  -webkit-backdrop-filter:
+    blur(24px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45);
+
+  overflow:
+    hidden;
+}
+
+/* ==========================================================================
+   CARD AMBIENT OVERLAY
+   ========================================================================== */
+
+.glass-card::before,
+.dashboard-card::before,
+.execution-card::before,
+.section-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04),
+      transparent 30%
+    );
+
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CARD HOVER EXECUTION STATE
+   ========================================================================== */
+
+.glass-card:hover,
+.dashboard-card:hover,
+.execution-card:hover,
+.section-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(59, 130, 246, 0.18);
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.52),
+    0 0 24px rgba(59, 130, 246, 0.12);
+
+  transition:
+    transform var(--theme-transition-base)
+      var(--theme-transition-easing),
+    box-shadow var(--theme-transition-base)
+      var(--theme-transition-easing),
+    border-color var(--theme-transition-base)
+      var(--theme-transition-easing);
+}
+
+/* ==========================================================================
+   EXECUTION KPI CARDS
+   ========================================================================== */
+
+.kpi-card,
+.metric-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 24, 48, 0.94),
+      rgba(7, 15, 35, 0.82)
+    );
+
+  border:
+    1px solid rgba(59, 130, 246, 0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.42);
+}
+
+.kpi-card:hover,
+.metric-card:hover {
+  border-color:
+    rgba(59, 130, 246, 0.22);
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.56),
+    0 0 24px rgba(59, 130, 246, 0.16);
+}
+
+/* ==========================================================================
+   HERO EXECUTION SURFACE
+   ========================================================================== */
+
+.hero-section,
+.dashboard-hero {
+  position: relative;
+}
+
+.hero-section::before,
+.dashboard-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center top,
+      rgba(59, 130, 246, 0.12),
+      transparent 46%
+    );
+
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   NEXT BEST ACTION PANEL
+   ========================================================================== */
+
+.next-action-section,
+.next-best-action {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 28, 54, 0.96),
+      rgba(7, 15, 35, 0.88)
+    );
+
+  border:
+    1px solid rgba(59, 130, 246, 0.12);
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.52),
+    0 0 40px rgba(59, 130, 246, 0.08);
+}
+
+/* ==========================================================================
+   BUTTON EXECUTION SYSTEM
+   ========================================================================== */
+
+button,
+.btn,
+.action-btn,
+.primary-action-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #2563EB,
+      #06B6D4
+    );
+
+  color:
+    #FFFFFF;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 12px 32px rgba(37, 99, 235, 0.24);
+
+  transition:
+    transform var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    box-shadow var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    opacity var(--theme-transition-fast)
+      var(--theme-transition-easing);
+}
+
+button:hover,
+.btn:hover,
+.action-btn:hover,
+.primary-action-btn:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 18px 42px rgba(37, 99, 235, 0.34),
+    0 0 20px rgba(6, 182, 212, 0.18);
+}
+
+button:active,
+.btn:active,
+.action-btn:active {
+  transform:
+    translateY(0);
+}
+
+/* ==========================================================================
+   SECONDARY BUTTONS
+   ========================================================================== */
+
+.secondary-action-btn,
+.btn-secondary {
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color:
+    var(--theme-text-primary);
+
+  box-shadow:
+    none;
+}
+
+.secondary-action-btn:hover,
+.btn-secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(59, 130, 246, 0.18);
+}
+
+/* ==========================================================================
+   INPUT EXECUTION SYSTEM
+   ========================================================================== */
+
+input,
+textarea,
+select {
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  color:
+    var(--theme-text-primary);
+
+  backdrop-filter:
+    blur(12px);
+
+  transition:
+    border-color var(--theme-transition-fast)
+      var(--theme-transition-easing),
+    background var(--theme-transition-fast)
+      var(--theme-transition-easing);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color:
+    rgba(59, 130, 246, 0.42);
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.10);
+}
+
+/* ==========================================================================
+   TABLE EXECUTION SURFACES
+   ========================================================================== */
+
+table {
+  background:
+    rgba(7, 15, 35, 0.42);
+}
+
+thead {
+  background:
+    rgba(255, 255, 255, 0.03);
+}
+
+tbody tr {
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.04);
+
+  transition:
+    background var(--theme-transition-fast)
+      var(--theme-transition-easing);
+}
+
+tbody tr:hover {
+  background:
+    rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================================================
+   SCROLLBAR EXECUTION STYLING
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border-radius:
+    999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(59, 130, 246, 0.42);
+}
+
+/* ==========================================================================
+   OPERATIONAL DIVIDERS
+   ========================================================================== */
+
+.divider,
+.section-divider {
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+}
+
+/* ==========================================================================
+   EXECUTION BADGES
+   ========================================================================== */
+
+.badge,
+.status-badge {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color:
+    var(--theme-text-primary);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+/* ==========================================================================
+   PRIORITY STATES
+   ========================================================================== */
+
+.priority-high {
+  border-color:
+    rgba(239, 68, 68, 0.24);
+
+  box-shadow:
+    0 0 24px rgba(239, 68, 68, 0.12);
+}
+
+.priority-medium {
+  border-color:
+    rgba(245, 158, 11, 0.22);
+
+  box-shadow:
+    0 0 24px rgba(245, 158, 11, 0.10);
+}
+
+.priority-low {
+  border-color:
+    rgba(34, 197, 94, 0.22);
+
+  box-shadow:
+    0 0 24px rgba(34, 197, 94, 0.10);
+}
+
+/* ==========================================================================
+   MOBILE EXECUTION STABILIZATION
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+  .glass-card,
+  .dashboard-card,
+  .execution-card,
+  .section-card {
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
+  }
+
+  .glass-card:hover,
+  .dashboard-card:hover,
+  .execution-card:hover,
+  .section-card:hover {
+    transform: none;
+  }
+
+  body {
+    background:
+      linear-gradient(
+        180deg,
+        #020617 0%,
+        #040B1A 100%
+      );
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .glass-card,
+  .dashboard-card,
+  .execution-card,
+  .section-card,
+  button,
+  .btn {
+    transition: none !important;
+  }
+
+  .glass-card:hover,
+  .dashboard-card:hover,
+  .execution-card:hover,
+  .section-card:hover,
+  button:hover,
+  .btn:hover {
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   FROZEN DARK THEME DISCIPLINE
+   --------------------------------------------------------------------------
+   DO NOT:
+   - Add business logic styling
+   - Add component-specific hacks
+   - Add inline override architecture
+   - Break semantic token hierarchy
+
+   ONLY:
+   - Consume semantic tokens
+   - Preserve cockpit clarity
+   - Maintain operational contrast
+   - Preserve Human Momentum OS aesthetics
+   ========================================================================== */
+
+
+   

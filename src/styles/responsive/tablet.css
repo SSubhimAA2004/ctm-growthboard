@@ -1,0 +1,581 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — TABLET.CSS
+   FINAL FROZEN TABLET RESPONSIVE SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+@media (min-width: 769px) and (max-width: 1280px) {
+
+  :root {
+    --tablet-max-width: 1180px;
+
+    --tablet-page-padding-x: 32px;
+    --tablet-page-padding-y: 28px;
+
+    --tablet-section-gap: 72px;
+    --tablet-card-gap: 20px;
+
+    --tablet-card-radius: 26px;
+
+    --tablet-density-scale: 0.88;
+  }
+
+  /* =========================================================
+     GLOBAL TABLET FOUNDATION
+  ========================================================= */
+
+  .app-shell,
+  .dashboard-shell,
+  .dashboard-page,
+  .dashboard-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+  }
+
+  .dashboard-container,
+  .dashboard-content,
+  .page-container {
+    width: 100%;
+    max-width: var(--tablet-max-width);
+
+    margin:
+      0 auto;
+
+    padding-left:
+      var(--tablet-page-padding-x);
+
+    padding-right:
+      var(--tablet-page-padding-x);
+  }
+
+  /* =========================================================
+     SECTION SPACING
+  ========================================================= */
+
+  .dashboard-section,
+  .hero-section,
+  .kpi-section,
+  .next-action-section,
+  .tribe-strength-section,
+  .weekly-income-section,
+  .rank-journey-section,
+  .prospect-followups-section,
+  .member-followups-section,
+  .daily-missions-section,
+  .footer-section {
+    margin-bottom:
+      var(--tablet-section-gap);
+  }
+
+  /* =========================================================
+     HERO SYSTEM
+  ========================================================= */
+
+  .hero-section,
+  .dashboard-hero,
+  .hero-shell {
+    min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-title,
+  .dashboard-hero-title,
+  .prospect-hero-title {
+    max-width: 820px;
+
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: -2px;
+  }
+
+  .hero-description,
+  .dashboard-hero-description,
+  .prospect-hero-description {
+    max-width: 680px;
+
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  /* =========================================================
+     HERO ACTION STACKING
+  ========================================================= */
+
+  .hero-actions,
+  .dashboard-actions,
+  .prospect-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* =========================================================
+     KPI SYSTEM
+  ========================================================= */
+
+  .kpi-strip,
+  .metrics-strip,
+  .dashboard-kpi-strip,
+  .prospect-kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      var(--tablet-card-gap);
+  }
+
+  .kpi-card,
+  .metric-card,
+  .dashboard-kpi-card,
+  .prospect-kpi-card {
+    min-height: 220px;
+
+    padding:
+      26px;
+
+    border-radius:
+      28px;
+  }
+
+  .kpi-value,
+  .metric-value,
+  .dashboard-kpi-value,
+  .prospect-kpi-value {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 0.94;
+    letter-spacing: -2px;
+  }
+
+  /* =========================================================
+     GRID SYSTEM
+  ========================================================= */
+
+  .dashboard-grid,
+  .dashboard-main-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap:
+      var(--tablet-card-gap);
+  }
+
+  .grid-span-1,
+  .grid-span-2,
+  .grid-span-3 {
+    grid-column: span 3;
+  }
+
+  .grid-span-4,
+  .grid-span-5,
+  .grid-span-6,
+  .grid-span-7,
+  .grid-span-8,
+  .grid-span-9,
+  .grid-span-12 {
+    grid-column: span 6;
+  }
+
+  /* =========================================================
+     NEXT ACTION SYSTEM
+  ========================================================= */
+
+  .next-action-section,
+  .next-action-shell {
+    min-height: auto;
+  }
+
+  .next-action-card,
+  .execution-card {
+    padding:
+      36px;
+
+    border-radius:
+      30px;
+  }
+
+  .next-action-title,
+  .execution-title {
+    max-width: 780px;
+
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 0.96;
+    letter-spacing: -2px;
+  }
+
+  .next-action-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      22px;
+  }
+
+  /* =========================================================
+     TRIBE STRENGTH SYSTEM
+  ========================================================= */
+
+  .tribe-strength-shell,
+  .tribe-strength-section {
+    min-height: auto;
+  }
+
+  .tribe-network-visual {
+    min-height: 440px;
+  }
+
+  .tribe-node-card {
+    min-width: 180px;
+
+    padding:
+      20px;
+  }
+
+  /* =========================================================
+     DAILY MISSIONS SYSTEM
+  ========================================================= */
+
+  .daily-missions-grid,
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .mission-card,
+  .daily-mission-card {
+    min-height: 280px;
+
+    padding:
+      24px;
+
+    border-radius:
+      24px;
+  }
+
+  /* =========================================================
+     WEEKLY INCOME SYSTEM
+  ========================================================= */
+
+  .weekly-income-grid,
+  .income-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .income-card,
+  .weekly-income-card {
+    min-height: 220px;
+
+    padding:
+      24px;
+
+    border-radius:
+      24px;
+  }
+
+  .income-value,
+  .weekly-income-value {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* =========================================================
+     RANK JOURNEY SYSTEM
+  ========================================================= */
+
+  .rank-journey-track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .rank-card {
+    min-height: 240px;
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  .rank-current-position {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 0.94;
+  }
+
+  /* =========================================================
+     FOLLOW-UP SYSTEMS
+  ========================================================= */
+
+  .prospect-followups-grid,
+  .member-followups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .prospect-card,
+  .member-followup-card {
+    min-height: 280px;
+
+    padding:
+      22px;
+
+    border-radius:
+      24px;
+  }
+
+  /* =========================================================
+     CRM WORKSPACE
+  ========================================================= */
+
+  .prospect-workspace {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap:
+      24px;
+  }
+
+  .prospect-sidebar {
+    position: relative;
+    top: unset;
+
+    width: 100%;
+  }
+
+  .prospect-sidebar-panel {
+    border-radius:
+      26px;
+  }
+
+  /* =========================================================
+     TOOLBAR STACKING
+  ========================================================= */
+
+  .prospect-toolbar,
+  .dashboard-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .prospect-toolbar-left,
+  .prospect-toolbar-right {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .prospect-search {
+    width: 100%;
+  }
+
+  /* =========================================================
+     TABLE SYSTEM
+  ========================================================= */
+
+  .prospect-table-shell,
+  .table-shell {
+    border-radius:
+      28px;
+  }
+
+  .prospect-table {
+    min-width: 1120px;
+  }
+
+  .prospect-table th,
+  .prospect-table td {
+    padding:
+      20px 20px;
+  }
+
+  /* =========================================================
+     AUTHENTICATION SYSTEM
+  ========================================================= */
+
+  .login-layout,
+  .register-shell {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .login-brand-panel,
+  .register-brand-panel {
+    padding-bottom: 18px;
+  }
+
+  .login-auth-panel,
+  .register-form-panel {
+    padding-top: 18px;
+  }
+
+  .login-brand-title,
+  .register-hero-title {
+    font-size: 58px;
+    letter-spacing: -2px;
+  }
+
+  .login-card,
+  .register-card {
+    max-width: 100%;
+  }
+
+  /* =========================================================
+     FORM SYSTEM
+  ========================================================= */
+
+  .register-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      20px;
+  }
+
+  .register-form-col-span-2 {
+    grid-column: span 2;
+  }
+
+  /* =========================================================
+     FOOTER SYSTEM
+  ========================================================= */
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap:
+      24px;
+  }
+
+  /* =========================================================
+     INTERACTION REDUCTION
+  ========================================================= */
+
+  .tablet-hover-lift:hover,
+  .kpi-card:hover,
+  .metric-card:hover,
+  .mission-card:hover,
+  .income-card:hover,
+  .rank-card:hover,
+  .prospect-card:hover,
+  .member-followup-card:hover {
+    transform:
+      translateY(-3px);
+  }
+
+  /* =========================================================
+     TABLET SCROLL SYSTEM
+  ========================================================= */
+
+  .tablet-scroll-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+  }
+
+  .tablet-scroll-area::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .tablet-scroll-area::-webkit-scrollbar-track {
+    background:
+      rgba(255,255,255,0.02);
+  }
+
+  .tablet-scroll-area::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+      rgba(255,255,255,0.12);
+  }
+
+  /* =========================================================
+     PERFORMANCE OPTIMIZATION
+  ========================================================= */
+
+  .tablet-gpu-layer {
+    transform:
+      translateZ(0);
+
+    will-change:
+      transform;
+  }
+
+  .tablet-blur-surface {
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
+  }
+
+  /* =========================================================
+     LANDSCAPE TABLET OPTIMIZATION
+  ========================================================= */
+
+  @media (orientation: landscape) {
+
+    .hero-section,
+    .dashboard-hero {
+      min-height: 560px;
+    }
+
+    .dashboard-grid,
+    .dashboard-main-grid {
+      gap:
+        22px;
+    }
+  }
+
+  /* =========================================================
+     REDUCED MOTION SUPPORT
+  ========================================================= */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .tablet-hover-lift:hover,
+    .kpi-card:hover,
+    .metric-card:hover,
+    .mission-card:hover,
+    .income-card:hover,
+    .rank-card:hover,
+    .prospect-card:hover,
+    .member-followup-card:hover {
+      transform: none;
+    }
+  }
+}
+
+

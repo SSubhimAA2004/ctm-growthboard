@@ -1,71 +1,164 @@
 
 
 
-function NextBestAction({ action }) {
+import { useEffect, useState } from "react";
 
-  const progress = 72;
+import { loadDashboard } from "../services/dashboardData";
+
+export default function NextBestAction() {
+
+  const [actionData, setActionData] =
+    useState({
+      priority_action: "",
+      action_reason: "",
+      impact_score: 0,
+      checklist: [],
+    });
+
+  useEffect(() => {
+
+    async function hydrateAction() {
+
+      const dashboard =
+        await loadDashboard("100001");
+
+      if (dashboard?.nextAction) {
+        setActionData(
+          dashboard.nextAction
+        );
+      }
+    }
+
+    hydrateAction();
+
+  }, []);
 
   return (
-    <section className="next-action-card">
+    <section className="next-action-wrapper">
 
-      <div className="next-action-header">
+      <div className="next-action-card">
 
-        <div>
-          <p className="next-action-label">
-            AI NEXT BEST ACTION
-          </p>
+        {/* TOP LABELS */}
 
-          <h2>
-            {action.title}
-          </h2>
+        <div className="next-action-topbar">
+
+          <div className="execution-priority-label">
+            EXECUTION PRIORITY
+          </div>
+
+          <div className="momentum-detected">
+            Momentum Opportunity Detected
+          </div>
+
         </div>
 
-        <div className="priority-pill">
-          HIGH PRIORITY
+        {/* IMPACT BADGE */}
+
+        <div className="impact-badge">
+          HIGH IMPACT
         </div>
 
-      </div>
+        {/* MAIN ACTION */}
 
-      <p className="action-description">
-        {action.description}
-      </p>
+        <h1 className="action-headline">
+          {actionData.priority_action}
+        </h1>
 
-      <div className="progress-section">
+        {/* DESCRIPTION */}
 
-        <div className="progress-top">
-          <span>Mission Progress</span>
-          <span>{progress}%</span>
+        <p className="action-description">
+          {actionData.action_reason}
+        </p>
+
+        {/* METRICS ROW */}
+
+        <div className="action-metrics-grid">
+
+          <div className="action-metric-card">
+
+            <div className="metric-label">
+              POTENTIAL IMPACT
+            </div>
+
+            <div className="metric-value positive">
+              +18%
+            </div>
+
+          </div>
+
+          <div className="action-metric-card">
+
+            <div className="metric-label">
+              ESTIMATED TIME
+            </div>
+
+            <div className="metric-value">
+              45 MIN
+            </div>
+
+          </div>
+
+          <div className="action-metric-card">
+
+            <div className="metric-label">
+              MOMENTUM SCORE
+            </div>
+
+            <div className="metric-value primary">
+              {actionData.impact_score}
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="progress-bar">
-          <div
-            className="progress-fill"
-            style={{ width: `${progress}%` }}
-          ></div>
+        {/* CHECKLIST */}
+
+        <div className="action-checklist">
+
+          {actionData.checklist?.map(
+            (item, index) => (
+              <div
+                className="checklist-item"
+                key={index}
+              >
+
+                <div className="checklist-number">
+                  {index + 1}
+                </div>
+
+                <div className="checklist-text">
+                  {item}
+                </div>
+
+              </div>
+            )
+          )}
+
         </div>
 
-      </div>
+        {/* CTA BUTTONS */}
 
-      <div className="action-footer">
+        <div className="action-buttons-row">
 
-        <div className="action-stat">
-          <span className="stat-label">
-            TARGET
-          </span>
+          <button className="primary-action-btn">
+            Start Execution
+          </button>
 
-          <span className="stat-value">
-            {action.target}
-          </span>
+          <button className="secondary-action-btn">
+            View Mission Queue
+          </button>
+
         </div>
 
-        <div className="action-stat">
-          <span className="stat-label">
-            REWARD
-          </span>
+        {/* FOOTER INSIGHT */}
 
-          <span className="stat-value reward">
-            {action.reward}
-          </span>
+        <div className="reinforcement-insight">
+
+          Highest conversion probability occurs
+          within 24 hours after presentation
+          or emotional breakthrough conversation.
+
         </div>
 
       </div>
@@ -73,7 +166,5 @@ function NextBestAction({ action }) {
     </section>
   );
 }
-
-export default NextBestAction;
 
 

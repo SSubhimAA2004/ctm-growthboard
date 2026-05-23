@@ -1,0 +1,958 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — PROSPECT-MODAL.CSS
+   FINAL FROZEN PROSPECT EXECUTION MODAL SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.prospect-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  background:
+    rgba(2,6,23,0.78);
+
+  backdrop-filter:
+    blur(16px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 220ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 400;
+}
+
+.prospect-modal-overlay-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================================
+   MODAL SHELL
+========================================================= */
+
+.prospect-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 980px;
+  max-height: calc(100vh - 64px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 36px;
+
+  background:
+    rgba(7,15,35,0.88);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter:
+    blur(32px);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.62),
+    0 0 42px rgba(59,130,246,0.10);
+
+  transform:
+    translateY(18px) scale(0.98);
+
+  opacity: 0;
+
+  transition:
+    opacity 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-modal-active {
+  opacity: 1;
+  transform:
+    translateY(0) scale(1);
+}
+
+.prospect-modal::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+.prospect-modal::after {
+  content: "";
+
+  position: absolute;
+  top: -20%;
+  right: -10%;
+
+  width: 320px;
+  height: 320px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.14),
+      rgba(6,182,212,0.08),
+      transparent 72%
+    );
+
+  filter: blur(72px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.prospect-modal-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding:
+    32px 36px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.prospect-modal-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prospect-modal-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.prospect-modal-title {
+  margin: 0;
+
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.prospect-modal-description {
+  max-width: 620px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.prospect-modal-close {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  color:
+    rgba(255,255,255,0.72);
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-modal-close:hover {
+  transform: rotate(90deg);
+
+  background:
+    rgba(239,68,68,0.12);
+
+  color:
+    #f87171;
+}
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.prospect-modal-body {
+  position: relative;
+  z-index: 1;
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding:
+    36px;
+}
+
+.prospect-modal-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* =========================================================
+   MODAL GRID
+========================================================= */
+
+.prospect-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+}
+
+.prospect-modal-col-span-4 {
+  grid-column: span 4;
+}
+
+.prospect-modal-col-span-6 {
+  grid-column: span 6;
+}
+
+.prospect-modal-col-span-8 {
+  grid-column: span 8;
+}
+
+.prospect-modal-col-span-12 {
+  grid-column: span 12;
+}
+
+/* =========================================================
+   PROSPECT PROFILE CARD
+========================================================= */
+
+.prospect-profile-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  padding:
+    28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+
+  overflow: hidden;
+}
+
+.prospect-profile-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 42%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PROSPECT IDENTITY
+========================================================= */
+
+.prospect-identity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.prospect-avatar {
+  position: relative;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  box-shadow:
+    0 0 24px rgba(59,130,246,0.22);
+}
+
+.prospect-avatar::after {
+  content: "";
+
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  border:
+    3px solid rgba(7,15,35,1);
+}
+
+.prospect-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prospect-name {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.prospect-role {
+  font-size: 15px;
+  font-weight: 500;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   PROSPECT STATUS
+========================================================= */
+
+.prospect-status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.prospect-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding:
+    10px 16px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.prospect-status-hot {
+  background:
+    rgba(239,68,68,0.12);
+
+  border:
+    1px solid rgba(239,68,68,0.18);
+
+  color:
+    #f87171;
+}
+
+.prospect-status-warm {
+  background:
+    rgba(245,158,11,0.12);
+
+  border:
+    1px solid rgba(245,158,11,0.18);
+
+  color:
+    #fbbf24;
+}
+
+.prospect-status-cold {
+  background:
+    rgba(148,163,184,0.12);
+
+  border:
+    1px solid rgba(148,163,184,0.18);
+
+  color:
+    #cbd5e1;
+}
+
+/* =========================================================
+   CRM METRICS
+========================================================= */
+
+.prospect-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.prospect-metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding:
+    18px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+}
+
+.prospect-metric-value {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.prospect-metric-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+/* =========================================================
+   FOLLOW-UP TIMELINE
+========================================================= */
+
+.prospect-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.prospect-timeline-item {
+  position: relative;
+
+  display: flex;
+  gap: 18px;
+}
+
+.prospect-timeline-line {
+  position: absolute;
+  left: 11px;
+  top: 32px;
+  bottom: -24px;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59,130,246,0.22),
+      rgba(255,255,255,0.04)
+    );
+}
+
+.prospect-timeline-dot {
+  position: relative;
+  z-index: 1;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 999px;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 18px rgba(59,130,246,0.22);
+}
+
+.prospect-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding-bottom: 24px;
+}
+
+.prospect-timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.prospect-timeline-description {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.prospect-timeline-time {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.38);
+}
+
+/* =========================================================
+   ACTION PANEL
+========================================================= */
+
+.prospect-action-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding:
+    28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.04);
+}
+
+.prospect-action-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prospect-action-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.prospect-action-description {
+  font-size: 14px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   NOTES AREA
+========================================================= */
+
+.prospect-notes {
+  min-height: 180px;
+
+  padding:
+    20px;
+
+  border-radius: 22px;
+
+  resize: vertical;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.02)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:
+    #ffffff;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  outline: none;
+
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-notes:focus {
+  border-color:
+    rgba(59,130,246,0.42);
+
+  box-shadow:
+    0 0 0 4px rgba(59,130,246,0.10);
+}
+
+.prospect-notes::placeholder {
+  color:
+    rgba(255,255,255,0.32);
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.prospect-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.prospect-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 54px;
+
+  padding:
+    0 22px;
+
+  border-radius: 18px;
+
+  border: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prospect-btn:hover {
+  transform: translateY(-2px);
+}
+
+.prospect-btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 18px 42px rgba(59,130,246,0.22);
+}
+
+.prospect-btn-success {
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 18px 42px rgba(34,197,94,0.22);
+}
+
+.prospect-btn-secondary {
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  color:
+    rgba(255,255,255,0.82);
+}
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.prospect-modal-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding:
+    24px 36px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.prospect-footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.prospect-footer-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.prospect-footer-value {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   SCROLLBAR SYSTEM
+========================================================= */
+
+.prospect-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.prospect-modal-body::-webkit-scrollbar-track {
+  background:
+    rgba(255,255,255,0.02);
+}
+
+.prospect-modal-body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.12);
+}
+
+.prospect-modal-body::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(255,255,255,0.22);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .prospect-modal {
+    max-width: 92vw;
+  }
+
+  .prospect-modal-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .prospect-modal-col-span-8,
+  .prospect-modal-col-span-12 {
+    grid-column: span 6;
+  }
+
+  .prospect-modal-col-span-4,
+  .prospect-modal-col-span-6 {
+    grid-column: span 3;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .prospect-modal-overlay {
+    padding: 12px;
+  }
+
+  .prospect-modal {
+    max-width: 100%;
+    max-height: calc(100vh - 24px);
+
+    border-radius: 28px;
+  }
+
+  .prospect-modal-header,
+  .prospect-modal-body,
+  .prospect-modal-footer {
+    padding:
+      24px;
+  }
+
+  .prospect-modal-header,
+  .prospect-modal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prospect-modal-title {
+    font-size: 30px;
+  }
+
+  .prospect-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prospect-modal-col-span-4,
+  .prospect-modal-col-span-6,
+  .prospect-modal-col-span-8,
+  .prospect-modal-col-span-12 {
+    grid-column: span 1;
+  }
+
+  .prospect-identity {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prospect-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .prospect-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prospect-btn:hover,
+  .prospect-modal-close:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .prospect-modal,
+  .prospect-modal-overlay,
+  .prospect-btn,
+  .prospect-modal-close {
+    transition: none;
+  }
+
+  .prospect-btn:hover,
+  .prospect-modal-close:hover {
+    transform: none;
+  }
+}
+
+

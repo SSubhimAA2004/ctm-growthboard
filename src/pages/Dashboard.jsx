@@ -1,50 +1,78 @@
 
 
+// FILE: src/pages/Dashboard.jsx
+
+import React, { useEffect, useState } from "react";
 
 import Header from "../components/Header";
 import KPIStrip from "../components/KPIStrip";
-import NextBestAction from "../components/NextBestAction";
-import TribeStrength from "../components/TribeStrength";
 import WeeklyIncome from "../components/WeeklyIncome";
 import RankJourney from "../components/RankJourney";
 import ProspectFollowups from "../components/ProspectFollowups";
 import MemberFollowups from "../components/MemberFollowups";
 import DailyMissions from "../components/DailyMissions";
-import Footer from "../components/Footer";
 
-import { dashboardData } from "../services/dashboardData";
+import { loadDashboard } from "../services/dashboardData";
 
-function Dashboard() {
+const Dashboard = () => {
+  const [dashboard, setDashboard] = useState(null);
+
+  useEffect(() => {
+    async function initializeDashboard() {
+      const data = await loadDashboard();
+      setDashboard(data);
+    }
+
+    initializeDashboard();
+  }, []);
+
+  if (!dashboard) {
+    return (
+      <div className="app-loader">
+        Loading CTM GrowthBoard...
+      </div>
+    );
+  }
 
   return (
+    <div className="dashboard-shell">
+      <Header
+        user={dashboard.user}
+        metrics={dashboard.metrics}
+      />
 
-    <div className="dashboard-container">
+      <main className="dashboard-content">
+        <KPIStrip
+          metrics={dashboard.metrics}
+        />
 
-      <Header />
+        <div className="dashboard-grid">
+          <WeeklyIncome
+            income={dashboard.income}
+          />
 
-      <KPIStrip metrics={dashboardData.metrics} />
+          <RankJourney
+            rankJourney={dashboard.rankJourney}
+          />
+        </div>
 
-      <NextBestAction action={dashboardData.nextBestAction} />
+        <div className="dashboard-grid">
+          <ProspectFollowups
+            prospects={dashboard.prospects}
+          />
 
-      <TribeStrength data={dashboardData.tribeStrength} />
+          <MemberFollowups
+            members={dashboard.memberFollowups}
+          />
+        </div>
 
-      <WeeklyIncome data={dashboardData.weeklyIncome} />
-
-      <RankJourney data={dashboardData.rankJourney} />
-
-      <ProspectFollowups prospects={dashboardData.prospectFollowups} />
-
-      <MemberFollowups members={dashboardData.memberFollowups} />
-
-      <DailyMissions missions={dashboardData.dailyMissions} />
-
-      <Footer />
-
+        <DailyMissions
+          missions={dashboard.missions}
+        />
+      </main>
     </div>
-
   );
-}
+};
 
 export default Dashboard;
-
 

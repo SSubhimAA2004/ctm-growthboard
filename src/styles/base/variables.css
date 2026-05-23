@@ -1,0 +1,433 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — DESIGN TOKEN ENGINE
+   FILE: src/styles/base/variables.css
+   PURPOSE:
+   - Frozen design token architecture
+   - Unified spacing system
+   - Color hierarchy system
+   - Shadow + glow engine
+   - Motion token system
+   - Responsive sizing engine
+   - Z-index orchestration
+   ========================================================================== */
+
+:root {
+
+  /* ==========================================================================
+     COLOR SYSTEM
+     Based on frozen CTM output architecture
+     ========================================================================== */
+
+  --color-background-primary: #020617;
+  --color-background-secondary: rgba(10, 18, 38, 0.72);
+  --color-background-tertiary: rgba(7, 15, 35, 0.82);
+
+  --color-surface-primary: rgba(7, 15, 35, 0.72);
+  --color-surface-secondary: rgba(10, 18, 38, 0.84);
+  --color-surface-hover: rgba(18, 28, 54, 0.92);
+
+  --color-border-primary: rgba(255, 255, 255, 0.06);
+  --color-border-secondary: rgba(255, 255, 255, 0.12);
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.72);
+  --color-text-muted: rgba(255, 255, 255, 0.42);
+  --color-text-disabled: rgba(255, 255, 255, 0.28);
+
+  /* ==========================================================================
+     BRAND COLORS
+     ========================================================================== */
+
+  --color-primary-blue: #3B82F6;
+  --color-primary-cyan: #06B6D4;
+  --color-primary-green: #22C55E;
+  --color-primary-pink: #EC4899;
+  --color-primary-purple: #8B5CF6;
+  --color-primary-indigo: #6366F1;
+
+  /* ==========================================================================
+     STATUS COLORS
+     ========================================================================== */
+
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #06B6D4;
+
+  --color-high-priority: #EF4444;
+  --color-medium-priority: #F59E0B;
+  --color-low-priority: #22C55E;
+
+  /* ==========================================================================
+     GRADIENT SYSTEM
+     ========================================================================== */
+
+  --gradient-primary:
+    linear-gradient(
+      135deg,
+      #3B82F6 0%,
+      #06B6D4 50%,
+      #22C55E 100%
+    );
+
+  --gradient-card:
+    linear-gradient(
+      145deg,
+      rgba(10, 18, 38, 0.92),
+      rgba(7, 15, 35, 0.72)
+    );
+
+  --gradient-hero:
+    radial-gradient(
+      circle at top center,
+      rgba(59, 130, 246, 0.18),
+      transparent 45%
+    );
+
+  --gradient-glow:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.32),
+      transparent 70%
+    );
+
+  /* ==========================================================================
+     GLASSMORPHISM SYSTEM
+     ========================================================================== */
+
+  --glass-background: rgba(7, 15, 35, 0.72);
+  --glass-background-strong: rgba(7, 15, 35, 0.92);
+
+  --glass-border: 1px solid rgba(255, 255, 255, 0.06);
+
+  --glass-backdrop-blur: blur(24px);
+
+  /* ==========================================================================
+     SHADOW SYSTEM
+     ========================================================================== */
+
+  --shadow-xs:
+    0 2px 8px rgba(0, 0, 0, 0.18);
+
+  --shadow-sm:
+    0 6px 18px rgba(0, 0, 0, 0.24);
+
+  --shadow-md:
+    0 12px 32px rgba(0, 0, 0, 0.32);
+
+  --shadow-lg:
+    0 20px 60px rgba(0, 0, 0, 0.45);
+
+  --shadow-xl:
+    0 28px 80px rgba(0, 0, 0, 0.52);
+
+  /* ==========================================================================
+     GLOW SYSTEM
+     ========================================================================== */
+
+  --glow-blue:
+    0 0 24px rgba(59, 130, 246, 0.42);
+
+  --glow-cyan:
+    0 0 24px rgba(6, 182, 212, 0.42);
+
+  --glow-green:
+    0 0 24px rgba(34, 197, 94, 0.42);
+
+  --glow-pink:
+    0 0 24px rgba(236, 72, 153, 0.42);
+
+  --glow-danger:
+    0 0 24px rgba(239, 68, 68, 0.42);
+
+  /* ==========================================================================
+     SPACING SCALE
+     ========================================================================== */
+
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 56px;
+  --space-12: 64px;
+  --space-13: 72px;
+  --space-14: 80px;
+  --space-15: 96px;
+  --space-16: 120px;
+
+  /* ==========================================================================
+     SECTION SPACING
+     ========================================================================== */
+
+  --section-spacing-desktop: 96px;
+  --section-spacing-tablet: 72px;
+  --section-spacing-mobile: 56px;
+
+  /* ==========================================================================
+     CONTAINER SYSTEM
+     ========================================================================== */
+
+  --container-max-width: 1440px;
+
+  --container-padding-desktop: 48px;
+  --container-padding-tablet: 32px;
+  --container-padding-mobile: 20px;
+
+  /* ==========================================================================
+     GRID SYSTEM
+     ========================================================================== */
+
+  --grid-columns: 12;
+
+  --grid-gap-desktop: 24px;
+  --grid-gap-tablet: 20px;
+  --grid-gap-mobile: 16px;
+
+  /* ==========================================================================
+     BORDER RADIUS SYSTEM
+     ========================================================================== */
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-2xl: 32px;
+  --radius-3xl: 40px;
+  --radius-full: 999px;
+
+  /* ==========================================================================
+     CARD SYSTEM
+     ========================================================================== */
+
+  --card-radius: 28px;
+  --card-padding-desktop: 32px;
+  --card-padding-tablet: 28px;
+  --card-padding-mobile: 22px;
+
+  --card-background: rgba(7, 15, 35, 0.72);
+
+  --card-border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  --card-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45);
+
+  /* ==========================================================================
+     KPI SYSTEM
+     ========================================================================== */
+
+  --kpi-card-height-desktop: 260px;
+  --kpi-card-height-tablet: 220px;
+  --kpi-card-height-mobile: 180px;
+
+  /* ==========================================================================
+     MISSION SYSTEM
+     ========================================================================== */
+
+  --mission-card-height-desktop: 320px;
+  --mission-card-height-tablet: 280px;
+  --mission-card-height-mobile: 240px;
+
+  /* ==========================================================================
+     FOOTER SYSTEM
+     ========================================================================== */
+
+  --footer-height: 220px;
+
+  /* ==========================================================================
+     BUTTON SYSTEM
+     ========================================================================== */
+
+  --button-height-sm: 42px;
+  --button-height-md: 52px;
+  --button-height-lg: 58px;
+
+  --button-padding-sm: 0 16px;
+  --button-padding-md: 0 22px;
+  --button-padding-lg: 0 28px;
+
+  /* ==========================================================================
+     TRANSITION SYSTEM
+     ========================================================================== */
+
+  --transition-fast: 160ms;
+  --transition-base: 220ms;
+  --transition-slow: 320ms;
+
+  --transition-easing:
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ==========================================================================
+     MOTION SYSTEM
+     ========================================================================== */
+
+  --hover-lift-sm: translateY(-2px);
+  --hover-lift-md: translateY(-4px);
+  --hover-lift-lg: translateY(-6px);
+
+  --scale-hover-sm: scale(1.01);
+  --scale-hover-md: scale(1.02);
+
+  /* ==========================================================================
+     BLUR SYSTEM
+     ========================================================================== */
+
+  --blur-sm: blur(8px);
+  --blur-md: blur(16px);
+  --blur-lg: blur(24px);
+  --blur-xl: blur(36px);
+
+  /* ==========================================================================
+     Z-INDEX HIERARCHY
+     ========================================================================== */
+
+  --z-base: 1;
+  --z-dropdown: 50;
+  --z-sticky: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-toast: 2000;
+  --z-tooltip: 3000;
+  --z-max: 9999;
+
+  /* ==========================================================================
+     TYPOGRAPHY TOKENS
+     ========================================================================== */
+
+  --font-primary:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* ==========================================================================
+     TYPOGRAPHY SCALE
+     ========================================================================== */
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+
+  /* ==========================================================================
+     LINE HEIGHTS
+     ========================================================================== */
+
+  --leading-tight: 1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+  --leading-loose: 1.9;
+
+  /* ==========================================================================
+     LETTER SPACING
+     ========================================================================== */
+
+  --tracking-tightest: -3px;
+  --tracking-tighter: -2px;
+  --tracking-tight: -1px;
+  --tracking-normal: 0;
+  --tracking-wide: 1px;
+  --tracking-wider: 1.5px;
+  --tracking-widest: 2px;
+
+  /* ==========================================================================
+     RESPONSIVE BREAKPOINTS
+     ========================================================================== */
+
+  --breakpoint-mobile-sm: 480px;
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-wide: 1440px;
+
+  /* ==========================================================================
+     SAFE AREA SUPPORT
+     ========================================================================== */
+
+  --safe-area-top: env(safe-area-inset-top);
+  --safe-area-right: env(safe-area-inset-right);
+  --safe-area-bottom: env(safe-area-inset-bottom);
+  --safe-area-left: env(safe-area-inset-left);
+}
+
+/* ==========================================================================
+   RESPONSIVE TOKEN OVERRIDES — TABLET
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+
+  :root {
+
+    --container-padding-desktop:
+      var(--container-padding-tablet);
+
+    --section-spacing-desktop:
+      var(--section-spacing-tablet);
+
+    --card-padding-desktop:
+      var(--card-padding-tablet);
+
+    --grid-gap-desktop:
+      var(--grid-gap-tablet);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE TOKEN OVERRIDES — MOBILE
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+
+  :root {
+
+    --container-padding-desktop:
+      var(--container-padding-mobile);
+
+    --section-spacing-desktop:
+      var(--section-spacing-mobile);
+
+    --card-padding-desktop:
+      var(--card-padding-mobile);
+
+    --grid-gap-desktop:
+      var(--grid-gap-mobile);
+
+    --kpi-card-height-desktop:
+      var(--kpi-card-height-mobile);
+
+    --mission-card-height-desktop:
+      var(--mission-card-height-mobile);
+  }
+}
+
+

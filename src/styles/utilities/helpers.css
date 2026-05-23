@@ -1,0 +1,602 @@
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — HELPER UTILITIES
+   FILE: src/styles/utilities/helpers.css
+   PURPOSE:
+   - Reusable helper utility architecture
+   - Layout orchestration helpers
+   - Visibility & overflow systems
+   - Alignment & typography helpers
+   - Production-safe utility layer
+   ========================================================================== */
+
+/* ==========================================================================
+   DISPLAY UTILITIES
+   ========================================================================== */
+
+.u-block {
+  display: block;
+}
+
+.u-inline {
+  display: inline;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-inline-flex {
+  display: inline-flex;
+}
+
+.u-grid {
+  display: grid;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   FLEX ALIGNMENT UTILITIES
+   ========================================================================== */
+
+.u-flex-row {
+  flex-direction: row;
+}
+
+.u-flex-column {
+  flex-direction: column;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.u-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.u-items-start {
+  align-items: flex-start;
+}
+
+.u-items-center {
+  align-items: center;
+}
+
+.u-items-end {
+  align-items: flex-end;
+}
+
+.u-items-stretch {
+  align-items: stretch;
+}
+
+.u-justify-start {
+  justify-content: flex-start;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-end {
+  justify-content: flex-end;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-around {
+  justify-content: space-around;
+}
+
+.u-justify-evenly {
+  justify-content: space-evenly;
+}
+
+.u-flex-1 {
+  flex: 1;
+}
+
+.u-flex-auto {
+  flex: auto;
+}
+
+.u-flex-none {
+  flex: none;
+}
+
+/* ==========================================================================
+   GAP UTILITIES
+   ========================================================================== */
+
+.u-gap-xs {
+  gap: 4px;
+}
+
+.u-gap-sm {
+  gap: 8px;
+}
+
+.u-gap-md {
+  gap: 16px;
+}
+
+.u-gap-lg {
+  gap: 24px;
+}
+
+.u-gap-xl {
+  gap: 32px;
+}
+
+.u-gap-2xl {
+  gap: 48px;
+}
+
+/* ==========================================================================
+   POSITION UTILITIES
+   ========================================================================== */
+
+.u-relative {
+  position: relative;
+}
+
+.u-absolute {
+  position: absolute;
+}
+
+.u-fixed {
+  position: fixed;
+}
+
+.u-sticky {
+  position: sticky;
+}
+
+.u-inset-0 {
+  inset: 0;
+}
+
+.u-top-0 {
+  top: 0;
+}
+
+.u-left-0 {
+  left: 0;
+}
+
+.u-right-0 {
+  right: 0;
+}
+
+.u-bottom-0 {
+  bottom: 0;
+}
+
+/* ==========================================================================
+   WIDTH UTILITIES
+   ========================================================================== */
+
+.u-w-full {
+  width: 100%;
+}
+
+.u-w-auto {
+  width: auto;
+}
+
+.u-h-full {
+  height: 100%;
+}
+
+.u-h-auto {
+  height: auto;
+}
+
+.u-min-h-screen {
+  min-height: 100vh;
+}
+
+.u-max-w-full {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   OVERFLOW UTILITIES
+   ========================================================================== */
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-overflow-auto {
+  overflow: auto;
+}
+
+.u-overflow-scroll {
+  overflow: scroll;
+}
+
+.u-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.u-overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   TEXT ALIGNMENT UTILITIES
+   ========================================================================== */
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-justify {
+  text-align: justify;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+.u-capitalize {
+  text-transform: capitalize;
+}
+
+.u-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.u-break-word {
+  word-break: break-word;
+}
+
+.u-nowrap {
+  white-space: nowrap;
+}
+
+.u-font-thin {
+  font-weight: 100;
+}
+
+.u-font-light {
+  font-weight: 300;
+}
+
+.u-font-regular {
+  font-weight: 400;
+}
+
+.u-font-medium {
+  font-weight: 500;
+}
+
+.u-font-semibold {
+  font-weight: 600;
+}
+
+.u-font-bold {
+  font-weight: 700;
+}
+
+.u-font-black {
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   OPACITY UTILITIES
+   ========================================================================== */
+
+.u-opacity-0 {
+  opacity: 0;
+}
+
+.u-opacity-25 {
+  opacity: 0.25;
+}
+
+.u-opacity-50 {
+  opacity: 0.5;
+}
+
+.u-opacity-75 {
+  opacity: 0.75;
+}
+
+.u-opacity-100 {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   VISIBILITY UTILITIES
+   ========================================================================== */
+
+.u-visible {
+  visibility: visible;
+}
+
+.u-invisible {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   POINTER UTILITIES
+   ========================================================================== */
+
+.u-pointer {
+  cursor: pointer;
+}
+
+.u-not-allowed {
+  cursor: not-allowed;
+}
+
+.u-no-pointer {
+  pointer-events: none;
+}
+
+.u-pointer-auto {
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   BORDER RADIUS UTILITIES
+   ========================================================================== */
+
+.u-rounded-none {
+  border-radius: 0;
+}
+
+.u-rounded-sm {
+  border-radius: 6px;
+}
+
+.u-rounded-md {
+  border-radius: 12px;
+}
+
+.u-rounded-lg {
+  border-radius: 18px;
+}
+
+.u-rounded-xl {
+  border-radius: 24px;
+}
+
+.u-rounded-2xl {
+  border-radius: 32px;
+}
+
+.u-rounded-full {
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   SHADOW UTILITIES
+   ========================================================================== */
+
+.u-shadow-sm {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.u-shadow-md {
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.14);
+}
+
+.u-shadow-lg {
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.20);
+}
+
+.u-shadow-xl {
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.u-shadow-none {
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   Z-INDEX UTILITIES
+   ========================================================================== */
+
+.u-z-0 {
+  z-index: 0;
+}
+
+.u-z-1 {
+  z-index: 1;
+}
+
+.u-z-10 {
+  z-index: 10;
+}
+
+.u-z-20 {
+  z-index: 20;
+}
+
+.u-z-30 {
+  z-index: 30;
+}
+
+.u-z-40 {
+  z-index: 40;
+}
+
+.u-z-50 {
+  z-index: 50;
+}
+
+/* ==========================================================================
+   GLASSMORPHISM HELPERS
+   ========================================================================== */
+
+.u-glass {
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  backdrop-filter:
+    blur(20px);
+}
+
+.u-glass-heavy {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(28px);
+}
+
+/* ==========================================================================
+   SCROLLBAR HELPERS
+   ========================================================================== */
+
+.u-scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.u-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.u-scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+/* ==========================================================================
+   USER SELECT UTILITIES
+   ========================================================================== */
+
+.u-select-none {
+  user-select: none;
+}
+
+.u-select-text {
+  user-select: text;
+}
+
+.u-select-all {
+  user-select: all;
+}
+
+/* ==========================================================================
+   ISOLATION UTILITIES
+   ========================================================================== */
+
+.u-isolate {
+  isolation: isolate;
+}
+
+.u-isolation-auto {
+  isolation: auto;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY HELPERS
+   ========================================================================== */
+
+.u-sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE HELPERS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  .u-mobile-hidden {
+    display: none !important;
+  }
+
+  .u-mobile-block {
+    display: block !important;
+  }
+
+  .u-mobile-flex {
+    display: flex !important;
+  }
+
+  .u-mobile-column {
+    flex-direction: column !important;
+  }
+
+  .u-mobile-center {
+    text-align: center !important;
+  }
+
+  .u-mobile-full {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .u-hover-animate,
+  .u-glass,
+  .u-glass-heavy {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+

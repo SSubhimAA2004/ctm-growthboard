@@ -1,0 +1,490 @@
+
+
+
+/* ==========================================================================
+   CTM GROWTHBOARD — RESET ENGINE
+   FILE: src/styles/base/reset.css
+   PURPOSE:
+   - Frozen rendering normalization system
+   - Browser consistency stabilization
+   - Layout integrity preservation
+   - Overflow protection
+   - Media normalization
+   - Form normalization
+   - Accessibility-safe rendering
+   ========================================================================== */
+
+/* ==========================================================================
+   UNIVERSAL BOX MODEL
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   ROOT FOUNDATION
+   ========================================================================== */
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  scroll-behavior: smooth;
+
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  line-height: 1.5;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   ROOT APPLICATION CONTAINERS
+   ========================================================================== */
+
+#root,
+#__next,
+.app,
+.app-root {
+  width: 100%;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY RESET
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ==========================================================================
+   LINK RESET
+   ========================================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   BUTTON RESET
+   ========================================================================== */
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+
+  color: inherit;
+  font: inherit;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   FORM RESET
+   ========================================================================== */
+
+input,
+textarea,
+select {
+  margin: 0;
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: inherit;
+  font: inherit;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   TABLE RESET
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+}
+
+/* ==========================================================================
+   MEDIA NORMALIZATION
+   ========================================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+svg {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   IFRAME RESET
+   ========================================================================== */
+
+iframe {
+  border: 0;
+}
+
+/* ==========================================================================
+   HR RESET
+   ========================================================================== */
+
+hr {
+  border: none;
+  margin: 0;
+}
+
+/* ==========================================================================
+   ABBREVIATION RESET
+   ========================================================================== */
+
+abbr[title] {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   STRONG / EMPHASIS RESET
+   ========================================================================== */
+
+strong,
+b {
+  font-weight: bolder;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   CODE RESET
+   ========================================================================== */
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 1em;
+}
+
+/* ==========================================================================
+   PRE NORMALIZATION
+   ========================================================================== */
+
+pre {
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   SMALL TEXT RESET
+   ========================================================================== */
+
+small {
+  font-size: 80%;
+}
+
+/* ==========================================================================
+   SUB / SUP RESET
+   ========================================================================== */
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* ==========================================================================
+   DETAILS / SUMMARY RESET
+   ========================================================================== */
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HIDDEN ATTRIBUTE NORMALIZATION
+   ========================================================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   OVERFLOW PROTECTION
+   ========================================================================== */
+
+img,
+svg,
+video,
+canvas,
+iframe,
+table {
+  max-width: 100%;
+}
+
+pre,
+code {
+  overflow-wrap: break-word;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+li {
+  overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   TOUCH ACTION OPTIMIZATION
+   ========================================================================== */
+
+button,
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
+/* ==========================================================================
+   SELECTION STYLING
+   ========================================================================== */
+
+::selection {
+  background: rgba(59, 130, 246, 0.28);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SCROLLBAR NORMALIZATION
+   ========================================================================== */
+
+* {
+  scrollbar-width: thin;
+}
+
+/* ==========================================================================
+   FOCUS NORMALIZATION
+   ========================================================================== */
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.72);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY — REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   SAFARI INPUT SHADOW FIX
+   ========================================================================== */
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* ==========================================================================
+   AUTOFILL NORMALIZATION
+   ========================================================================== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: inherit;
+
+  transition:
+    background-color 9999s ease-in-out 0s;
+}
+
+/* ==========================================================================
+   MOBILE SAFE AREA NORMALIZATION
+   ========================================================================== */
+
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* ==========================================================================
+   RENDERING STABILIZATION
+   ========================================================================== */
+
+html,
+body,
+#root {
+  contain: layout style;
+}
+
+/* ==========================================================================
+   DRAG PREVENTION FOR MEDIA
+   ========================================================================== */
+
+img,
+svg {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================================================
+   FINAL RESET DISCIPLINE
+   --------------------------------------------------------------------------
+   DO NOT:
+   - Add component styling here
+   - Add theme styling here
+   - Add section styling here
+   - Add business-specific styling here
+
+   ONLY:
+   - Normalize rendering
+   - Stabilize browser behavior
+   - Preserve layout consistency
+   - Protect responsive integrity
+   ========================================================================== */
+
+
+   

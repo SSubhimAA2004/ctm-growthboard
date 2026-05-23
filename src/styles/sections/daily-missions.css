@@ -1,0 +1,823 @@
+
+
+
+/* =========================================================
+   CTM GROWTHBOARD — DAILY-MISSIONS.CSS
+   FINAL FROZEN DAILY EXECUTION SYSTEM V1
+   Human Momentum Operating System
+========================================================= */
+
+/* =========================================================
+   DAILY MISSIONS ROOT
+========================================================= */
+
+.daily-missions-section {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+
+  padding:
+    42px;
+
+  border-radius: 36px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 12, 32, 0.92),
+      rgba(3, 8, 24, 0.96)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.45);
+}
+
+/* =========================================================
+   BACKGROUND VISUAL SYSTEM
+========================================================= */
+
+.daily-missions-section::before {
+  content: "";
+
+  position: absolute;
+  top: -20%;
+  right: -10%;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 999px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,0.16),
+      rgba(6,182,212,0.08),
+      transparent 72%
+    );
+
+  filter:
+    blur(90px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.daily-missions-section::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 38%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.daily-missions-header {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.daily-missions-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.daily-missions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+
+  min-height: 38px;
+
+  padding:
+    0 16px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+.daily-missions-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 14px rgba(34,197,94,0.62);
+}
+
+.daily-missions-title {
+  margin: 0;
+
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+
+  color:
+    #ffffff;
+}
+
+.daily-missions-description {
+  max-width: 720px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   MOMENTUM PANEL
+========================================================= */
+
+.daily-momentum-panel {
+  position: relative;
+
+  min-width: 240px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding:
+    28px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 20, 44, 0.92),
+      rgba(5, 12, 32, 0.96)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.35);
+}
+
+.daily-momentum-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34,197,94,0.12),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.daily-momentum-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+.daily-momentum-score {
+  font-size: 82px;
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -4px;
+
+  color:
+    #ffffff;
+}
+
+.daily-momentum-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.daily-momentum-indicator {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background:
+    #22c55e;
+
+  box-shadow:
+    0 0 16px rgba(34,197,94,0.62);
+
+  animation:
+    dailyMissionPulse 2.8s infinite ease-in-out;
+}
+
+.daily-momentum-status {
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    rgba(34,197,94,0.92);
+}
+
+/* =========================================================
+   MISSION GRID
+========================================================= */
+
+.daily-missions-grid {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================================================
+   MISSION CARD
+========================================================= */
+
+.daily-mission-card {
+  position: relative;
+
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+
+  padding:
+    28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(7,15,35,0.72);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(24px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.32);
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.daily-mission-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(59,130,246,0.24);
+
+  box-shadow:
+    0 28px 60px rgba(0,0,0,0.42);
+}
+
+.daily-mission-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.03),
+      transparent 38%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.daily-mission-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.daily-mission-icon {
+  width: 56px;
+  height: 56px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(59,130,246,0.12);
+
+  border:
+    1px solid rgba(59,130,246,0.22);
+
+  color:
+    #3b82f6;
+
+  box-shadow:
+    0 10px 24px rgba(59,130,246,0.18);
+}
+
+.daily-mission-count {
+  font-size: 14px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+/* =========================================================
+   MISSION CONTENT
+========================================================= */
+
+.daily-mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.daily-mission-title {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  color:
+    #ffffff;
+}
+
+.daily-mission-description {
+  font-size: 14px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.62);
+}
+
+/* =========================================================
+   PROGRESS SYSTEM
+========================================================= */
+
+.daily-mission-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.daily-mission-progress-bar {
+  position: relative;
+
+  width: 100%;
+  height: 10px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.06);
+}
+
+.daily-mission-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3b82f6,
+      #06b6d4,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 18px rgba(6,182,212,0.34);
+}
+
+.daily-mission-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.daily-mission-progress-label {
+  font-size: 13px;
+  font-weight: 600;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+.daily-mission-progress-value {
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    #ffffff;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.daily-mission-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.daily-mission-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 38px;
+
+  padding:
+    0 14px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(34,197,94,0.12);
+
+  border:
+    1px solid rgba(34,197,94,0.18);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color:
+    #22c55e;
+}
+
+.daily-mission-status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    currentColor;
+
+  box-shadow:
+    0 0 12px currentColor;
+}
+
+.daily-mission-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+/* =========================================================
+   ACTION BAR
+========================================================= */
+
+.daily-missions-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.daily-missions-primary-btn,
+.daily-missions-secondary-btn {
+  position: relative;
+
+  min-height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding:
+    0 26px;
+
+  border-radius: 18px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.daily-missions-primary-btn {
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #06b6d4
+    );
+
+  color:
+    #ffffff;
+
+  box-shadow:
+    0 20px 42px rgba(59,130,246,0.28);
+}
+
+.daily-missions-primary-btn:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 26px 48px rgba(59,130,246,0.34);
+}
+
+.daily-missions-secondary-btn {
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:
+    rgba(255,255,255,0.72);
+}
+
+.daily-missions-secondary-btn:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(255,255,255,0.16);
+}
+
+/* =========================================================
+   REINFORCEMENT INSIGHT
+========================================================= */
+
+.daily-missions-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding-top: 8px;
+}
+
+.daily-missions-insight-icon {
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    rgba(59,130,246,0.12);
+
+  color:
+    #3b82f6;
+}
+
+.daily-missions-insight-text {
+  max-width: 780px;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.56);
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1280px) {
+
+  .daily-missions-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .daily-momentum-panel {
+    width: 100%;
+  }
+
+  .daily-missions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .daily-missions-section {
+    padding:
+      24px;
+
+    border-radius:
+      26px;
+
+    gap:
+      28px;
+  }
+
+  .daily-missions-title {
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .daily-missions-description {
+    font-size: 15px;
+  }
+
+  .daily-momentum-panel {
+    min-width: 100%;
+
+    padding:
+      22px;
+
+    border-radius:
+      22px;
+  }
+
+  .daily-momentum-score {
+    font-size: 58px;
+    letter-spacing: -2px;
+  }
+
+  .daily-missions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-mission-card {
+    min-height: auto;
+
+    padding:
+      22px;
+
+    border-radius:
+      22px;
+  }
+
+  .daily-mission-title {
+    font-size: 24px;
+  }
+
+  .daily-missions-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .daily-missions-primary-btn,
+  .daily-missions-secondary-btn {
+    width: 100%;
+  }
+
+  .daily-mission-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .daily-mission-card,
+  .daily-missions-primary-btn,
+  .daily-missions-secondary-btn,
+  .daily-momentum-indicator {
+    transition: none;
+    animation: none;
+  }
+
+  .daily-mission-card:hover,
+  .daily-missions-primary-btn:hover,
+  .daily-missions-secondary-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes dailyMissionPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

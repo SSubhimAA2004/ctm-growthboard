@@ -1,221 +1,164 @@
 
 
-// FILE: src/pages/Login.jsx
-
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
 
 import {
-  ArrowRight,
-  ShieldCheck,
+  Shield,
+  TrendingUp,
   Zap,
   Target,
-  Users,
-  TrendingUp,
-  Mail,
-  Lock,
+  ArrowRight,
 } from "lucide-react";
 
-import { loginUser, validateStoredSession } from "../services/api";
-
 import "../styles/pages/login.css";
+import "../styles/animations/premium-motion.css";
 
-const Login = () => {
-  const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    setLoading(true);
-
-    try {
-      const response = await loginUser(formData);
-
-      if (response?.success) {
-        localStorage.setItem(
-          "ctm_session",
-          JSON.stringify(response.session || {})
-        );
-
-        navigate("/dashboard");
-      } else {
-        alert(response?.message || "Invalid login credentials");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Login failed");
-    }
-
-    setLoading(false);
-  }
-
+export default function Login() {
   return (
-    <div className="login-page">
-      <div className="login-background-glow login-glow-1"></div>
-      <div className="login-background-glow login-glow-2"></div>
-
+    <div className="login-page motion-grid">
       <div className="login-grid">
-        {/* LEFT SIDE */}
+        {/* =========================================
+            LEFT PANEL
+        ========================================= */}
         <section className="login-left-panel">
           <div className="login-brand">
-            <div className="login-brand-icon">
-              <Zap size={34} />
+            <div className="login-brand-icon motion-glow motion-float">
+              <Zap size={34} strokeWidth={2.5} />
             </div>
 
-            <div>
-              <h2>CTM GrowthBoard</h2>
-              <p>Execution Intelligence System</p>
+            <div className="login-brand-text">
+              <h1>CTM GrowthBoard</h1>
+
+              <p>
+                Execution Intelligence System
+              </p>
             </div>
           </div>
 
           <div className="login-hero">
-            <div className="login-badge">
-              LIVE EXECUTION NETWORK
+            <div className="hero-badge live-indicator glass-premium">
+              <span className="live-indicator-dot"></span>
+
+              GLOBAL EXECUTION NETWORK
             </div>
 
-            <h1>
+            <h2 className="hero-title">
               Build Momentum.
               <br />
               Scale Leadership.
               <br />
               Compound Results.
-            </h1>
+            </h2>
 
-            <p>
-              CTM GrowthBoard transforms daily activity into measurable
-              duplication, tribe expansion, and leadership acceleration.
+            <p className="hero-description">
+              CTM GrowthBoard transforms daily
+              action into measurable duplication,
+              leadership acceleration, and tribe
+              expansion through a live execution
+              operating system.
             </p>
           </div>
 
-          <div className="login-stats-grid">
-            <div className="login-stat-card">
+          <div className="hero-metrics">
+            <div className="metric-card hover-lift motion-shimmer">
               <TrendingUp size={22} />
 
               <h3>+46%</h3>
 
-              <span>
-                Faster execution consistency across active leaders
-              </span>
+              <p>
+                Faster execution consistency
+                across active leaders
+              </p>
             </div>
 
-            <div className="login-stat-card">
-              <Users size={22} />
+            <div className="metric-card hover-lift motion-shimmer">
+              <Target size={22} />
 
               <h3>118%</h3>
 
-              <span>
-                Tribe momentum expansion through structured duplication
-              </span>
+              <p>
+                Tribe momentum expansion through
+                structured duplication
+              </p>
             </div>
 
-            <div className="login-stat-card">
-              <Target size={22} />
+            <div className="metric-card hover-lift motion-shimmer">
+              <Shield size={22} />
 
               <h3>3X</h3>
 
-              <span>
-                Higher mission completion through guided action systems
-              </span>
+              <p>
+                Higher mission completion through
+                guided action systems
+              </p>
             </div>
           </div>
         </section>
 
-        {/* RIGHT SIDE */}
+        {/* =========================================
+            RIGHT PANEL
+        ========================================= */}
         <section className="login-right-panel">
-          <div className="login-card">
+          <div className="login-card glass-premium motion-float">
             <div className="login-card-header">
-              <div className="login-security-icon">
-                <ShieldCheck size={24} />
+              <div className="status-pill">
+                <span className="status-dot"></span>
+
+                LIVE SYSTEM
               </div>
 
-              <h2>Access Your Dashboard</h2>
+              <h2>Mission Control Access</h2>
 
               <p>
-                Secure login to continue your execution journey.
+                Enter your execution workspace
+                and activate your daily momentum
+                engine.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="login-form">
-              <div className="login-input-group">
-                <Mail size={18} />
+            <form className="login-form">
+              <div className="form-group">
+                <label>Email Address</label>
 
                 <input
                   type="email"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      email: event.target.value,
-                    })
-                  }
-                  required
+                  placeholder="Enter your email"
                 />
               </div>
 
-              <div className="login-input-group">
-                <Lock size={18} />
+              <div className="form-group">
+                <label>Password</label>
 
                 <input
                   type="password"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      password: event.target.value,
-                    })
-                  }
-                  required
+                  placeholder="Enter your password"
                 />
               </div>
 
               <button
                 type="submit"
-                className="login-submit-button"
-                disabled={loading}
+                className="login-button"
               >
-                {loading ? "Launching..." : "Enter Mission Control"}
+                Enter Mission Control
 
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </button>
             </form>
 
             <div className="login-footer">
-              <div className="login-footer-row">
-                <span className="status-dot"></span>
+              <p>
+                End-to-end encrypted session
+                security enabled
+              </p>
 
-                Live Infrastructure Operational
-              </div>
-
-              <div className="login-footer-row">
-                <ShieldCheck size={16} />
-
-                End-to-end session protection enabled
-              </div>
-            </div>
-
-            <div className="login-register-link">
-              New to CTM?
-
-              <Link to="/register">
+              <button className="secondary-button">
                 Create Business ID
-              </Link>
+              </button>
             </div>
           </div>
         </section>
       </div>
     </div>
   );
-};
-
-export default Login;
-
+}
 

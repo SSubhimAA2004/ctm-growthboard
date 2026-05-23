@@ -1,0 +1,202 @@
+
+
+/* =========================================================
+   CTM GROWTHBOARD — PREMIUM MOTION SYSTEM
+========================================================= */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 0 rgba(79,70,229,0.0),
+      0 0 0 rgba(37,99,235,0.0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px rgba(79,70,229,0.25),
+      0 0 80px rgba(37,99,235,0.18);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 rgba(79,70,229,0.0),
+      0 0 0 rgba(37,99,235,0.0);
+  }
+}
+
+@keyframes floatCard {
+  0% {
+    transform:
+      translateY(0px);
+  }
+
+  50% {
+    transform:
+      translateY(-6px);
+  }
+
+  100% {
+    transform:
+      translateY(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position:
+      -200% center;
+  }
+
+  100% {
+    background-position:
+      200% center;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform:
+      translateY(0px);
+  }
+
+  100% {
+    transform:
+      translateY(72px);
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+.motion-float {
+  animation:
+    floatCard 6s ease-in-out infinite;
+}
+
+.motion-glow {
+  animation:
+    pulseGlow 4s ease-in-out infinite;
+}
+
+.motion-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-shimmer::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      rgba(255,255,255,0.12) 50%,
+      transparent 100%
+    );
+
+  background-size:
+    200% 100%;
+
+  animation:
+    shimmer 4s linear infinite;
+
+  pointer-events: none;
+}
+
+.motion-grid {
+  position: relative;
+}
+
+.motion-grid::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    72px 72px;
+
+  animation:
+    gridMove 12s linear infinite;
+
+  pointer-events: none;
+
+  opacity: 0.2;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.live-indicator-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background:
+    #34d399;
+
+  box-shadow:
+    0 0 18px #34d399;
+
+  animation:
+    livePulse 1.8s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.28);
+}
+
+.glass-premium {
+  background:
+    rgba(255,255,255,0.05);
+
+  backdrop-filter:
+    blur(24px);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+

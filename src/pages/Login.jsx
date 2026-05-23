@@ -1,110 +1,125 @@
 
 
-import React from "react";
-
-import {
-  Zap,
-  ArrowRight,
-} from "lucide-react";
-
-import "../styles/pages/login.css";
-import "../styles/animations/premium-motion.css";
+import { ArrowRight, Mail, Lock, UserPlus } from "lucide-react";
 
 export default function Login() {
   return (
-    <div className="login-page motion-grid">
+    <div className="login-page">
+      <div className="login-background-glow"></div>
+
       <div className="login-container">
-        {/* =========================================
-            BRAND
-        ========================================= */}
+        {/* BRAND HEADER */}
         <div className="login-brand">
-          <div className="login-brand-icon motion-glow motion-float">
-            <Zap size={34} strokeWidth={2.5} />
-          </div>
+          <div className="brand-logo">⚡</div>
 
-          <div className="login-brand-text">
+          <div className="brand-content">
             <h1>CTM GrowthBoard</h1>
-
-            <p>
-              Execution Intelligence System
-            </p>
+            <p>Execution Intelligence System</p>
           </div>
         </div>
 
-        {/* =========================================
-            HERO
-        ========================================= */}
-        <div className="login-hero">
-          <div className="hero-badge glass-premium live-indicator">
-            <span className="live-indicator-dot"></span>
+        {/* LIVE BADGE */}
+        <div className="live-badge">
+          <span className="live-dot"></span>
+          LIVE EXECUTION NETWORK
+        </div>
 
-            LIVE EXECUTION NETWORK
-          </div>
-
-          <h2 className="hero-title">
+        {/* HERO */}
+        <div className="hero-content">
+          <h2>
             Execute Daily.
             <br />
             Compound Forever.
           </h2>
 
-          <p className="hero-description">
-            Your mission control centre for
-            disciplined execution, duplication,
-            leadership growth, and momentum
-            expansion.
+          <h3>Welcome back, Leader.</h3>
+
+          <p>
+            This is your mission control center.
+            <br />
+            Let’s continue building your legacy today.
           </p>
         </div>
 
-        {/* =========================================
-            LOGIN CARD
-        ========================================= */}
-        <div className="login-card glass-premium motion-float">
-          <div className="login-card-header">
-            <h3>Mission Control Access</h3>
+        {/* LOGIN CARD */}
+        <div className="login-card">
+          <div className="card-lock">🔒</div>
 
-            <p>
-              Enter your execution workspace
-            </p>
+          <h4>Mission Control Access</h4>
+
+          <p>Enter your credentials to access your dashboard</p>
+
+          {/* EMAIL */}
+          <div className="input-group">
+            <label>Email Address</label>
+
+            <div className="input-wrapper">
+              <Mail size={20} />
+              <input type="email" placeholder="Enter your email" />
+            </div>
           </div>
 
-          <form className="login-form">
-            <div className="form-group">
-              <label>Email Address</label>
+          {/* PASSWORD */}
+          <div className="input-group">
+            <label>Password</label>
 
-              <input
-                type="email"
-                placeholder="Enter your email"
-              />
+            <div className="input-wrapper">
+              <Lock size={20} />
+              <input type="password" placeholder="Enter your password" />
             </div>
+          </div>
 
-            <div className="form-group">
-              <label>Password</label>
+          {/* OPTIONS */}
+          <div className="login-options">
+            <label className="remember-me">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
 
-              <input
-                type="password"
-                placeholder="Enter your password"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="login-button"
-            >
-              Enter Mission Control
-
-              <ArrowRight size={18} />
-            </button>
-          </form>
-
-          <div className="login-footer">
-            <button className="secondary-button">
-              Create Business ID
+            <button className="forgot-password">
+              Forgot Password?
             </button>
           </div>
+
+          {/* LOGIN BUTTON */}
+          <button className="login-button">
+            Enter Mission Control
+            <ArrowRight size={22} />
+          </button>
+        </div>
+
+        {/* NEW USER CTA */}
+        <div className="new-user-card">
+          <div className="new-user-left">
+            <div className="new-user-icon">
+              <UserPlus size={24} />
+            </div>
+
+            <div>
+              <span className="new-user-label">
+                New user?
+              </span>
+
+              <h5>Create Your Business ID</h5>
+
+              <p>
+                Start your execution journey today.
+              </p>
+            </div>
+          </div>
+
+          <button className="business-button">
+            Create Business ID
+            <ArrowRight size={20} />
+          </button>
+        </div>
+
+        {/* FOOTER */}
+        <div className="login-footer">
+          🔐 Secure. Private. Built for Leaders.
         </div>
       </div>
     </div>
   );
 }
-
 
